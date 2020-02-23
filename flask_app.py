@@ -13,4 +13,9 @@ def root():
 @app.route('/learn.html')
 def learn():
     return render_template('learn.html')
+    
+
+@app.route('/participate.html')
+def participate():
+    return render_template('participate.html')
 
