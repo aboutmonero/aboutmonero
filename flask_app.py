@@ -10,6 +10,10 @@ app = Flask(__name__)
 def root():
     return render_template('index.html')
 
+@app.route('/index.html')
+def index():
+    return render_template('index.html')
+
 @app.route('/learn.html')
 def learn():
     return render_template('learn.html')
