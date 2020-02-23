@@ -1,0 +1,9 @@
+{
+    "header": {
+        "title": "Account",
+        "short_description": "Distributing a cryptocurrency token or coin, usually for free, to numerous wallet addresses. [1]",
+        "full_description": "In a typical ICO, participants contribute capital to buy tokens whereas, in an airdrop (or hard fork), tokens are allocated to existing holders of a particular chain—typically Bitcoin or Ethereum. Instead of buying tokens, they’re simply given away to the holders of another coin. [2]",
+        "last_update": "02/16/20",
+        "version": 0.1
+    },
+}
