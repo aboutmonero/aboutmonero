@@ -23,3 +23,13 @@ def learn():
 def participate():
     return render_template('participate.html')
 
+
+@app.route('/statistics.html')
+def statistics():
+    return render_template('statistics.html')
+
+
+@app.route('/learn/<topic>.html')
+def topic(topic):
+    return render_template('/learn/'+topic+'.html')
+
