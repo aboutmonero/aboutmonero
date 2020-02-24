@@ -15,9 +15,12 @@
 <hr>
 
 <div style="font-size: large;">
-An account is a group of subaddresses of a wallet.
+An account is a group of subaddresses of a wallet.<br><br>
+
+A wallet has a seed. From this seed, the primary address private spend and view keys are derived. From these private keys, subaddresses are derived. Subaddresses are grouped into accounts. This primary address is the first address in the first account in the wallet. Each account has its own balance, and can have multiple subaddresses associated with it. Since accounts are only groupings of subaddresses, there is no such thing as an account address (unless you count the first subaddress in the account as the 'account address'). So a wallet can have multiple accounts, and each account can have multiple subaddresses. Since accounts and subaddresses are deterministically derived from the seed, you only need to know the seed in order to restore the account/subaddress structure when restoring a wallet (although any labels you assign to the accounts/subaddresses will need to be noted separately).[1]
+<br><br>
+See also: <a href="../learn/address.html">Address</a> <a href="../learn/subaddress.html">Subaddress</a> <a href="../learn/wallet.html">Wallet</a>
 </div>
-A wallet has a seed. From this seed, the primary address private spend and view keys are derived. From these private keys, subaddresses are derived. Subaddresses are grouped into accounts. This primary address is the first address in the first account in the wallet. Each account has its own balance, and can have multiple subaddresses associated with it. Since accounts are only groupings of subaddresses, there is no such thing as an account address (unless you count the first subaddress in the account as the 'account address'). So a wallet can have multiple accounts, and each account can have multiple subaddresses. Since accounts and subaddresses are deterministically derived from the seed, you only need to know the seed in order to restore the account/subaddress structure when restoring a wallet (although any labels you assign to the accounts/subaddresses will need to be noted separately). [1]
 <hr>
 <div style="font-size:large">
 <h3>References</h3>
