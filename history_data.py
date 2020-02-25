@@ -15,12 +15,12 @@ def get_last(direc):
         return 0
         
 def cache(data,direc):
-    last = get_last(direc)
+    #last = get_last(direc)
     with open("static/data/"+direc+".csv", 'a+') as f:
         writer = csv.writer(f) 
         for x in data:
-            if int(x[0]) > last:
-                writer.writerow(x)  
+            #if int(x[0]) > last:
+            writer.writerow(x)  
     return True
             
 def get_json(url):   
@@ -41,12 +41,14 @@ def get_current_block():
 def get_blocks():
     last = get_last("blocks")
     new = []
-    current = 10000 #get_current_block()
+    current = 100000 #get_current_block()
     while current > last:
         data = get_json("https://www.xmrchain.net/api/block/"+str(last))['data']
-        new = [[data['block_height'],data['timestamp'],data['size'],len(data['txs']),data['txs'][0]['xmr_outputs']]]
+        new = new + [[data['block_height'],data['timestamp'],data['size'],len(data['txs']),data['txs'][0]['xmr_outputs']]]
         last +=1
-        cache(new,"blocks")
+        if(last %100 ==0):
+            cache(new,"blocks")
+            new = []
     
 def get_hashrate():
     return get_json("https://www.xmrchain.net/api/networkinfo")['data']['hash_rate']
