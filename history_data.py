@@ -3,7 +3,8 @@ import urllib.request
 import json 
 import time
 import math
-
+from monero.daemon import Daemon
+from monero.backends.jsonrpc import JSONRPCDaemon
 
 def get_last(direc):
     with open("static/data/"+direc+".csv", 'r') as f:
@@ -15,12 +16,9 @@ def get_last(direc):
         return 0
         
 def cache(data,direc):
-    #last = get_last(direc)
     with open("static/data/"+direc+".csv", 'a+') as f:
         writer = csv.writer(f) 
-        for x in data:
-            #if int(x[0]) > last:
-            writer.writerow(x)  
+        writer.writerows(data)
     return True
             
 def get_json(url):   
@@ -35,50 +33,72 @@ def get_price():
     cache(prices,"price")
         
 def get_current_block():
-    data = get_json("https://www.xmrchain.net/api/networkinfo")['data']['hash_rate']
+    data = get_json("https://www.xmrchain.net/api/networkinfo")
     return int(data['data']['height'])
         
 def get_blocks():
+    daemon = Daemon(JSONRPCDaemon(port=18081))
     last = get_last("blocks")
     new = []
-    current = 100000 #get_current_block()
+    current = daemon.height()
     while current > last:
-        data = get_json("https://www.xmrchain.net/api/block/"+str(last))['data']
-        new = new + [[data['block_height'],data['timestamp'],data['size'],len(data['txs']),data['txs'][0]['xmr_outputs']]]
+        data = daemon.block(height=last)
+        new = new + [[data.height,data.timestamp,data.difficulty,data.reward,len(data.transactions)]]
         last +=1
-        if(last %100 ==0):
-            cache(new,"blocks")
-            new = []
+    cache(new,"blocks")
     
-def get_hashrate():
-    return get_json("https://www.xmrchain.net/api/networkinfo")['data']['hash_rate']
 
-'''
-def get_supply():
-
-def get_marketcap():
-
-def get_inflation_rate():
-        
 def get_block_reward():
+    with open("static/data/blocks.csv", 'r') as f:
+        reader = csv.reader(f)
+        rows=list(reader)
+    data = [[x[1],x[3]] for x in rows]
+    cache(data,"reward")
+    
+def get_supply():
+    with open("static/data/reward.csv", 'r') as f:
+        reader = csv.reader(f)
+        rows=list(reader)
+    supply = [[0.0,0.0]]
+    for x in rows:
+        supply.append([x[0],float(x[1]) + supply[-1][1]])
+    cache(supply,"supply")
 
-def get_block_size_24h():
+def get_hashrate():
+    with open("static/data/blocks.csv", 'r') as f:
+        reader = csv.reader(f)
+        rows=list(reader)
+    data = [[x[1],float(x[2])/120] for x in rows]
+    cache(data,"hashrate")
+    
+def get_transactions():
+    with open("static/data/blocks.csv", 'r') as f:
+        reader = csv.reader(f)
+        rows=list(reader)
+    data = [[x[1],float(x[4])] for x in rows]
+    cache(data,"transactions")
+    
+def month(direc):
+    with open("static/data/"+direc+".csv", 'r') as f:
+        reader = csv.reader(f)
+        rows=list(reader)
+    rows = rows[::-1]
+    data = rows[:720]
+        
+        
+        
+        
+def year():
 
-def get_blockchain_size():
-
-def get_transactions_24h():
+def all():
 
 
-#def get_pending_transactions():
 
-#def get_confirmation_time():
 
-#def get_largest_pool():
 
-#def get_reddit_posts_7d():
 
-#def get_github_commits_7d():    
-'''
 
-get_blocks()
+
+
+
 
