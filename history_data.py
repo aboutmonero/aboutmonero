@@ -110,7 +110,7 @@ def get_transactions():
     data = data[:300]+data
     return data
     
-def convert_to_month(data):
+def convert_to_1M(data):
     start = time.time() - 30*24*60*60
 
     # find earliest block
@@ -128,8 +128,8 @@ def convert_to_month(data):
     return data    
         
 
-def convert_to_year(data):
-    last_month = convert_to_month(data)
+def convert_to_1Y(data):
+    last_month = convert_to_1M(data)
     
     start = time.time() - 360*24*60*60
 
@@ -157,7 +157,7 @@ def convert_to_year(data):
         
 
 def convert_to_all(data):
-    last_year = convert_to_year(data)
+    last_year = convert_to_1Y(data)
 
     #find last block
     finish = time.time() - 360*24*60*60
@@ -174,17 +174,37 @@ def convert_to_all(data):
     
     return data
         
-'''      
-get_blocks()
-print(convert_to_month("transactions"))
-'''
-#1000000 block is when time changes
 def get_chart(data,title,xlabel,ylabel):
     fig, ax = plt.subplots()
     ax.plot([x[0] for x in data], [x[1] for x in data])
     ax.set(xlabel = xlabel, ylabel = ylabel, title = title)
     ax.grid()
-    fig.savefig("static/data/"+ title + ".png")
+    fig.set_size_inches(16,5)
+    fig.savefig("static/data/"+ title + ".png",dpi=100)
     return True
 
-#get_chart(convert_to_month(get_block_reward()),"block_reward_1M","UNIX timestamp","Reward per block")
+get_chart(convert_to_all(get_block_reward()),"block_reward_all","UNIX timestamp","ℳ")
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
