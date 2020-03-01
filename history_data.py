@@ -187,4 +187,4 @@ def get_chart(data,title,xlabel,ylabel):
     fig.savefig("static/data/"+ title + ".png")
     return True
 
-get_chart(convert_to_month(get_block_reward()),"block_reward_1M","UNIX timestamp","Reward per block")
+#get_chart(convert_to_month(get_block_reward()),"block_reward_1M","UNIX timestamp","Reward per block")
