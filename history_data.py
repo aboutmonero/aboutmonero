@@ -6,7 +6,10 @@ import math
 from monero.daemon import Daemon
 from monero.backends.jsonrpc import JSONRPCDaemon
 from datetime import datetime
-        
+import matplotlib
+import matplotlib.pyplot as plt
+
+
 def get_csv(direc):
     with open("static/data/"+direc+".csv", 'r') as f:
         reader = csv.reader(f)
@@ -26,6 +29,19 @@ def get_json(url):
         data = json.loads(urltemp.read().decode())
     return data
     
+def avg(data, length, log = False):
+    if log:
+        data = [math.log(x) for x in data]
+    s = sum(data[:length])
+    avg = [s/length]
+    for i in range(len(data)-length):
+        s += data[i+length] 
+        s -= data[i]
+        avg.append(s/length)
+    if log:
+        avg = [math.exp(x) for x in avg]
+    return avg 
+        
 def get_price():
     data = get_json("https://api.cryptowat.ch/markets/binance/xmrusdt/ohlc?periods=14400")
     prices = [[float(x[0]),float(x[4])] for x in list(data['result']['14400'])]
@@ -57,8 +73,10 @@ def get_block_time():
     data = [[blocks[0][0],120]]
     for x in blocks[1:]:
         data.append([x[0],(x[0]-data[-1][0])+1])
-    data = [[data[i][0],sum([data[i-j][1] for j in range(60)])/60] for i in range(60,len(data))]
-    data = data[:60]+data
+    info = [x[1] for x in data]
+    info = avg(info, 300)    
+    data = [[data[i][0],info[i-300]] for i in range(300,len(data))]
+    data = data[:300]+data
     return data 
 
 def get_difficulty():
@@ -86,6 +104,10 @@ def get_hashrate():
 def get_transactions():
     blocks = get_csv("blocks")
     data = [[x[0],x[4]] for x in blocks]
+    info = [x[1] for x in data]
+    info = avg(info, 300,log=True)    
+    data = [[data[i][0],info[i-300]] for i in range(300,len(data))]
+    data = data[:300]+data
     return data
     
 def convert_to_month(data):
@@ -130,7 +152,7 @@ def convert_to_year(data):
     l = int(len(data)/360)
     data = [data[i] for i in range(len(data)) if i % l == 0]
     
-    data.append(last_month)
+    data = data + last_month
     return data    
         
 
@@ -148,7 +170,7 @@ def convert_to_all(data):
     l = int(len(data)/360)
     data = [data[i] for i in range(len(data)) if i % l == 0]
     
-    data.append(last_year)
+    data = data + last_year
     
     return data
         
@@ -157,7 +179,12 @@ get_blocks()
 print(convert_to_month("transactions"))
 '''
 #1000000 block is when time changes
-get_blocks()
+def get_chart(data,title,xlabel,ylabel):
+    fig, ax = plt.subplots()
+    ax.plot([x[0] for x in data], [x[1] for x in data])
+    ax.set(xlabel = xlabel, ylabel = ylabel, title = title)
+    ax.grid()
+    fig.savefig("static/data/"+ title + ".png")
+    return True
 
-
-
+get_chart(convert_to_month(get_block_reward()),"block_reward_1M","UNIX timestamp","Reward per block")
