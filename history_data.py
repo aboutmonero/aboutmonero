@@ -5,15 +5,13 @@ import time
 import math
 from monero.daemon import Daemon
 from monero.backends.jsonrpc import JSONRPCDaemon
-
-def get_last(direc):
+from datetime import datetime
+        
+def get_csv(direc):
     with open("static/data/"+direc+".csv", 'r') as f:
         reader = csv.reader(f)
         rows=list(reader)
-    if rows:
-        return int(rows[-1][0])
-    else:
-        return 0
+    return rows
         
 def cache(data,direc):
     with open("static/data/"+direc+".csv", 'a+') as f:
@@ -37,68 +35,72 @@ def get_current_block():
     return int(data['data']['height'])
         
 def get_blocks():
+    
+    def get_block_reward():
+        blocks = get_csv("blocks")
+        data = [[x[0],x[3]] for x in blocks]
+        last = len(get_csv("reward"))
+        data = data[last-1369999:]
+        cache(data,"reward")
+        
+    def get_supply():
+        reward = get_csv("reward")
+        supply = [[0.0,0.0]]
+        last = len(get_csv("supply"))
+        reward = reward[last:]
+        for x in reward:
+            supply.append([x[0],float(x[1]) + supply[-1][1]])
+        cache(data,"reward")
+
+    def get_hashrate():
+        blocks = get_csv("blocks")
+        data = [[x[1],float(x[2])/120] for x in blocks]
+        cache(data,"hashrate")
+        
+    def get_transactions():
+        blocks = get_csv("blocks")
+        data = [[x[1],float(x[4])] for x in blocks]
+        cache(data,"transactions")
+        
     daemon = Daemon(JSONRPCDaemon(port=18081))
-    last = get_last("blocks")
+    last = 2000000
     new = []
-    current = daemon.height()
+    current = 2030000
     while current > last:
         data = daemon.block(height=last)
-        new = new + [[data.height,data.timestamp,data.difficulty,data.reward,len(data.transactions)]]
+        new.append([datetime.fromisoformat(str(data.timestamp)).timestamp(),data.height,data.difficulty,float(data.reward),len(data.transactions)])
         last +=1
+        if(last%1000==0):
+            print(last)
     cache(new,"blocks")
-    
+    return True
 
-def get_block_reward():
-    with open("static/data/blocks.csv", 'r') as f:
-        reader = csv.reader(f)
-        rows=list(reader)
-    data = [[x[1],x[3]] for x in rows]
-    cache(data,"reward")
-    
-def get_supply():
-    with open("static/data/reward.csv", 'r') as f:
-        reader = csv.reader(f)
-        rows=list(reader)
-    supply = [[0.0,0.0]]
-    for x in rows:
-        supply.append([x[0],float(x[1]) + supply[-1][1]])
-    cache(supply,"supply")
+def convert_to_month(direc):
+    data = get_csv(direc)
+    start = time.time() - 30*24*60*60
 
-def get_hashrate():
-    with open("static/data/blocks.csv", 'r') as f:
-        reader = csv.reader(f)
-        rows=list(reader)
-    data = [[x[1],float(x[2])/120] for x in rows]
-    cache(data,"hashrate")
+    # find earliest block
+    i = len(data)
+    while float(data[i][0]) > start:
+        i -= 1
+        
+    # cut off earlier blocks
+    data = data[i:]
     
-def get_transactions():
-    with open("static/data/blocks.csv", 'r') as f:
-        reader = csv.reader(f)
-        rows=list(reader)
-    data = [[x[1],float(x[4])] for x in rows]
-    cache(data,"transactions")
+    # want 360 data points
+    l = int(len(data)/360)
+    data = [data[i] for i in range(len(data)) if i % l == 0]
     
-def month(direc):
-    with open("static/data/"+direc+".csv", 'r') as f:
-        reader = csv.reader(f)
-        rows=list(reader)
-    rows = rows[::-1]
-    data = rows[:720]
+    cache(month_data,direc+"_1m")
+    return month_data    
         
         
-        
-        
-def year():
-
-def all():
-
-
-
-
-
-
-
-
+'''      
+get_blocks()
+print(convert_to_month("transactions"))
+'''
+#1000000 block is when time changes
+get_blocks()
 
 
 
