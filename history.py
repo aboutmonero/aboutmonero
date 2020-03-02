@@ -22,12 +22,12 @@ def get_price():
     return data
             
 def get_block_reward():
-    blocks = cache.get_csv("blocks")
+    blocks = cache.get_csv('blocks_early') + cache.get_csv("blocks")
     data = [[x[0],x[3]] for x in blocks]
     return data
 
 def get_block_time():
-    blocks = cache.get_csv("blocks")
+    blocks = cache.get_csv('blocks_early') + cache.get_csv("blocks")
     data = [[blocks[0][0],120]]
     for x in blocks[1:]:
         data.append([x[0],(x[0]-data[-1][0])+1])
@@ -38,7 +38,7 @@ def get_block_time():
     return data 
 
 def get_difficulty():
-    blocks = cache.get_csv("blocks")
+    blocks = cache.get_csv('blocks_early') + cache.get_csv("blocks")
     data = []
     for x in blocks:
         data.append([x[0],x[2]])
@@ -52,7 +52,7 @@ def get_supply():
     return supply
 
 def get_hashrate():
-    block_time = cget_block_time()
+    block_time = get_block_time()
     difficulty = get_difficulty()
     data = [[difficulty[0][0],difficulty[0][1]/(block_time[0][0])]]
     for i in range(len(difficulty[1:])):
@@ -60,7 +60,7 @@ def get_hashrate():
     return data 
     
 def get_transactions():
-    blocks = cache.get_csv("blocks")
+    blocks = cache.get_csv('blocks_early') + cache.get_csv("blocks")
     data = [[x[0],x[4]] for x in blocks]
     info = [x[1] for x in data]
     info = avg(info, 300,log=True)    

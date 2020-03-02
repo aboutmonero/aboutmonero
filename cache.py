@@ -27,7 +27,6 @@ def get_json(url):
         data = json.loads(urltemp.read().decode())
     return data
     
-        
 def cache_price():
     last = str(int(get_csv("price")[-1][0]))
     prices = []
@@ -44,31 +43,19 @@ def cache_blocks():
     daemon = Daemon(JSONRPCDaemon(port=18081))
     last = int(get_csv("blocks")[-1][0])
     new = []
-    current = 2045024
+    current = daemon.height()
     while current > last:
         last +=1
         data = daemon.block(height=last)
         new.append([datetime.fromisoformat(str(data.timestamp)).timestamp(),data.height,data.difficulty,float(data.reward),len(data.transactions)])
-    cache(new,"blocks")
-    return True
+    if new:
+        cache(new,"blocks")
+        return True
+    else:
+        return False
 
 
-def cache_blocks_tmp():
-    daemon = Daemon(JSONRPCDaemon(port=18081))
-    last = 0
-    new = []
-    current = 500000
-    while current > last:
-        last +=1
-        data = daemon.block(height=last)
-        new.append([datetime.fromisoformat(str(data.timestamp)).timestamp(),data.height,data.difficulty,float(data.reward),len(data.transactions)])
-        if last % 10000==0:
-            cache(new,"blocks_early")
-            new = [] 
-            print(last)
-    return True
 
-cache_blocks_tmp()
 
 
 
