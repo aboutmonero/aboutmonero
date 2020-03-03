@@ -78,8 +78,6 @@ def get_latest():
 
 
 
-cache_blocks(last=1,end=1000000)
-
 
 
 

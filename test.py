@@ -65,9 +65,6 @@ def get_latest():
     return ["{0:,.2f}".format(float(x[1])) for x in rows]
 
 
-test()
-
-
 
 
 
