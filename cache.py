@@ -39,17 +39,21 @@ def cache_price():
     else:
         return False
     
-def cache_blocks():
+def cache_blocks(last = 1, end = None):
     daemon = Daemon(JSONRPCDaemon(port=18081))
-    last = int(get_csv("blocks")[-1][1])
     new = []
-    current = daemon.height()-10
-    while current > last:
+    if not end:
+        end = daemon.height() - 1
+    while end > last:
         last +=1
         data = daemon.block(height=last)
-        new.append([datetime.fromisoformat(str(data.timestamp)).timestamp(),data.height,data.difficulty,float(data.reward),len(data.transactions)])
+        new.append([data.timestamp,data.height,data.difficulty,float(data.reward),data.num_txes,float(data.fee),data.size,data.nonce,data.version[0],data.version[1]])
+        if last %10000 ==0:
+            cache(new,"blocks_1000000")
+            new = []
+            print(last)
     if new:
-        cache(new,"blocks")
+        cache(new,"blocks_1000000")
         return True
     else:
         return False
@@ -74,7 +78,7 @@ def get_latest():
 
 
 
-
+cache_blocks(last=1,end=1000000)
 
 
 
