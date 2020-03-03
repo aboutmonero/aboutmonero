@@ -149,6 +149,7 @@ def get_inflation():
     cache.update_latest('inflation',inflation[-1][1]*100)
     return inflation  
     
+'''
 cache.cache_blocks()
 cache.cache_price()
 
@@ -194,7 +195,7 @@ chart.get_chart(infl,"block_count","UNIX timestamp","#","all",scale='log')
 chart.get_chart(infl,"block_count","UNIX timestamp","#","1Y",scale='log')
 chart.get_chart(infl,"block_count","UNIX timestamp","#","1M",scale='log')
 
-
+'''
 
 
 
