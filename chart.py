@@ -11,6 +11,7 @@ def get_chart(data,title,xlabel,ylabel,dur, scale = "linear",):
     ax.grid()
     fig.set_size_inches(16,5)
     fig.savefig("static/data/"+ title +"_" + dur + ".png",dpi=100)
+    plt.close(fig)
     return True
 
 

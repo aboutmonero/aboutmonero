@@ -44,7 +44,6 @@ def cache_blocks():
     last = int(get_csv("blocks")[-1][1])
     new = []
     current = daemon.height()-10
-    print(last)
     while current > last:
         last +=1
         data = daemon.block(height=last)

@@ -149,53 +149,6 @@ def get_inflation():
     cache.update_latest('inflation',inflation[-1][1]*100)
     return inflation  
     
-'''
-cache.cache_blocks()
-cache.cache_price()
-
-infl = get_inflation()
-chart.get_chart(infl,"inflation","UNIX timestamp","% of Total Supply","all",scale='log')
-chart.get_chart(infl,"inflation","UNIX timestamp","% of Total Supply","1Y",scale='log')
-chart.get_chart(infl,"inflation","UNIX timestamp","% of Total Supply","1M",scale='log')
-
-infl = get_marketcap()
-chart.get_chart(infl,"marketcap","UNIX timestamp","$","all",scale='log')
-chart.get_chart(infl,"marketcap","UNIX timestamp","$","1Y",scale='log')
-chart.get_chart(infl,"marketcap","UNIX timestamp","$","1M",scale='log')
-
-infl = get_price()
-chart.get_chart(infl,"price","UNIX timestamp","$","all",scale='log')
-chart.get_chart(infl,"price","UNIX timestamp","$","1Y",scale='log')
-chart.get_chart(infl,"price","UNIX timestamp","$","1M",scale='log')
-
-infl = get_block_reward()
-chart.get_chart(infl,"block_reward","UNIX timestamp","ℳ","all",scale='log')
-chart.get_chart(infl,"block_reward","UNIX timestamp","ℳ","1Y",scale='log')
-chart.get_chart(infl,"block_reward","UNIX timestamp","ℳ","1M",scale='log')
-
-infl = get_supply()
-chart.get_chart(infl,"supply","UNIX timestamp","ℳ","all")
-chart.get_chart(infl,"supply","UNIX timestamp","ℳ","1Y")
-chart.get_chart(infl,"supply","UNIX timestamp","ℳ","1M")
-
-
-infl = get_hashrate()
-chart.get_chart(infl,"hashrate","UNIX timestamp","H/s","all",scale='log')
-chart.get_chart(infl,"hashrate","UNIX timestamp","H/s","1Y",scale='log')
-chart.get_chart(infl,"hashrate","UNIX timestamp","H/s","1M",scale='log')
-
-infl = get_transactions()
-chart.get_chart(infl,"transactions","UNIX timestamp","#","all",scale='log')
-chart.get_chart(infl,"transactions","UNIX timestamp","#","1Y",scale='log')
-chart.get_chart(infl,"transactions","UNIX timestamp","#","1M",scale='log')
-
-
-infl = get_block_count()
-chart.get_chart(infl,"block_count","UNIX timestamp","#","all",scale='log')
-chart.get_chart(infl,"block_count","UNIX timestamp","#","1Y",scale='log')
-chart.get_chart(infl,"block_count","UNIX timestamp","#","1M",scale='log')
-
-'''
 
 
 
