@@ -28,6 +28,10 @@ def participate():
 def statistics():
     return render_template('statistics.html')
 
+@app.route('/newsletter.html')
+def newsletter():
+    return render_template('newsletter.html')
+
 
 @app.route('/learn/<topic>.html')
 def topic(topic):
