@@ -9,6 +9,20 @@ from datetime import datetime
 
 
 def get_csv(direc):
+    if direc == 'blocks':
+        with open("static/data/"+direc+"_1000000.csv", 'r') as f:
+            reader = csv.reader(f)
+            rows = list(reader)
+        rows = [[float(y) for y in x] for x in rows]
+        with open("static/data/"+direc+"_2000000.csv", 'r') as f:
+            reader = csv.reader(f)
+            newrows = list(reader)
+        rows = rows + [[float(y) for y in x] for x in newrows]
+        with open("static/data/"+direc+".csv", 'r') as f:
+            reader = csv.reader(f)
+            newrows = list(reader)
+        rows = rows + [[float(y) for y in x] for x in newrows]
+        return rows
     with open("static/data/"+direc+".csv", 'r') as f:
         reader = csv.reader(f)
         rows = list(reader)
@@ -39,21 +53,19 @@ def cache_price():
     else:
         return False
     
-def cache_blocks(last = 1, end = None):
+def cache_blocks(last = None, end = None):
     daemon = Daemon(JSONRPCDaemon(port=18081))
     new = []
     if not end:
         end = daemon.height() - 1
+    if not last:
+        last = int(get_csv("blocks")[-1][1])
     while end > last:
         last +=1
         data = daemon.block(height=last)
         new.append([data.timestamp,data.height,data.difficulty,float(data.reward),data.num_txes,float(data.fee),data.size,data.nonce,data.version[0],data.version[1]])
-        if last %10000 ==0:
-            cache(new,"blocks_1000000")
-            new = []
-            print(last)
     if new:
-        cache(new,"blocks_1000000")
+        cache(new,"blocks")
         return True
     else:
         return False
@@ -75,8 +87,6 @@ def get_latest():
         reader = csv.reader(f)
         rows = list(reader)
     return ["{0:,.2f}".format(float(x[1])) for x in rows]
-
-
 
 
 

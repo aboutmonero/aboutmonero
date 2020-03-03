@@ -3,12 +3,13 @@ import math
 import convert_time
 import chart
 import cache
+import statistics
 
 def avg(data, length, log = False):
     if log:
         data = [math.log(x) for x in data]
     s = sum(data[:length])
-    avg = [s/length]
+    avg = data[:length] + [s/length]
     for i in range(len(data)-length):
         s += data[i+length] 
         s -= data[i]
@@ -16,32 +17,31 @@ def avg(data, length, log = False):
     if log:
         avg = [math.exp(x) for x in avg]
     return avg 
-        
+            
 def get_price():
     data = cache.get_csv("price")
     cache.update_latest('price',data[-1][1])
     return data 
             
 def get_block_reward():
-    blocks = cache.get_csv('blocks_1000000') + cache.get_csv("blocks")
+    blocks = cache.get_csv("blocks")
     data = [[x[0],x[3]] for x in blocks]
     cache.update_latest('block_reward',data[-1][1])
     return data
 
 def get_block_time():
-    blocks = cache.get_csv('blocks_1000000') + cache.get_csv("blocks")
+    blocks = cache.get_csv("blocks")
     data = [[blocks[0][0],120]]
     for x in blocks[1:]:
         data.append([x[0],(x[0]-data[-1][0])+1])
     info = [x[1] for x in data]
     info = avg(info, 300)    
-    data = [[data[i][0],info[i-300]] for i in range(300,len(data))]
-    data = data[:300]+data
+    data = [[data[i][0],info[i]] for i in range(len(data))]
     cache.update_latest('block_time',data[-1][1])
     return data 
 
 def get_difficulty():
-    blocks = cache.get_csv('blocks_1000000') + cache.get_csv("blocks")
+    blocks = cache.get_csv("blocks")
     data = []
     for x in blocks:
         data.append([x[0],x[2]])
@@ -50,8 +50,10 @@ def get_difficulty():
 def get_supply():
     reward = get_block_reward()
     supply = [[reward[0][0],0.0]]
+    s = 0
     for x in reward[1:]:
-        supply.append([x[0],x[1] + supply[-1][1]])
+        s += x[1]
+        supply.append([x[0],s])
     cache.update_latest('supply',supply[-1][1])
     return supply
 
@@ -62,11 +64,11 @@ def get_hashrate():
     for i in range(len(difficulty[1:])):
         data.append([difficulty[i][0],difficulty[i][1]/(block_time[i][1])])
     cache.update_latest('hashrate',data[-1][1])
-    return data[86400:]
+    return data[50000:]
     
 def get_transactions():
-    blocks = cache.get_csv('blocks_1000000') + cache.get_csv("blocks")
-    data = [[x[0],x[4]-1] for x in blocks]
+    blocks = cache.get_csv("blocks")
+    data = [[x[0],x[4]] for x in blocks]
     i = 0
     transactions = []
     while data[i][0] - data[0][0] < 24*60*60:
@@ -89,7 +91,7 @@ def get_transactions():
     return transactions
 
 def get_block_count():
-    blocks = cache.get_csv('blocks_1000000') + cache.get_csv("blocks")
+    blocks = cache.get_csv("blocks")
     data = [[x[0]] for x in blocks]
     i = 0
     block_count = []
@@ -150,33 +152,40 @@ def get_inflation():
     return inflation  
     
 def get_block_size():
-    blocks = cache.get_csv('blocks_1000000') + cache.get_csv("blocks")
+    blocks = cache.get_csv("blocks")
     data = [[x[0],x[6]] for x in blocks]
     info = [x[1] for x in data]
-    info = avg(info, 300)    
-    data = [[data[i][0],info[i-300]] for i in range(300,len(data))]
-    data = data[:300]+data
+    info = avg(info, 720,log=True)    
+    data = [[data[i][0],info[i]] for i in range(len(data))]
     cache.update_latest('block_size',data[-1][1])
     return data 
 
 def get_blockchain_size():
-    blocks = cache.get_csv('blocks_1000000') + cache.get_csv("blocks")
+    blocks = cache.get_csv("blocks")
     size = [[x[0],x[6]] for x in blocks]
     chainsize = [[size[0][0],0.0]]
+    s = 0
     for x in size[1:]:
-        chainsize.append([x[0],x[1] + chainsize[-1][1]])
+        s += x[1]
+        chainsize.append([x[0],s])
     cache.update_latest('blockchain_size',chainsize[-1][1])
-    return chain
+    return chainsize
 
 def get_fees():
-    blocks = cache.get_csv('blocks_1000000') + cache.get_csv("blocks")
-    data = [[x[0],x[5]] for x in blocks]
+    blocks = cache.get_csv("blocks")
+    data = [[x[0],x[5]] for x in blocks if x[5]]
+    info = [x[1] for x in data]
+    info = avg(info, 720,log=True)    
+    data = [[data[i][0],info[i]] for i in range(len(data))] 
     cache.update_latest('fees',data[-1][1])
     return data
     
 def get_nonces():
-    blocks = cache.get_csv('blocks_1000000') + cache.get_csv("blocks")
+    blocks = cache.get_csv("blocks")
     data = [[x[0],x[7]] for x in blocks]
+    info = [x[1]+1 for x in data]
+    info = avg(info, 720,log = True)    
+    data = [[data[i][0],info[i]] for i in range(len(data))]
     cache.update_latest('nonces',data[-1][1])
     return data
     

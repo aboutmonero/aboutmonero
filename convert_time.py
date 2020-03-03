@@ -14,7 +14,7 @@ def convert_to_1M(data):
     data = data[i:]
     
     # want 360 data points
-    l = int(len(data)/360)
+    l = int(len(data)/300)
     if l:
         data = [data[i] for i in range(len(data)) if i % l == 0]
     
@@ -41,8 +41,8 @@ def convert_to_1Y(data):
         i -= 1
     data = data[:i]
     
-    # want 360 data points
-    l = int(len(data)/360)
+    # want n data points
+    l = int(len(data)/300)
     if l:
         data = [data[i] for i in range(len(data)) if i % l == 0]
     
@@ -60,9 +60,9 @@ def convert_to_all(data):
         i -= 1
     data = data[:i]
     
-    # want 360 data points
-    l = int(len(data)/360)
-    data = [data[i] for i in range(len(data)) if i % l == 0]
+    # want n data points
+    l = int(len(data)/600)
+    data = [data[i] for i in range(len(data)) if ((i<1000000 and i % (l*2) == 0) or (i>1000000 and i%l==0))]
     
     data = data + last_year
     
