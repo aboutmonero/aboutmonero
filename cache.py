@@ -41,9 +41,10 @@ def cache_price():
     
 def cache_blocks():
     daemon = Daemon(JSONRPCDaemon(port=18081))
-    last = int(get_csv("blocks")[-1][0])
+    last = int(get_csv("blocks")[-1][1])
     new = []
-    current = daemon.height()
+    current = daemon.height()-10
+    print(last)
     while current > last:
         last +=1
         data = daemon.block(height=last)
@@ -54,9 +55,23 @@ def cache_blocks():
     else:
         return False
 
+def update_latest(target, data):
+    with open("static/data/latest.csv", 'r') as f:
+        reader = csv.reader(f)
+        rows = list(reader)
+    for x in rows:
+        if x[0] == target:
+            x[1] = data
+    with open("static/data/latest.csv", 'w') as f:
+        writer = csv.writer(f) 
+        writer.writerows(rows)
+    return True
 
-
-
+def get_latest():
+    with open("static/data/latest.csv", 'r') as f:
+        reader = csv.reader(f)
+        rows = list(reader)
+    return ["{0:,.2f}".format(float(x[1])) for x in rows]
 
 
 

@@ -19,11 +19,13 @@ def avg(data, length, log = False):
         
 def get_price():
     data = cache.get_csv("price")
+    cache.update_latest('price',data[-1][1])
     return data 
             
 def get_block_reward():
     blocks = cache.get_csv('blocks_early') + cache.get_csv("blocks")
     data = [[x[0],x[3]] for x in blocks]
+    cache.update_latest('block_reward',data[-1][1])
     return data
 
 def get_block_time():
@@ -35,6 +37,7 @@ def get_block_time():
     info = avg(info, 300)    
     data = [[data[i][0],info[i-300]] for i in range(300,len(data))]
     data = data[:300]+data
+    cache.update_latest('block_time',data[-1][1])
     return data 
 
 def get_difficulty():
@@ -49,6 +52,7 @@ def get_supply():
     supply = [[reward[0][0],0.0]]
     for x in reward[1:]:
         supply.append([x[0],x[1] + supply[-1][1]])
+    cache.update_latest('supply',supply[-1][1])
     return supply
 
 def get_hashrate():
@@ -57,6 +61,7 @@ def get_hashrate():
     data = [[difficulty[0][0],difficulty[0][1]/(block_time[0][0])]]
     for i in range(len(difficulty[1:])):
         data.append([difficulty[i][0],difficulty[i][1]/(block_time[i][1])])
+    cache.update_latest('hashrate',data[-1][1])
     return data[86400:]
     
 def get_transactions():
@@ -80,6 +85,7 @@ def get_transactions():
         transactions.append([data[j][0],s])
         s -= data[j-i][1]
         j += 1
+    cache.update_latest('transactions',transactions[-1][1])
     return transactions
 
 def get_block_count():
@@ -98,6 +104,7 @@ def get_block_count():
             i += 1
         block_count.append([data[j][0],i])
         j += 1
+    cache.update_latest('block_count',block_count[-1][1])
     return block_count
         
 def get_marketcap():
@@ -114,6 +121,7 @@ def get_marketcap():
         while price[j][0] < supply[i][0]:
             j+=1
         data.append([supply[i][0],supply[i][1]*price[j][1]])
+    cache.update_latest('marketcap',data[-1][1])
     return data   
     
 def get_inflation():
@@ -138,9 +146,12 @@ def get_inflation():
         inflation.append([reward[j][0],s/supply[j][1]])
         s -= reward[j-i][1]
         j += 1
+    cache.update_latest('inflation',inflation[-1][1]*100)
     return inflation  
     
-'''
+cache.cache_blocks()
+cache.cache_price()
+
 infl = get_inflation()
 chart.get_chart(infl,"inflation","UNIX timestamp","% of Total Supply","all",scale='log')
 chart.get_chart(infl,"inflation","UNIX timestamp","% of Total Supply","1Y",scale='log')
@@ -183,7 +194,6 @@ chart.get_chart(infl,"block_count","UNIX timestamp","#","all",scale='log')
 chart.get_chart(infl,"block_count","UNIX timestamp","#","1Y",scale='log')
 chart.get_chart(infl,"block_count","UNIX timestamp","#","1M",scale='log')
 
-'''
 
 
 

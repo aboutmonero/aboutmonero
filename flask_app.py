@@ -3,6 +3,7 @@
 
 from flask import Flask, flash, redirect, render_template, request, url_for
 import csv
+import cache
 
 app = Flask(__name__)
 
@@ -26,7 +27,7 @@ def participate():
 
 @app.route('/statistics.html')
 def statistics():
-    return render_template('statistics.html')
+    return render_template('statistics.html', data = cache.get_latest())
 
 @app.route('/newsletter.html')
 def newsletter():
