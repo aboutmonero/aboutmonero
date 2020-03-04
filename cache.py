@@ -87,11 +87,11 @@ def get_latest():
         reader = csv.reader(f)
         rows = list(reader)
     rows =  ["{0:,.2f}".format(float(x[1])) for x in rows]
-    rows[1] = int(rows[1])
-    rows[2] = int(rows[2])
-    rows[3] = int(rows[3])
-    rows[11] = int(rows[11])
-    rows[12] = int(rows[12])
+    rows[1] = int(float(rows[1]))
+    rows[2] = int(float(rows[2]))
+    rows[3] = int(float(rows[3]))
+    rows[11] = int(float(rows[11]))
+    rows[12] = int(float(rows[12]))
     return rows
 
 
