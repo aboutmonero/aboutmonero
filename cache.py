@@ -88,12 +88,11 @@ def get_latest():
         rows = list(reader)
     for i in range(len(rows)):
         if i in [1,2,3,4,6,9,11,12]:
-            rows[i][1] = "{0:,}".format(int(float(rows[i][1])))
+            rows[i] = "{0:,}".format(int(float(rows[i][1])))
         elif i == 10:
-            rows[i][1] = "{0:,.6f}".format(float(rows[i][1]))
+            rows[i] = "{0:,.6f}".format(float(rows[i][1]))
         else:
-            rows[i][1] = "{0:,.2f}".format(float(x[1]))
-    rows =  [x[1] for x in rows]
+            rows[i] = "{0:,.2f}".format(rows[i][1]))
     return rows
 
 
