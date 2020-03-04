@@ -31,7 +31,7 @@ def var(data, length, log = False):
         ss += abs(cnt[data[i+length]]-1) - abs(cnt[data[i+length]]-2) 
         cnt[data[i]] -= 1
         ss += abs(cnt[data[i]]-1) - abs(cnt[data[i]])
-        var.append(1/ss)
+        var.append((10**7)/ss)
     return var  
             
 def get_price():
