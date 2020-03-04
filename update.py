@@ -2,7 +2,6 @@ from history import *
 from chart import *
 from cache import *
 
-#
 cache_blocks()
 cache_price()
 
@@ -11,7 +10,6 @@ get_chart(infl,"inflation","UNIX timestamp","% of Total Supply","all",scale='log
 get_chart(infl,"inflation","UNIX timestamp","% of Total Supply","1Y",scale='log')
 get_chart(infl,"inflation","UNIX timestamp","% of Total Supply","1M",scale='log')
 
-'''
 infl = get_marketcap()
 get_chart(infl,"marketcap","UNIX timestamp","$","all",scale='log')
 get_chart(infl,"marketcap","UNIX timestamp","$","1Y",scale='log')
@@ -68,10 +66,6 @@ infl = get_nonces()
 get_chart(infl,"nonces","UNIX timestamp","#","all",scale = 'log')
 get_chart(infl,"nonces","UNIX timestamp","#","1Y",scale='log')
 get_chart(infl,"nonces","UNIX timestamp","#","1M",scale='log')
-
-
-'''
-
 
 
 
