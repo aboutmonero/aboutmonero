@@ -63,9 +63,9 @@ get_chart(infl,"fees","Date","ℳ","1Y",scale = 'log')
 get_chart(infl,"fees","Date","ℳ","1M",scale = 'log')
 
 infl = get_nonces()
-get_chart(infl,"nonces","Date","Randomness","all",scale='log')
-get_chart(infl,"nonces","Date","Randomness","1Y",scale='log')
-get_chart(infl,"nonces","Date","Randomness","1M",scale='log')
+get_chart(infl,"nonces","Date","Randomness","all")
+get_chart(infl,"nonces","Date","Randomness","1Y")
+get_chart(infl,"nonces","Date","Randomness","1M")
 
 
 
