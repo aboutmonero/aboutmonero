@@ -92,7 +92,7 @@ def get_latest():
         elif i == 10:
             rows[i] = "{0:,.6f}".format(float(rows[i][1]))
         else:
-            rows[i] = "{0:,.2f}".format(rows[i][1]))
+            rows[i] = "{0:,.2f}".format(float(rows[i][1]))
     return rows
 
 
