@@ -92,11 +92,11 @@ def get_latest():
     rows[1] = rows_c[0]
     rows[2] = rows_c[1]
     rows[3] = rows_c[2]
-    rows[6] = rows_c[4]
-    rows[9] = rows_c[5]
-    rows[11] = rows_c[6]
-    rows[12] = rows_c[7]
-    rows[10] = rows_c[8]
+    rows[6] = rows_c[3]
+    rows[9] = rows_c[4]
+    rows[11] = rows_c[5]
+    rows[12] = rows_c[6]
+    rows[10] = rows_c[7]
     return rows
 
 
