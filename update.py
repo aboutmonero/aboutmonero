@@ -1,7 +1,8 @@
 from history import *
 from chart import *
 from cache import *
-'''
+
+
 cache_blocks()
 cache_price()
 
@@ -30,7 +31,7 @@ get_chart(infl,"supply","UNIX timestamp","ℳ","all")
 get_chart(infl,"supply","UNIX timestamp","ℳ","1Y")
 get_chart(infl,"supply","UNIX timestamp","ℳ","1M")
 
-'''
+
 infl = get_hashrate()
 get_chart(infl,"hashrate","UNIX timestamp","H/s","all",scale='log')
 get_chart(infl,"hashrate","UNIX timestamp","H/s","1Y",scale='log')
