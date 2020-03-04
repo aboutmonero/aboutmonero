@@ -165,7 +165,7 @@ def get_inflation():
         s -= reward[j-i][1]
         j += 1
     cache.update_latest('inflation',inflation[-1][1])
-    return inflation  
+    return inflation
     
 def get_block_size():
     blocks = cache.get_csv("blocks")
