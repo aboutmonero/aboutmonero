@@ -14,7 +14,7 @@
 <br>
 Statistics and charts for the Monero network. Please note that many of the charts are logarithmic in scale.
 <br><br>
-<div style="font-size: large;">
+<div style="line-height:1.5">
 <table>
 <tr>
     <th>Data</th>
@@ -26,79 +26,79 @@ Statistics and charts for the Monero network. Please note that many of the chart
     <td>Market Price:</td>
     <td>${{data[0]}}</td>
     <td><a href="../static/data/price_1M.png">1M</a> <a href="../static/data/price_1Y.png">1Y</a> <a href="../static/data/price_all.png">All</a></td>
-    <td>Average USD market price across major monero exchanges.</td>
+    <td align ="center">Average USD market price across major monero exchanges.</td>
 </tr>
 <tr>
     <td>Market Capitalization: </td>
     <td>${{data[6]}}</td>
     <td><a href="../static/data/marketcap_1M.png">1M</a> <a href="../static/data/marketcap_1Y.png">1Y</a> <a href="../static/data/marketcap_all.png">All</a></td>
-    <td>USD value of total monero supply in circulation.</td>
+    <td align ="center">USD value of total monero supply in circulation.</td>
 </tr>
 <tr>
     <td>Circulating Supply: </td>
     <td>ℳ{{data[4]}}</td>
     <td><a href="../static/data/supply_1M.png">1M</a> <a href="../static/data/supply_1Y.png">1Y</a> <a href="../static/data/supply_all.png">All</a></td>
-    <td>Total number of monero in circulation.</td>
+    <td align ="center">Total number of monero in circulation.</td>
 </tr>
 <tr>
     <td>Inflation Rate (1Y): </td>
     <td>%{{data[7]}}</td>
     <td><a href="../static/data/inflation_1M.png">1M</a> <a href="../static/data/inflation_1Y.png">1Y</a> <a href="../static/data/inflation_all.png">All</a></td>
-    <td>Percent of circulating supply that has been mined in the previous year.</td>
+    <td align ="center">Percent of circulating supply that has been mined in the previous year.</td>
 </tr>
 <tr>
     <td>Network Hashrate: </td>
     <td>{{data[3]}} H/s </td>
     <td><a href="../static/data/hashrate_1M.png">1M</a> <a href="../static/data/hashrate_1Y.png">1Y</a> <a href="../static/data/hashrate_all.png">All</a></td>
-    <td>Estimated number of hashes per second the monero network is performing.</td>
+    <td align ="center">Estimated number of hashes per second the monero network is performing.</td>
 </tr>
 <tr>
     <td>Miner's Block Reward: </td>
     <td>ℳ{{data[5]}} </td>
     <td> <a href="../static/data/block_reward_1M.png">1M</a> <a href="../static/data/block_reward_1Y.png">1Y</a> <a href="../static/data/block_reward_all.png">All</a></td>
-    <td>Value of newly minted monero paid to miners per block.</td>
+    <td align ="center">Value of newly minted monero paid to miners per block.</td>
 </tr>
 <tr>
     <td>Block Count: </td>
     <td>{{data[1]}} </td>
     <td> <a href="../static/data/block_count_1M.png">1M</a> <a href="../static/data/block_count_1Y.png">1Y</a> <a href="../static/data/block_count_all.png">All</a></td>
-    <td>Average number of blocks mined per day.</td>
+    <td align ="center">Average number of blocks mined per day.</td>
 </tr>
 <tr>
     <td>Transactions Per Day: </td>
     <td>{{data[2]}} </td>
     <td><a href="../static/data/transactions_1M.png">1M</a> <a href="../static/data/transactions_1Y.png">1Y</a> <a href="../static/data/transactions_all.png">All</a></td>
-    <td>Average number of confirmed monero transactions per day.</td>
+    <td align ="center">Average number of confirmed monero transactions per day.</td>
 </tr>
 <tr>
     <td>Block Size: </td>
     <td>{{data[8]}} </td>
     <td><a href="../static/data/block_size_1M.png">1M</a> <a href="../static/data/block_size_1Y.png">1Y</a> <a href="../static/data/block_size_all.png">All</a></td>
-    <td>Mean block size.</td>
+    <td align ="center">Mean block size.</td>
 </tr>
 <tr>
     <td>Blockchain Size: </td>
     <td>{{data[9]}} </td>
     <td><a href="../static/data/blockchain_size_1M.png">1M</a> <a href="../static/data/blockchain_size_1Y.png">1Y</a> <a href="../static/data/blockchain_size_all.png">All</a></td>
-    <td>Total size of blockchain.</td>
+    <td align ="center">Total size of blockchain.</td>
 </tr>
 <tr>
     <td>Fees per block: </td>
     <td>ℳ{{data[10]}} </td>
     <td><a href="../static/data/fees_1M.png">1M</a> <a href="../static/data/fees_1Y.png">1Y</a> <a href="../static/data/fees_all.png">All</a></td>
-    <td>Average fee amount per block paid to miners. Calculated as the geometric average of nonzero fees.</td>
+    <td align ="center">Average fee amount per block paid to miners. Calculated as the geometric average of nonzero fees.</td>
 </tr>
 <tr>
     <td>Nonces: </td>
     <td>{{data[11]}} </td>
     <td><a href="../static/data/nonces_1M.png">1M</a> <a href="../static/data/nonces_1Y.png">1Y</a> <a href="../static/data/nonces_all.png">All</a></td>
-    <td>Mean nonce used by miners. Calculated as the geometric average of (nonce+1).</td>
+    <td align ="center">Mean nonce used by miners. Calculated as the geometric average of (nonce+1).</td>
 </tr>
 <tr>
     <td>Version: </td>
     <td>{{data[12]}} </td>
     <td><a href="../static/data/version_1M.png">1M</a> <a href="../static/data/version_1Y.png">1Y</a> <a href="../static/data/version_all.png">All</a></td>
-    <td>Major and minor version of client used by miner.</td>
+    <td align ="center">Major and minor version of client used by miner.</td>
 </tr>
 </table>
 </div>
