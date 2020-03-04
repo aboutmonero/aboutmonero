@@ -1,68 +1,75 @@
-import csv
-import urllib.request
-import json 
-import time
-import math
-from monero.daemon import Daemon
-from monero.backends.jsonrpc import JSONRPCDaemon
-from datetime import datetime
+from history import *
+from chart import *
+from cache import *
 
 
-def get_csv(direc):
-    with open("static/data/"+direc+".csv", 'r') as f:
-        reader = csv.reader(f)
-        rows = list(reader)
-    rows = [[float(y) for y in x] for x in rows]
-    return rows
-        
-def cache(data,direc):
-    with open("static/data/"+direc+".csv", 'a+') as f:
-        writer = csv.writer(f) 
-        writer.writerows(data)
-    return True
-            
-def get_json(url):   
-    req = urllib.request.Request(url, headers={'User-Agent': 'Mozilla/5.0'})
-    with urllib.request.urlopen(req) as urltemp:
-        data = json.loads(urltemp.read().decode())
-    return data
-    
-def cache_price():
-    last = str(int(get_csv("price")[-1][0]))
-    prices = []
-    data = get_json("https://api.cryptowat.ch/markets/binance/xmrusdt/ohlc?periods=21600&after="+last)
-    data = list(data['result']['21600'])[1:]
-    for i in range(len(data)):
-        prices.append([data[i][0],float(data[i][4])])
-    if prices:
-        return cache(prices,"price")
-    else:
-        return False
-    
-def test():
-    daemon = Daemon(JSONRPCDaemon(port=18081))
-    current = daemon.height()-1
-    data = daemon.block(height=100000)
-    print([data.timestamp,data.height,data.difficulty,float(data.reward),data.num_txes,data.fee,data.size,data.nonce,data.version[0],data.version[1]])
-    
+'''
+infl = get_price()
+get_chart(infl,"price","Date","$","all",scale='log')
+get_chart(infl,"price","Date","$","1Y",scale='log')
+get_chart(infl,"price","Date","$","1M",scale='log')
 
-def update_latest(target, data):
-    with open("static/data/latest.csv", 'r') as f:
-        reader = csv.reader(f)
-        rows = list(reader)
-    for x in rows:
-        if x[0] == target:
-            x[1] = data
-    with open("static/data/latest.csv", 'w') as f:
-        writer = csv.writer(f) 
-        writer.writerows(rows)
-    return True
+cache_blocks()
+cache_price()
 
-def get_latest():
-    with open("static/data/latest.csv", 'r') as f:
-        reader = csv.reader(f)
-        rows = list(reader)
-    return ["{0:,.2f}".format(float(x[1])) for x in rows]
+infl = get_inflation()
+get_chart(infl,"inflation","UNIX timestamp","% of Total Supply","all",scale='log')
+get_chart(infl,"inflation","UNIX timestamp","% of Total Supply","1Y",scale='log')
+get_chart(infl,"inflation","UNIX timestamp","% of Total Supply","1M",scale='log')
+
+infl = get_marketcap()
+get_chart(infl,"marketcap","UNIX timestamp","$","all",scale='log')
+get_chart(infl,"marketcap","UNIX timestamp","$","1Y",scale='log')
+get_chart(infl,"marketcap","UNIX timestamp","$","1M",scale='log')
+
+
+infl = get_block_reward()
+get_chart(infl,"block_reward","UNIX timestamp","ℳ","all",scale='log')
+get_chart(infl,"block_reward","UNIX timestamp","ℳ","1Y",scale='log')
+get_chart(infl,"block_reward","UNIX timestamp","ℳ","1M",scale='log')
+
+infl = get_supply()
+get_chart(infl,"supply","UNIX timestamp","ℳ","all")
+get_chart(infl,"supply","UNIX timestamp","ℳ","1Y")
+get_chart(infl,"supply","UNIX timestamp","ℳ","1M")
+
+
+infl = get_hashrate()
+get_chart(infl,"hashrate","UNIX timestamp","H/s","all",scale='log')
+get_chart(infl,"hashrate","UNIX timestamp","H/s","1Y",scale='log')
+get_chart(infl,"hashrate","UNIX timestamp","H/s","1M",scale='log')
+
+infl = get_transactions()
+get_chart(infl,"transactions","UNIX timestamp","#","all",scale='log')
+get_chart(infl,"transactions","UNIX timestamp","#","1Y",scale='log')
+get_chart(infl,"transactions","UNIX timestamp","#","1M",scale='log')
+
+
+infl = get_block_count()
+get_chart(infl,"block_count","UNIX timestamp","#","all",scale='log')
+get_chart(infl,"block_count","UNIX timestamp","#","1Y",scale='log')
+get_chart(infl,"block_count","UNIX timestamp","#","1M",scale='log')
+
+infl = get_block_size()
+get_chart(infl,"block_size","UNIX timestamp","b","all",scale='log')
+get_chart(infl,"block_size","UNIX timestamp","b","1Y",scale='log')
+get_chart(infl,"block_size","UNIX timestamp","b","1M",scale='log')
+
+infl = get_blockchain_size()
+get_chart(infl,"blockchain_size","UNIX timestamp","b","all",scale='log')
+get_chart(infl,"blockchain_size","UNIX timestamp","b","1Y",scale='log')
+get_chart(infl,"blockchain_size","UNIX timestamp","b","1M",scale='log')
+
+infl = get_fees()
+get_chart(infl,"fees","UNIX timestamp","ℳ","all",scale = 'log')
+get_chart(infl,"fees","UNIX timestamp","ℳ","1Y",scale = 'log')
+get_chart(infl,"fees","UNIX timestamp","ℳ","1M",scale = 'log')
+'''
+infl = get_nonces()
+get_chart(infl,"nonces","UNIX timestamp","Randomness","all",scale = 'log')
+get_chart(infl,"nonces","UNIX timestamp","Randomness","1Y",scale='log')
+get_chart(infl,"nonces","UNIX timestamp","Randomness","1M",scale='log')
+
 
 
 

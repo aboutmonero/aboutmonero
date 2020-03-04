@@ -21,9 +21,10 @@ def avg(data, length, log = False):
 def var(data, length, log = False):
     if log:
         data = [math.log(x) for x in data]
-    data = [int(x)//length for x in data]
+    bin_size = int((2**32)/length)
+    data = [int(x)//bin_size for x in data]
     cdf = data[:length]
-    cnt = [cdf.count(i) for i in range((2**32)//length+1)]
+    cnt = [cdf.count(i) for i in range((2**32)//bin_size+1)]
     ss = sum([abs(x-1) for x in cnt])
     var = [0 for x in data[:length]]
     for i in range(len(data)-length):
@@ -31,7 +32,7 @@ def var(data, length, log = False):
         ss += abs(cnt[data[i+length]]-1) - abs(cnt[data[i+length]]-2) 
         cnt[data[i]] -= 1
         ss += abs(cnt[data[i]]-1) - abs(cnt[data[i]])
-        var.append((10**7)/ss)
+        var.append(length - ss/2)
     return var  
             
 def get_price():
