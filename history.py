@@ -148,7 +148,7 @@ def get_inflation():
         inflation.append([reward[j][0],100*s/supply[j][1]])
         s -= reward[j-i][1]
         j += 1
-    cache.update_latest('inflation',inflation[-1][1]*100)
+    cache.update_latest('inflation',inflation[-1][1])
     return inflation  
     
 def get_block_size():
