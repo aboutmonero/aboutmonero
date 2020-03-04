@@ -67,8 +67,8 @@ get_chart(infl,"fees","UNIX timestamp","ℳ","1M",scale = 'log')
 '''
 infl = get_nonces()
 get_chart(infl,"nonces","UNIX timestamp","Randomness","all")
-get_chart(infl,"nonces","UNIX timestamp","Randomness","1Y",scale='log')
-get_chart(infl,"nonces","UNIX timestamp","Randomness","1M",scale='log')
+get_chart(infl,"nonces","UNIX timestamp","Randomness","1Y")
+get_chart(infl,"nonces","UNIX timestamp","Randomness","1M")
 
 
 

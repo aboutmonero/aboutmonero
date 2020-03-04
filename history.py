@@ -25,14 +25,20 @@ def var(data, length, log = False):
     data = [int(x)//bin_size for x in data]
     cdf = data[:length]
     cnt = [cdf.count(i) for i in range((2**32)//bin_size+1)]
-    ss = sum([abs(x-1) for x in cnt])
-    var = [100*(length - ss/2)/length for x in data[:length]]
+    ss = sum([1 for x in cnt if x == 1])
+    var = [100*(ss)/length for x in data[:length]]
     for i in range(len(data)-length):
         cnt[data[i+length]] += 1
-        ss += abs(cnt[data[i+length]]-1) - abs(cnt[data[i+length]]-2) 
+        if cnt[data[i+length]] == 1:
+            ss += 1 
+        if cnt[data[i+length]] == 2:
+            ss -= 1 
         cnt[data[i]] -= 1
-        ss += abs(cnt[data[i]]-1) - abs(cnt[data[i]])
-        var.append(100*(length - ss/2)/length)
+        if cnt[data[i]] == 1:
+            ss += 1 
+        if cnt[data[i]] == 0:
+            ss -= 1 
+        var.append(100*(ss)/length)
     return var  
             
 def get_price():
