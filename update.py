@@ -2,6 +2,7 @@ from history import *
 from chart import *
 from cache import *
 
+'''
 cache_blocks()
 cache_price()
 
@@ -61,11 +62,11 @@ infl = get_fees()
 get_chart(infl,"fees","UNIX timestamp","ℳ","all",scale = 'log')
 get_chart(infl,"fees","UNIX timestamp","ℳ","1Y",scale = 'log')
 get_chart(infl,"fees","UNIX timestamp","ℳ","1M",scale = 'log')
-
+'''
 infl = get_nonces()
-get_chart(infl,"nonces","UNIX timestamp","#","all",scale = 'log')
-get_chart(infl,"nonces","UNIX timestamp","#","1Y",scale='log')
-get_chart(infl,"nonces","UNIX timestamp","#","1M",scale='log')
+get_chart(infl,"nonces","UNIX timestamp","Randomness","all",scale = 'log')
+get_chart(infl,"nonces","UNIX timestamp","Randomness","1Y",scale='log')
+get_chart(infl,"nonces","UNIX timestamp","Randomness","1M",scale='log')
 
 
 

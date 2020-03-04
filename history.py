@@ -16,7 +16,23 @@ def avg(data, length, log = False):
         avg.append(s/length)
     if log:
         avg = [math.exp(x) for x in avg]
-    return avg 
+    return avg
+
+def var(data, length, log = False):
+    if log:
+        data = [math.log(x) for x in data]
+    data = [int(x)//length for x in data]
+    cdf = data[:length]
+    cnt = [cdf.count(i) for i in range((2**32)//length+1)]
+    ss = sum([abs(x-1) for x in cnt])
+    var = [0 for x in data[:length]]
+    for i in range(len(data)-length):
+        cnt[data[i+length]] += 1
+        ss += abs(cnt[data[i+length]]-1) - abs(cnt[data[i+length]]-2) 
+        cnt[data[i]] -= 1
+        ss += abs(cnt[data[i]]-1) - abs(cnt[data[i]])
+        var.append(1/ss)
+    return var  
             
 def get_price():
     data = cache.get_csv("price")
@@ -183,8 +199,8 @@ def get_fees():
 def get_nonces():
     blocks = cache.get_csv("blocks")
     data = [[x[0],x[7]] for x in blocks]
-    info = [x[1]+1 for x in data]
-    info = avg(info, 720,log = True)    
+    info = [x[1] for x in data]
+    info = var(info, 720)    
     data = [[data[i][0],info[i]] for i in range(len(data))]
     cache.update_latest('nonces',data[-1][1])
     return data
