@@ -86,7 +86,13 @@ def get_latest():
     with open("static/data/latest.csv", 'r') as f:
         reader = csv.reader(f)
         rows = list(reader)
-    return ["{0:,.2f}".format(float(x[1])) for x in rows]
+    rows =  ["{0:,.2f}".format(float(x[1])) for x in rows]
+    rows[1] = int(rows[1])
+    rows[2] = int(rows[2])
+    rows[3] = int(rows[3])
+    rows[11] = int(rows[11])
+    rows[12] = int(rows[12])
+    return rows
 
 
 

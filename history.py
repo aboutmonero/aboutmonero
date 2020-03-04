@@ -145,7 +145,7 @@ def get_inflation():
             j += 1  
             i += 1
             s += reward[j][1]
-        inflation.append([reward[j][0],s/supply[j][1]])
+        inflation.append([reward[j][0],100*s/supply[j][1]])
         s -= reward[j-i][1]
         j += 1
     cache.update_latest('inflation',inflation[-1][1]*100)
