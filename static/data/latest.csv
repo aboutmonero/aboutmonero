@@ -10,4 +10,6 @@ block_size,17985.680953844196
 blockchain_size,61698603843.0
 fees,0.0006357910284814555
 nonces,18.701778979798227
-version,15
+version_major,12.0
+version_minor,12.0
+height,2047810

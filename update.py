@@ -32,20 +32,20 @@ get_chart(infl,"supply","Date","ℳ","1M")
 
 
 infl = get_hashrate()
-get_chart(infl,"hashrate","Date","H/s","all",scale='log')
-get_chart(infl,"hashrate","Date","H/s","1Y",scale='log')
-get_chart(infl,"hashrate","Date","H/s","1M",scale='log')
+get_chart(infl,"hashrate","Date","Hashes/s","all",scale='log')
+get_chart(infl,"hashrate","Date","Hashes/s","1Y",scale='log')
+get_chart(infl,"hashrate","Date","Hashes/s","1M",scale='log')
 
 infl = get_transactions()
-get_chart(infl,"transactions","Date","#","all",scale='log')
-get_chart(infl,"transactions","Date","#","1Y",scale='log')
-get_chart(infl,"transactions","Date","#","1M",scale='log')
+get_chart(infl,"transactions","Date","# of Transactions","all",scale='log')
+get_chart(infl,"transactions","Date","# of Transactions","1Y",scale='log')
+get_chart(infl,"transactions","Date","# of Transactions","1M",scale='log')
 
 
 infl = get_block_count()
-get_chart(infl,"block_count","Date","#","all",scale='log')
-get_chart(infl,"block_count","Date","#","1Y",scale='log')
-get_chart(infl,"block_count","Date","#","1M",scale='log')
+get_chart(infl,"block_count","Date","# of Blocks","all",scale='log')
+get_chart(infl,"block_count","Date","# of Blocks","1Y",scale='log')
+get_chart(infl,"block_count","Date","# of Blocks","1M",scale='log')
 
 infl = get_block_size()
 get_chart(infl,"block_size","Date","b","all",scale='log')
@@ -67,6 +67,16 @@ get_chart(infl,"nonces","Date","Randomness","all")
 get_chart(infl,"nonces","Date","Randomness","1Y")
 get_chart(infl,"nonces","Date","Randomness","1M")
 
+infl = get_height()
+get_chart(infl,"block_height","Date","# of Blocks","all")
+get_chart(infl,"block_height","Date","# of Blocks","1Y")
+get_chart(infl,"block_height","Date","# of Blocks","1M")
+
+
+infl = get_version()    
+get_chart(infl,"version","Date","Version","raw",scale = None)
+get_chart(infl,"version","Date","Version","1Y",scale = None)
+get_chart(infl,"version","Date","Version","1M",scale = None)
 
 
 

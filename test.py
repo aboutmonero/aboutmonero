@@ -64,12 +64,19 @@ infl = get_fees()
 get_chart(infl,"fees","UNIX timestamp","ℳ","all",scale = 'log')
 get_chart(infl,"fees","UNIX timestamp","ℳ","1Y",scale = 'log')
 get_chart(infl,"fees","UNIX timestamp","ℳ","1M",scale = 'log')
-'''
-infl = get_nonces()
-get_chart(infl,"nonces","UNIX timestamp","Randomness","all")
-get_chart(infl,"nonces","UNIX timestamp","Randomness","1Y")
-get_chart(infl,"nonces","UNIX timestamp","Randomness","1M")
 
+
+
+infl = get_height()
+get_chart(infl,"block_height","Date","# of Blocks","all")
+get_chart(infl,"block_height","Date","# of Blocks","1Y")
+get_chart(infl,"block_height","Date","# of Blocks","1M")
+'''
+
+infl = get_version()    
+get_chart(infl,"version","Date","Version","raw",scale = None)
+get_chart(infl,"version","Date","Version","1Y",scale = None)
+get_chart(infl,"version","Date","Version","1M",scale = None)
 
 
 

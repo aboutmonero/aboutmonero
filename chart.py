@@ -17,8 +17,10 @@ def get_chart(data,title,xlabel,ylabel,dur, scale = "linear"):
     # Plot the date using plot_date rather than plot
     ax.plot(secs, [x[1] for x in data],linewidth=1)
 
-
-    ax.set(xlabel = xlabel, ylabel = ylabel, title = title +"_" + dur, yscale = scale)
+    if scale:
+        ax.set(xlabel = xlabel, ylabel = ylabel, title = title +"_" + dur, yscale = scale)
+    else:
+        ax.set(xlabel = xlabel, ylabel = ylabel, title = title +"_" + dur)
     ax.grid()
     
     # Choose your xtick format string

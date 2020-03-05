@@ -216,10 +216,29 @@ def get_nonces():
     return data
     
 
+def get_version_major():
+    blocks = cache.get_csv("blocks")
+    data = [[x[0],x[8]] for x in blocks]
+    cache.update_latest('version_major',data[-1][1])
+    return data
 
-
-
-
+def get_version_minor():
+    blocks = cache.get_csv("blocks")
+    data = [[x[0],x[9]] for x in blocks]
+    cache.update_latest('version_minor',data[-1][1])
+    return data
+    
+def get_version():
+    maj = get_version_major()
+    mino = get_version_minor()
+    maj = [[maj[i][0],str(int(maj[i][1]))+"."+str(int(mino[i][1]))] for i in range(len(maj))]
+    return maj
+    
+def get_height():
+    blocks = cache.get_csv("blocks")
+    data = [[blocks[i][0],i] for i in range(len(blocks))]
+    cache.update_latest('height',data[-1][1])
+    return data
 
 
 

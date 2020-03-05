@@ -87,7 +87,7 @@ def get_latest():
         reader = csv.reader(f)
         rows = list(reader)
     for i in range(len(rows)):
-        if i in [1,2,3,4,6,9,12]:
+        if i in [1,2,3,4,6,9,12,13,14]:
             rows[i] = "{0:,}".format(int(float(rows[i][1])))
         elif i == 10:
             rows[i] = "{0:,.6f}".format(float(rows[i][1]))
