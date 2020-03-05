@@ -23,6 +23,30 @@ Statistics and charts for the Monero network. Please note that many of the chart
     <th>Description</th>
 </tr>
 <tr>
+    <td>Market Price:</td>
+    <td>${{data[0]}}</td>
+    <td><a href="../static/data/price_1M.png">1M</a> <a href="../static/data/price_1Y.png">1Y</a> <a href="../static/data/price_all.png">All</a></td>
+    <td align ="center">Average USD market price across major monero exchanges.</td>
+</tr>
+<tr>
+    <td>Market Capitalization: </td>
+    <td>${{data[6]}}</td>
+    <td><a href="../static/data/marketcap_1M.png">1M</a> <a href="../static/data/marketcap_1Y.png">1Y</a> <a href="../static/data/marketcap_all.png">All</a></td>
+    <td align ="center">USD value of total monero supply in circulation.</td>
+</tr>
+<tr>
+    <td>Circulating Supply: </td>
+    <td>ℳ{{data[4]}}</td>
+    <td><a href="../static/data/supply_1M.png">1M</a> <a href="../static/data/supply_1Y.png">1Y</a> <a href="../static/data/supply_all.png">All</a></td>
+    <td align ="center">Total number of monero in circulation.</td>
+</tr>
+<tr>
+    <td>Inflation Rate (1Y): </td>
+    <td>%{{data[7]}}</td>
+    <td><a href="../static/data/inflation_1M.png">1M</a> <a href="../static/data/inflation_1Y.png">1Y</a> <a href="../static/data/inflation_all.png">All</a></td>
+    <td align ="center">Percentage of circulating supply mined in the past year.</td>
+</tr>
+<tr>
     <td>Network Hashrate: </td>
     <td>{{data[3]}}</td>
     <td><a href="../static/data/hashrate_1M.png">1M</a> <a href="../static/data/hashrate_1Y.png">1Y</a> <a href="../static/data/hashrate_all.png">All</a></td>
@@ -81,30 +105,6 @@ Statistics and charts for the Monero network. Please note that many of the chart
     <td>{{data[12]}}.{{data[13]}} </td>
     <td><a href="../static/data/version_1M.png">1M</a> <a href="../static/data/version_1Y.png">1Y</a> <a href="../static/data/version_raw.png">All</a></td>
     <td align ="center">Major and minor version of client used by miner.</td>
-</tr>
-<tr>
-    <td>Market Price:</td>
-    <td>${{data[0]}}</td>
-    <td><a href="../static/data/price_1M.png">1M</a> <a href="../static/data/price_1Y.png">1Y</a> <a href="../static/data/price_all.png">All</a></td>
-    <td align ="center">Average USD market price across major monero exchanges.</td>
-</tr>
-<tr>
-    <td>Market Capitalization: </td>
-    <td>${{data[6]}}</td>
-    <td><a href="../static/data/marketcap_1M.png">1M</a> <a href="../static/data/marketcap_1Y.png">1Y</a> <a href="../static/data/marketcap_all.png">All</a></td>
-    <td align ="center">USD value of total monero supply in circulation.</td>
-</tr>
-<tr>
-    <td>Circulating Supply: </td>
-    <td>ℳ{{data[4]}}</td>
-    <td><a href="../static/data/supply_1M.png">1M</a> <a href="../static/data/supply_1Y.png">1Y</a> <a href="../static/data/supply_all.png">All</a></td>
-    <td align ="center">Total number of monero in circulation.</td>
-</tr>
-<tr>
-    <td>Inflation Rate (1Y): </td>
-    <td>%{{data[7]}}</td>
-    <td><a href="../static/data/inflation_1M.png">1M</a> <a href="../static/data/inflation_1Y.png">1Y</a> <a href="../static/data/inflation_all.png">All</a></td>
-    <td align ="center">Percentage of circulating supply mined in the past year.</td>
 </tr>
 </table>
 </center>
