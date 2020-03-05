@@ -58,7 +58,7 @@ Statistics and charts for the Monero network. Please note that many of the chart
     <td align ="center">Value of newly minted monero paid to miners per block.</td>
 </tr>
 <tr>
-    <td>Block Count: </td>
+    <td>Block Count Per Day: </td>
     <td>{{data[1]}} </td>
     <td> <a href="../static/data/block_count_1M.png">1M</a> <a href="../static/data/block_count_1Y.png">1Y</a> <a href="../static/data/block_count_all.png">All</a></td>
     <td align ="center">Average number of blocks mined per day.</td>
@@ -82,16 +82,16 @@ Statistics and charts for the Monero network. Please note that many of the chart
     <td align ="center">Total size of blockchain.</td>
 </tr>
 <tr>
-    <td>Fees per block: </td>
+    <td>Fees Paid Per Block: </td>
     <td>ℳ{{data[10]}} </td>
     <td><a href="../static/data/fees_1M.png">1M</a> <a href="../static/data/fees_1Y.png">1Y</a> <a href="../static/data/fees_all.png">All</a></td>
     <td align ="center">Average fee amount per block paid to miners. Calculated as the geometric average of nonzero fees.</td>
 </tr>
 <tr>
-    <td>Nonce Randomness: </td>
-    <td>{{data[11]}} </td>
+    <td>Nonce Uniformity: </td>
+    <td>%{{data[11]}} </td>
     <td><a href="../static/data/nonces_1M.png">1M</a> <a href="../static/data/nonces_1Y.png">1Y</a> <a href="../static/data/nonces_all.png">All</a></td>
-    <td align ="center">Randomness of the nonces of the past 720 blocks.</td>
+    <td align ="center">Percent of nonces which are uniformly distributed of the past 720 blocks.</td>
 </tr>
 <tr>
     <td>Version: </td>

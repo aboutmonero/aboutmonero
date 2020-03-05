@@ -4,6 +4,7 @@ import convert_time
 import chart
 import cache
 import statistics
+import random
 
 def avg(data, length, log = False):
     if log:
@@ -23,22 +24,24 @@ def var(data, length, log = False):
         data = [math.log(x) for x in data]
     bin_size = int((2**32)/length)
     data = [int(x)//bin_size for x in data]
-    cdf = data[:length]
-    cnt = [cdf.count(i) for i in range((2**32)//bin_size+1)]
-    ss = sum([1 for x in cnt if x == 1])
-    var = [100*(ss)/length for x in data[:length]]
+    init = data[:length]
+    cnt = [0 for i in range((2**32)//bin_size+1)]
+    for i in init:
+        cnt[i]+=1
+    unique = sum([1 for x in cnt if x == 1])
+    var = [math.exp(1)*100*(unique)/length for x in data[:length]]
     for i in range(len(data)-length):
         cnt[data[i+length]] += 1
         if cnt[data[i+length]] == 1:
-            ss += 1 
+            unique += 1 
         if cnt[data[i+length]] == 2:
-            ss -= 1 
+            unique -= 1 
         cnt[data[i]] -= 1
         if cnt[data[i]] == 1:
-            ss += 1 
+            unique += 1 
         if cnt[data[i]] == 0:
-            ss -= 1 
-        var.append(100*(ss)/length)
+            unique -= 1 
+        var.append(math.exp(1)*100*(unique)/length)
     return var  
             
 def get_price():
@@ -207,7 +210,7 @@ def get_nonces():
     blocks = cache.get_csv("blocks")
     data = [[x[0],x[7]] for x in blocks]
     info = [x[1] for x in data]
-    info = var(info, 720)    
+    info = var(info, 10000)    
     data = [[data[i][0],info[i]] for i in range(len(data))]
     cache.update_latest('nonces',data[-1][1])
     return data

@@ -13,7 +13,7 @@ def get_chart(data,title,xlabel,ylabel,dur, scale = "linear"):
     secs = mdate.epoch2num([x[0] for x in data])
 
     fig, ax = plt.subplots()
-
+    # plt.scatter(secs, [x[1] for x in data],s=.01)
     # Plot the date using plot_date rather than plot
     ax.plot(secs, [x[1] for x in data],linewidth=1)
 
@@ -32,7 +32,7 @@ def get_chart(data,title,xlabel,ylabel,dur, scale = "linear"):
     fig.autofmt_xdate()
     
     fig.set_size_inches(16,5)
-    fig.savefig("static/data/"+ title +"_" + dur + ".png",dpi=100)
+    fig.savefig("static/data/"+ title +"_" + dur + ".png",dpi=200)
     plt.close(fig)
     return True
 
