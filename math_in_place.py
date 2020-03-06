@@ -1,20 +1,23 @@
 
 import math
 
-def avg(data, length, log = False):
+def avg(source, length, log = False):
+    data = [x[1] for x in source]
     if log:
         data = [math.log(x) for x in data]
     s = sum(data[:length])
-    avg = data[:length] + [s/length]
+    avg = data[:length]
     for i in range(len(data)-length):
         s += data[i+length] 
         s -= data[i]
         avg.append(s/length)
     if log:
         avg = [math.exp(x) for x in avg]
-    return avg
+    out = [[source[i][0],avg[i]] for i in range(len(avg))]
+    return out
 
-def var(data, length, log = False):
+def var(source, length, log = False):
+    data = [x[1] for x in source]
     if log:
         data = [math.log(x) for x in data]
     bin_size = int((2**32)/length)
@@ -37,4 +40,5 @@ def var(data, length, log = False):
         if cnt[data[i]] == 0:
             unique -= 1 
         var.append(math.exp(1)*100*(unique)/length)
-    return var  
+    out = [[source[i][0],var[i]] for i in range(len(var))]
+    return out

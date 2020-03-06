@@ -2,83 +2,103 @@ from history import *
 from chart import *
 from cache import *
 
+
 cache_blocks()
 cache_price()
 
-infl = get_inflation()
-get_chart(infl,"inflation","Date","% of Total Supply","all",scale='log')
-get_chart(infl,"inflation","Date","% of Total Supply","1Y",scale='log')
-get_chart(infl,"inflation","Date","% of Total Supply","1M",scale='log')
 
-infl = get_marketcap()
-get_chart(infl,"marketcap","Date","$","all",scale='log')
-get_chart(infl,"marketcap","Date","$","1Y",scale='log')
-get_chart(infl,"marketcap","Date","$","1M",scale='log')
+durations = ['1M','1Y','all']
+blocks = get_all()
+labels = [{
+    'title' : 'inflation',
+    'x-axis' : 'date',
+    'y-axis' : '1y emission % of total supply',
+    'scale' : 'linear'
+    } , {
+    'title' : 'marketcap',
+    'x-axis' : 'date',
+    'y-axis' : '$',
+    'scale' : 'log'
+    } , {
+    'title' : 'block_time',
+    'x-axis' : 'date',
+    'y-axis' : 's',
+    'scale' : 'linear'
+    } , {
+    'title' : 'hashrate',
+    'x-axis' : 'date',
+    'y-axis' : 'Hashes/s',
+    'scale' : 'log'
+    } , {
+    'title' : 'supply',
+    'x-axis' : 'date',
+    'y-axis' : 'monero',
+    'scale' : 'linear'
+    } , {
+    'title' : 'price',
+    'x-axis' : 'date',
+    'y-axis' : '$',
+    'scale' : 'log'
+    } , {
+    'title' : 'block_reward',
+    'x-axis' : 'date',
+    'y-axis' : 'monero',
+    'scale' : 'log'
+    } , {
+    'title' : 'block_count',
+    'x-axis' : 'date',
+    'y-axis' : '#',
+    'scale' : 'log'
+    }, {
+    'title' : 'block_height',
+    'x-axis' : 'date',
+    'y-axis' : '#',
+    'scale' : 'linear'
+    }, {
+    'title' : 'transaction',
+    'x-axis' : 'date',
+    'y-axis' : '#',
+    'scale' : 'log'
+    }, {
+    'title' : 'fee',
+    'x-axis' : 'date',
+    'y-axis' : 'monero',
+    'scale' : 'log'
+    }, {
+    'title' : 'version',
+    'x-axis' : 'date',
+    'y-axis' : '#',
+    'scale' : None
+    }, {
+    'title' : 'block_size',
+    'x-axis' : 'date',
+    'y-axis' : 'b',
+    'scale' : 'log'
+    }, {
+    'title' : 'blockchain_size',
+    'x-axis' : 'date',
+    'y-axis' : 'b',
+    'scale' : 'linear'
+    }, {
+    'title' : 'nonce',
+    'x-axis' : 'date',
+    'y-axis' : 'Uniformity',
+    'scale' : 'linear'
+    }]
 
-infl = get_price()
-get_chart(infl,"price","Date","$","all",scale='log')
-get_chart(infl,"price","Date","$","1Y",scale='log')
-get_chart(infl,"price","Date","$","1M",scale='log')
+for label in labels:
+    if label['title'] == 'block_size':
+        chart_data = [[x['timestamp'],x[label['title']]] for x in blocks]
+        chart_data = avg(chart_data,720,log=True)
+    elif label['title'] == 'nonce':
+        chart_data = [[x['timestamp'],x[label['title']]] for x in blocks]
+        chart_data = var(chart_data,720)
+    elif label['title'] == 'fee':
+        chart_data = [[x['timestamp'],x[label['title']]] for x in blocks if x[label['title']]]
+        chart_data = avg(chart_data,720,log=True)
+    else:
+        chart_data = [[x['timestamp'],x[label['title']]] for x in blocks]
+    for duration in durations:
+        build_chart(chart_data[2000:],label['title'],label['x-axis'],label['y-axis'],duration,label['scale'])
 
-infl = get_block_reward()
-get_chart(infl,"block_reward","Date","ℳ","all",scale='log')
-get_chart(infl,"block_reward","Date","ℳ","1Y",scale='log')
-get_chart(infl,"block_reward","Date","ℳ","1M",scale='log')
-
-infl = get_supply()
-get_chart(infl,"supply","Date","ℳ","all")
-get_chart(infl,"supply","Date","ℳ","1Y")
-get_chart(infl,"supply","Date","ℳ","1M")
-
-
-infl = get_hashrate()
-get_chart(infl,"hashrate","Date","Hashes/s","all",scale='log')
-get_chart(infl,"hashrate","Date","Hashes/s","1Y",scale='log')
-get_chart(infl,"hashrate","Date","Hashes/s","1M",scale='log')
-
-infl = get_transactions()
-get_chart(infl,"transactions","Date","# of Transactions","all",scale='log')
-get_chart(infl,"transactions","Date","# of Transactions","1Y",scale='log')
-get_chart(infl,"transactions","Date","# of Transactions","1M",scale='log')
-
-
-infl = get_block_count()
-get_chart(infl,"block_count","Date","# of Blocks","all",scale='log')
-get_chart(infl,"block_count","Date","# of Blocks","1Y",scale='log')
-get_chart(infl,"block_count","Date","# of Blocks","1M",scale='log')
-
-infl = get_block_size()
-get_chart(infl,"block_size","Date","b","all",scale='log')
-get_chart(infl,"block_size","Date","b","1Y",scale='log')
-get_chart(infl,"block_size","Date","b","1M",scale='log')
-
-infl = get_blockchain_size()
-get_chart(infl,"blockchain_size","Date","b","all",scale='log')
-get_chart(infl,"blockchain_size","Date","b","1Y",scale='log')
-get_chart(infl,"blockchain_size","Date","b","1M",scale='log')
-
-infl = get_fees()
-get_chart(infl,"fees","Date","ℳ","all",scale = 'log')
-get_chart(infl,"fees","Date","ℳ","1Y",scale = 'log')
-get_chart(infl,"fees","Date","ℳ","1M",scale = 'log')
-
-infl = get_nonces()
-get_chart(infl,"nonces","Date","Randomness","all")
-get_chart(infl,"nonces","Date","Randomness","1Y")
-get_chart(infl,"nonces","Date","Randomness","1M")
-
-infl = get_height()
-get_chart(infl,"block_height","Date","# of Blocks","all")
-get_chart(infl,"block_height","Date","# of Blocks","1Y")
-get_chart(infl,"block_height","Date","# of Blocks","1M")
-
-
-infl = get_version()    
-get_chart(infl,"version","Date","Version","raw",scale = None)
-get_chart(infl,"version","Date","Version","1Y",scale = None)
-get_chart(infl,"version","Date","Version","1M",scale = None)
-
-
-
-
-
+update_latest(blocks[-1])

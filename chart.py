@@ -4,7 +4,7 @@ import matplotlib.pyplot as plt
 import convert_time as ct
 import matplotlib.dates as mdate
 
-def get_chart(data,title,xlabel,ylabel,dur, scale = "linear", scatter = False):
+def build_chart(data,title,xlabel,ylabel,dur, scale, scatter = False):
     if dur != 'raw':
         data = ct.convert(data,dur)
     
@@ -39,10 +39,6 @@ def get_chart(data,title,xlabel,ylabel,dur, scale = "linear", scatter = False):
     fig.savefig("static/data/"+ title +"_" + dur + ".png",dpi=200)
     plt.close(fig)
     return True
-
-
-
-
 
 
 

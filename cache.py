@@ -70,13 +70,14 @@ def cache_blocks(last = None, end = None):
     else:
         return False
 
-def update_latest(target, data):
+def update_latest(targets):
     with open("static/data/latest.csv", 'r') as f:
         reader = csv.reader(f)
         rows = list(reader)
-    for x in rows:
-        if x[0] == target:
-            x[1] = data
+    for target in targets.keys():
+        for x in rows:
+            if x[0] == target:
+                x[1] = targets[target]
     with open("static/data/latest.csv", 'w') as f:
         writer = csv.writer(f) 
         writer.writerows(rows)
