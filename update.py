@@ -85,17 +85,19 @@ labels = [{
     'y-axis' : 'Uniformity',
     'scale' : 'linear'
     }]
-
 for label in labels:
     if label['title'] == 'block_size':
         chart_data = [[x['timestamp'],x[label['title']]] for x in blocks]
         chart_data = avg(chart_data,720,log=True)
+        blocks[-1][label['title']] = chart_data[-1][1]
     elif label['title'] == 'nonce':
         chart_data = [[x['timestamp'],x[label['title']]] for x in blocks]
         chart_data = var(chart_data,720)
+        blocks[-1][label['title']] = chart_data[-1][1]
     elif label['title'] == 'fee':
         chart_data = [[x['timestamp'],x[label['title']]] for x in blocks if x[label['title']]]
         chart_data = avg(chart_data,720,log=True)
+        blocks[-1][label['title']] = chart_data[-1][1]
     else:
         chart_data = [[x['timestamp'],x[label['title']]] for x in blocks]
     for duration in durations:
