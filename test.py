@@ -73,11 +73,8 @@ get_chart(infl,"block_height","Date","# of Blocks","1Y")
 get_chart(infl,"block_height","Date","# of Blocks","1M")
 '''
 
-infl = get_version()    
-get_chart(infl,"version","Date","Version","raw",scale = None)
-get_chart(infl,"version","Date","Version","1Y",scale = None)
-get_chart(infl,"version","Date","Version","1M",scale = None)
-
+infl = get_inflation()    
+get_chart(infl,"test","Date","Version","raw",scale = None)
 
 
 

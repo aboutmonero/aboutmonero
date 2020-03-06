@@ -1,10 +1,10 @@
 from history import *
 from chart import *
 from cache import *
-
+'''
 cache_blocks()
 cache_price()
-
+'''
 infl = get_inflation()
 get_chart(infl,"inflation","Date","% of Total Supply","all",scale='log')
 get_chart(infl,"inflation","Date","% of Total Supply","1Y",scale='log')

@@ -4,18 +4,20 @@ import matplotlib.pyplot as plt
 import convert_time as ct
 import matplotlib.dates as mdate
 
-def get_chart(data,title,xlabel,ylabel,dur, scale = "linear"):
+def get_chart(data,title,xlabel,ylabel,dur, scale = "linear", scatter = False):
     if dur != 'raw':
         data = ct.convert(data,dur)
-        
+    
     # Convert to the correct format for matplotlib.
     # mdate.epoch2num converts epoch timestamps to the right format for matplotlib
     secs = mdate.epoch2num([x[0] for x in data])
-
+    
     fig, ax = plt.subplots()
-    # plt.scatter(secs, [x[1] for x in data],s=.01)
-    # Plot the date using plot_date rather than plot
-    ax.plot(secs, [x[1] for x in data],linewidth=1)
+    if scatter:
+        plt.scatter(secs, [x[1] for x in data],s=.01)
+    else:
+        # Plot the date using plot_date rather than plot
+        ax.plot(secs, [x[1] for x in data],linewidth=1)
 
     if scale:
         ax.set(xlabel = xlabel, ylabel = ylabel, title = title +"_" + dur, yscale = scale)
