@@ -25,13 +25,13 @@ def participate():
     return render_template('participate.html')
 
 
-@app.route('/statistics.html')
-def statistics():
-    return render_template('statistics.html', data = cache.get_latest())
+@app.route('/explore.html')
+def explore():
+    return render_template('explore.html', data = cache.get_latest())
 
-@app.route('/newsletter.html')
-def newsletter():
-    return render_template('newsletter.html')
+@app.route('/follow.html')
+def follow():
+    return render_template('follow.html')
 
 
 @app.route('/learn/<topic>.html')
