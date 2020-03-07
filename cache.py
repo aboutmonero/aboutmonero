@@ -1,44 +1,39 @@
-import csv
+from csv import reader, writer
 import urllib.request
-import json 
-import time
-import math
+from json import loads
 from monero.daemon import Daemon
 from monero.backends.jsonrpc import JSONRPCDaemon
-from datetime import datetime
-
 
 def get_csv(direc):
     if direc == 'blocks':
         with open("static/data/"+direc+"_1000000.csv", 'r') as f:
-            reader = csv.reader(f)
-            rows = list(reader)
+            read = reader(f)
+            rows = list(read)   
         rows = [[float(y) for y in x] for x in rows]
         with open("static/data/"+direc+"_2000000.csv", 'r') as f:
-            reader = csv.reader(f)
-            newrows = list(reader)
+            read = reader(f)
+            newrows = list(read)   
         rows = rows + [[float(y) for y in x] for x in newrows]
         with open("static/data/"+direc+".csv", 'r') as f:
-            reader = csv.reader(f)
-            newrows = list(reader)
+            read = reader(f)
+            newrows = list(read)   
         rows = rows + [[float(y) for y in x] for x in newrows]
         return rows
     with open("static/data/"+direc+".csv", 'r') as f:
-        reader = csv.reader(f)
-        rows = list(reader)
+        rows = list(reader(f))
     rows = [[float(y) for y in x] for x in rows]
     return rows
         
 def cache(data,direc):
     with open("static/data/"+direc+".csv", 'a+') as f:
-        writer = csv.writer(f) 
-        writer.writerows(data)
+        write = writer(f) 
+        write.writerows(data)
     return True
             
 def get_json(url):   
     req = urllib.request.Request(url, headers={'User-Agent': 'Mozilla/5.0'})
     with urllib.request.urlopen(req) as urltemp:
-        data = json.loads(urltemp.read().decode())
+        data = loads(urltemp.read().decode())
     return data
     
 def cache_price():
@@ -72,21 +67,21 @@ def cache_blocks(last = None, end = None):
 
 def update_latest(targets):
     with open("static/data/latest.csv", 'r') as f:
-        reader = csv.reader(f)
-        rows = list(reader)
+        read = reader(f)
+        rows = list(read)
     for target in targets.keys():
         for x in rows:
             if x[0] == target:
                 x[1] = targets[target]
     with open("static/data/latest.csv", 'w') as f:
-        writer = csv.writer(f) 
-        writer.writerows(rows)
+        write = writer(f) 
+        write.writerows(rows)
     return True
 
 def get_latest():
     with open("static/data/latest.csv", 'r') as f:
-        reader = csv.reader(f)
-        rows = list(reader)
+        read = reader(f)
+        rows = list(read)
     for i in range(len(rows)):
         if i in [1,2,3,4,6,9,12,13,14]:
             rows[i] = "{0:,}".format(int(float(rows[i][1])))

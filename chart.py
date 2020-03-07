@@ -1,7 +1,5 @@
-import math
 import matplotlib
 import matplotlib.pyplot as plt
-import convert_time as ct
 import matplotlib.dates as mdate
 
 labels = {

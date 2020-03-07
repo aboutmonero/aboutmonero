@@ -1,6 +1,6 @@
-import time
-from cache import *
-import collections
+from cache import get_csv
+from collections import deque
+from math import exp, log
 
 block = {
     'timestamp' : 0,
@@ -29,13 +29,13 @@ def get_blocks():
     block['price'] = p[1]
     
     out = [[i] for i in list(block.keys())]
-    day = collections.deque([])
-    year = collections.deque([])
+    day = deque([])
+    year = deque([])
     
-    nonces = collections.deque([])
-    fees = collections.deque([])
-    block_sizes = collections.deque([])
-    nonce_geo = collections.deque([])
+    nonces = deque([])
+    fees = deque([])
+    block_sizes = deque([])
+    nonce_geo = deque([])
     bin_size = int((2**32)/(720*7))
     bin_count = [0 for i in range((2**32)//(bin_size)+1)]
     unique_bins = 0
@@ -81,14 +81,14 @@ def get_blocks():
         if x[5]:
             fees.append(x[5])
             if len(fees) > 720:
-                block['fee'] = math.exp(math.log(block['fee']) + math.log(x[5]/fees.popleft())/720)
+                block['fee'] = exp(log(block['fee']) + log(x[5]/fees.popleft())/720)
             else:
                 block['fee'] = x[5]
         
         #block_size geometric mean    
         block_sizes.append(x[6])
         if len(block_sizes) > 720:
-            block['block_size'] = math.exp(math.log(block['block_size']) + math.log(x[6]/block_sizes.popleft())/720)
+            block['block_size'] = exp(log(block['block_size']) + log(x[6]/block_sizes.popleft())/720)
         else:
             block['block_size'] = x[6]
         
@@ -107,7 +107,7 @@ def get_blocks():
                 unique_bins += 1 
             elif bin_count[nonce] == 0:
                 unique_bins -= 1 
-        block['nonce'] = math.exp(1)*100*(unique_bins)/(720*7)
+        block['nonce'] = exp(1)*100*(unique_bins)/(720*7)
         
         for i in range(len(out)):
             out[i].append(list(block.values())[i])
