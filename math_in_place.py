@@ -2,9 +2,11 @@
 import math
 
 def avg(source, length, log = False):
-    data = [x[1] for x in source]
     if log:
-        data = [math.log(x) for x in data]
+        source = [x for x in source if x[1]]
+        data = [math.log(x[1]) for x in source]
+    else:
+        data = [x[1] for x in source]
     s = sum(data[:length])
     avg = data[:length]
     for i in range(len(data)-length):
