@@ -3,8 +3,6 @@ import matplotlib
 import matplotlib.pyplot as plt
 import convert_time as ct
 import matplotlib.dates as mdate
-from math_in_place import *
-
 
 labels = {
     'inflation': {
@@ -115,6 +113,9 @@ labels = {
 }
     
 def build_chart(x_data, y_data, label, dur, scatter = False ):   
+
+    matplotlib.rcParams.update({'font.size': 5})
+    matplotlib.rcParams.update({'font.family': 'monospace'})
     label = labels[label]
     
     dates = mdate.epoch2num(x_data)
@@ -122,7 +123,7 @@ def build_chart(x_data, y_data, label, dur, scatter = False ):
     if scatter:
         plt.scatter(dates, y_data,s=.01)
     else:
-        ax.plot(dates, y_data,linewidth=1)
+        ax.plot(dates, y_data,linewidth=.5)
 
     if label['scale']:
         ax.set(xlabel = label['x-axis'], ylabel = label['y-axis'], title = label['title'] +"_" + dur, yscale = label['scale'])
@@ -130,15 +131,13 @@ def build_chart(x_data, y_data, label, dur, scatter = False ):
         ax.set(xlabel = label['x-axis'], ylabel = label['y-axis'], title = label['title'] +"_" + dur)
         
     ax.grid()
-    
+
     date_fmt = '%m/%d/%y'
     date_formatter = mdate.DateFormatter(date_fmt)
     ax.xaxis.set_major_formatter(date_formatter)
-    fig.autofmt_xdate()
     
-    fig.set_size_inches(16,10)
-    fig.savefig("static/data/"+ label['title'] +"_" + dur + ".png",dpi=200,bbox_inches='tight')
-    
+    fig.set_size_inches(8,5)
+    fig.savefig("static/data/"+ label['title'] +"_" + dur + ".png",dpi=150,bbox_inches='tight')
     plt.cla() 
     plt.clf() 
     plt.close('all')
