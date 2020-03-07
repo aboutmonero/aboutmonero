@@ -5,44 +5,143 @@ import convert_time as ct
 import matplotlib.dates as mdate
 from math_in_place import *
 
-def build_chart(x_data,y_data,title,xlabel,ylabel, dur, scale, scatter = False ):   
+
+labels = {
+    'inflation': {
+        'title' : 'inflation',
+        'x-axis' : 'date',
+        'y-axis' : '1y emission % of total supply',
+        'scale' : 'linear',
+        'options' : None
+    } ,
+    'marketcap': {
+        'title' : 'marketcap',
+        'x-axis' : 'date',
+        'y-axis' : '$',
+        'scale' : 'log',
+        'options' : None
+    } , 
+    'block_time': {
+        'title' : 'block_time',
+        'x-axis' : 'date',
+        'y-axis' : 's',
+        'scale' : 'linear',
+        'options' : None
+    } , 
+    'hashrate': {
+        'title' : 'hashrate',
+        'x-axis' : 'date',
+        'y-axis' : 'Hashes/s',
+        'scale' : 'log',
+        'options' : None
+    } , 
+    'supply': {
+        'title' : 'supply',
+        'x-axis' : 'date',
+        'y-axis' : 'monero',
+        'scale' : 'linear',
+        'options' : None
+    } , 
+    'price': {
+        'title' : 'price',
+        'x-axis' : 'date',
+        'y-axis' : '$',
+        'scale' : 'log',
+        'options' : None
+    } , 
+    'block_reward': {
+        'title' : 'block_reward',
+        'x-axis' : 'date',
+        'y-axis' : 'monero',
+        'scale' : 'log',
+        'options' : None
+    } , 
+    'block_count': {
+        'title' : 'block_count',
+        'x-axis' : 'date',
+        'y-axis' : '#',
+        'scale' : 'log',
+        'options' : None
+    } , 
+    'block_height': {
+        'title' : 'block_height',
+        'x-axis' : 'date',
+        'y-axis' : '#',
+        'scale' : 'linear',
+        'options' : None
+    } , 
+    'transaction': {
+        'title' : 'transaction',
+        'x-axis' : 'date',
+        'y-axis' : '#',
+        'scale' : 'log',
+        'options' : None
+    } , 
+    'fee': {
+        'title' : 'fee',
+        'x-axis' : 'date',
+        'y-axis' : 'monero',
+        'scale' : 'log',
+        'options' : 'avg'
+    } , 
+    'version': {
+        'title' : 'version',
+        'x-axis' : 'date',
+        'y-axis' : '#',
+        'scale' : None,
+        'options' : None
+    } , 
+    'block_size': {
+        'title' : 'block_size',
+        'x-axis' : 'date',
+        'y-axis' : 'b',
+        'scale' : 'log',
+        'options' : 'avg'
+    } , 
+    'blockchain_size': {
+        'title' : 'blockchain_size',
+        'x-axis' : 'date',
+        'y-axis' : 'b',
+        'scale' : 'linear',
+        'options' : None
+    } , 
+    'nonce': {
+        'title' : 'nonce',
+        'x-axis' : 'date',
+        'y-axis' : 'Uniformity',
+        'scale' : 'linear',
+        'options' : 'var'
+    }
+}
     
-    # Convert to the correct format for matplotlib.
-    # mdate.epoch2num converts epoch timestamps to the right format for matplotlib
-    secs = mdate.epoch2num(x_data)
+def build_chart(x_data, y_data, label, dur, scatter = False ):   
+    label = labels[label]
     
+    dates = mdate.epoch2num(x_data)
     fig, ax = plt.subplots()
     if scatter:
-        plt.scatter(secs, y_data,s=.01)
+        plt.scatter(dates, y_data,s=.01)
     else:
-        # Plot the date using plot_date rather than plot
-        ax.plot(secs, y_data,linewidth=1)
+        ax.plot(dates, y_data,linewidth=1)
 
-    if scale:
-        ax.set(xlabel = xlabel, ylabel = ylabel, title = title +"_" + dur, yscale = scale)
+    if label['scale']:
+        ax.set(xlabel = label['x-axis'], ylabel = label['y-axis'], title = label['title'] +"_" + dur, yscale = label['scale'])
     else:
-        ax.set(xlabel = xlabel, ylabel = ylabel, title = title +"_" + dur)
+        ax.set(xlabel = label['x-axis'], ylabel = label['y-axis'], title = label['title'] +"_" + dur)
+        
     ax.grid()
     
-    # Choose your xtick format string
     date_fmt = '%m/%d/%y'
-    
-    # Use a DateFormatter to set the data to the correct format.
     date_formatter = mdate.DateFormatter(date_fmt)
     ax.xaxis.set_major_formatter(date_formatter)
-    
-    # Sets the tick labels diagonal so they fit easier.
     fig.autofmt_xdate()
     
     fig.set_size_inches(16,10)
-    fig.savefig("static/data/"+ title +"_" + dur + ".png",dpi=200,bbox_inches='tight')
-    # Clear the current axes.
+    fig.savefig("static/data/"+ label['title'] +"_" + dur + ".png",dpi=200,bbox_inches='tight')
+    
     plt.cla() 
-    # Clear the current figure.
     plt.clf() 
-    # Closes all the figure windows.
     plt.close('all')
-    import gc; gc.collect()
     return True
 
 

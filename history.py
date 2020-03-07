@@ -6,7 +6,6 @@ import collections
 block = {
     'timestamp' : 0,
     'price' : 0,
-    'reward_1y' : 0,
     'block_size' : 0,
     'blockchain_size' : 0,
     'block_count' : 0,
@@ -41,6 +40,7 @@ def get_blocks():
     bin_size = int((2**32)/(720*7))
     bin_count = [0 for i in range((2**32)//(bin_size)+1)]
     unique_bins = 0
+    reward_1y = 0
     
     while blocks:
         x = blocks.pop()
@@ -60,14 +60,14 @@ def get_blocks():
         
         year.append([x[0],x[3]])
         block['block_reward'] = x[3]
-        block['reward_1y'] += x[3]
+        reward_1y += x[3]
         block['supply'] += x[3]
         block['blockchain_size'] += x[6]
         
         while year[0][0] < x[0] - 365*24*60*60:
-            block['reward_1y'] -= year.popleft()[1]
+            reward_1y -= year.popleft()[1]
         
-        block['inflation']  = 100 * block['reward_1y'] / block['supply']
+        block['inflation']  = 100 * reward_1y / block['supply']
         
         while p[0] < x[0]:
             p = price.pop()
