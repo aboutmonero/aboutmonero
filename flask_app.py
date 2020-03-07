@@ -24,6 +24,10 @@ def learn():
 def participate():
     return render_template('participate.html')
 
+@app.route('/legal.html')
+def legal():
+    return render_template('legal.html')
+
 
 @app.route('/explore.html')
 def explore():
