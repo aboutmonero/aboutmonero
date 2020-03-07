@@ -112,9 +112,7 @@ labels = {
     
 def build_chart(x_data, y_data, label, dur, scatter = False ):   
 
-    matplotlib.rcParams.update({'font.size': 5})
-    matplotlib.rcParams.update({'font.family': 'monospace'})
-    matplotlib.rcParams.update({'font.weight': 'bold'})
+    matplotlib.rcParams.update({'font.size': 5, 'font.family': 'monospace'})
     label = labels[label]
     
     dates = mdate.epoch2num(x_data)
@@ -134,7 +132,6 @@ def build_chart(x_data, y_data, label, dur, scatter = False ):
     date_fmt = '%m/%d/%y'
     date_formatter = mdate.DateFormatter(date_fmt)
     ax.xaxis.set_major_formatter(date_formatter)
-    
     fig.set_size_inches(8,5)
     fig.savefig("static/data/"+ label['title'] +"_" + dur + ".png",dpi=150,bbox_inches='tight')
     plt.cla() 
