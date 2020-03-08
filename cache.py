@@ -39,8 +39,8 @@ def get_json(url):
 def cache_price():
     last = str(int(get_csv("price")[-1][0]))
     prices = []
-    data = get_json("https://api.cryptowat.ch/markets/binance/xmrusdt/ohlc?periods=21600&after="+last)
-    data = list(data['result']['21600'])[1:]
+    data = get_json("https://api.cryptowat.ch/markets/binance/xmrusdt/ohlc?periods=7200&after="+last)
+    data = list(data['result']['7200'])[1:]
     for i in range(len(data)):
         prices.append([data[i][0],float(data[i][4])])
     if prices:

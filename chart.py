@@ -111,7 +111,6 @@ labels = {
 }
     
 def build_chart(x_data, y_data, label, dur, scatter = False ):   
-
     matplotlib.rcParams.update({'font.size': 5, 'font.family': 'monospace'})
     label = labels[label]
     

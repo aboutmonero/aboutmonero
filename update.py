@@ -10,6 +10,7 @@ data = get_blocks()
 timestamp = data.pop(0)
 timestamp.pop(0)
 update_latest(block)
+
 while data:
     gc.collect()
     yaxis = data.pop()
