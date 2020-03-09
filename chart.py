@@ -139,9 +139,9 @@ def build_chart(x_data, y_data, label_req, dur, scatter = False ):
     if label['scale']:
         if 'ℳ' in list(label['y-axis']) :
             plt.ylabel('ℳ', fontdict = {'family': 'sans'})
-        ax.set(xlabel = label['x-axis'], ylabel = label['y-axis'], title = label['title'] +" (" + dur + ")", yscale = label['scale'])
+        ax.set(xlabel = label['x-axis'], ylabel = label['y-axis'], title = label['title'], yscale = label['scale'])
     else:
-        ax.set(xlabel = label['x-axis'], ylabel = label['y-axis'], title = label['title'] +" (" + dur + ")")
+        ax.set(xlabel = label['x-axis'], ylabel = label['y-axis'], title = label['title'])
     ax.grid()
 
     date_fmt = '%m/%d/%y'
