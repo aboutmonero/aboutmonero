@@ -36,7 +36,7 @@ def get_blocks():
     fees = deque([])
     block_sizes = deque([])
     nonce_geo = deque([])
-    bin_size = int((2**32)/(720*7))
+    bin_size = int((2**32)/(720*3))
     bin_count = [0 for i in range((2**32)//(bin_size)+1)]
     unique_bins = 0
     reward_1y = 0
@@ -100,14 +100,14 @@ def get_blocks():
             unique_bins += 1 
         elif bin_count[nonce] == 2:
             unique_bins -= 1 
-        if len(nonces)> 720*7:    
+        if len(nonces)> 720*3:    
             nonce = nonces.popleft()    
             bin_count[nonce] -= 1
             if bin_count[nonce] == 1:
                 unique_bins += 1 
             elif bin_count[nonce] == 0:
                 unique_bins -= 1 
-        block['nonce'] = exp(1)*100*(unique_bins)/(720*7)
+        block['nonce'] = exp(1)*100*(unique_bins)/(720*3)
         
         for i in range(len(out)):
             out[i].append(list(block.values())[i])

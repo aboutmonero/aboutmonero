@@ -3,8 +3,8 @@ from chart import build_chart
 from cache import update_latest, cache_blocks, cache_price
 import gc
 
-cache_blocks()
-cache_price()
+#cache_blocks()
+#cache_price()
 
 data = get_blocks()
 timestamp = data.pop(0)
