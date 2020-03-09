@@ -37,70 +37,10 @@ Statistics and charts for the Monero network. Please note that many of the chart
     <th>Description</th>
 </tr>
 <tr>
-    <td>Market Price:</td>
-    <td>${{data[0]}}</td>
-    <td><a href="#price_1M">1M</a> <a href="#price_1Y">1Y</a> <a href="#price_all">All</a></td>
-    <td align ="center">Average USD market price across major monero exchanges.</td>
-</tr>
-<tr>
-    <td>Circulating Supply: </td>
-    <td>ℳ{{data[4]}}</td>
-    <td><a href="#supply_1M">1M</a> <a href="#supply_1Y">1Y</a> <a href="#supply_all">All</a></td>
-    <td align ="center">Total number of monero in circulation.</td>
-</tr>
-<tr>
-    <td>Market Capitalization: </td>
-    <td>${{data[6]}}</td>
-    <td><a href="#marketcap_1M">1M</a> <a href="#marketcap_1Y">1Y</a> <a href="#marketcap_all">All</a></td>
-    <td align ="center">USD value of total monero supply in circulation.</td>
-</tr>
-<tr>
-    <td>Miner's Block Reward: </td>
-    <td>ℳ{{data[5]}} </td>
-    <td> <a href="#block_reward_1M">1M</a> <a href="#block_reward_1Y">1Y</a> <a href="#block_reward_all">All</a></td>
-    <td align ="center">Value of newly minted monero paid to miners per block.</td>
-</tr>
-<tr>
-    <td>Inflation Rate (1Y): </td>
-    <td>%{{data[7]}}</td>
-    <td><a href="#inflation_1M">1M</a> <a href="#inflation_1Y">1Y</a> <a href="#inflation_all">All</a></td>
-    <td align ="center">Percentage of circulating supply mined in the past year.</td>
-</tr>
-<tr>
-    <td>Fees Paid Per Block: </td>
-    <td>ℳ{{data[10]}} </td>
-    <td><a href="#fee_1M">1M</a> <a href="#fee_1Y">1Y</a> <a href="#fee_all">All</a></td>
-    <td align ="center">Average (Geometric) fee amount per block paid to miners.</td>
-</tr>
-<tr>
-    <td>Network Hashrate: </td>
-    <td>{{data[3]}}</td>
-    <td><a href="#hashrate_1M">1M</a> <a href="#hashrate_1Y">1Y</a> <a href="#hashrate_all">All</a></td>
-    <td align ="center">Estimated hashes/second the monero network is performing.</td>
-</tr>
-<tr>
-    <td>Transactions Per Day: </td>
-    <td>{{data[2]}} </td>
-    <td><a href="#transaction_1M">1M</a> <a href="#transaction_1Y">1Y</a> <a href="#transaction_all">All</a></td>
-    <td align ="center">Number of monero transactions in the previous day.</td>
-</tr>
-<tr>
-    <td>Nonce Uniformity: </td>
-    <td>%{{data[11]}} </td>
-    <td><a href="#nonce_1M">1M</a> <a href="#nonce_1Y">1Y</a> <a href="#nonce_all">All</a></td>
-    <td align ="center">Uniformity of the previous 2160 blocks' (~3 days) nonces.</td>
-</tr>
-<tr>
     <td>Block Count Per Day: </td>
     <td>{{data[1]}} </td>
     <td> <a href="#block_count_1M">1M</a> <a href="#block_count_1Y">1Y</a> <a href="#block_count_all">All</a></td>
     <td align ="center">The number of blocks mined in the previous day.</td>
-</tr>
-<tr>
-    <td>Blockchain Height: </td>
-    <td>{{data[14]}} </td>
-    <td><a href="#block_height_1M">1M</a> <a href="#block_height_1Y">1Y</a> <a href="#block_height_all">All</a></td>
-    <td align ="center">Total number of blocks in the blockchain.</td>
 </tr>
 <tr>
     <td>Block Size: </td>
@@ -109,10 +49,70 @@ Statistics and charts for the Monero network. Please note that many of the chart
     <td align ="center">Mean (Geometric) block size. </td>
 </tr>
 <tr>
+    <td>Blockchain Height: </td>
+    <td>{{data[14]}} </td>
+    <td><a href="#block_height_1M">1M</a> <a href="#block_height_1Y">1Y</a> <a href="#block_height_all">All</a></td>
+    <td align ="center">Total number of blocks in the blockchain.</td>
+</tr>
+<tr>
     <td>Blockchain Size: </td>
     <td>{{data[9]}} </td>
     <td><a href="#blockchain_size_1M">1M</a> <a href="#blockchain_size_1Y">1Y</a> <a href="#blockchain_size_all">All</a></td>
     <td align ="center">Total size of blockchain.</td>
+</tr>
+<tr>
+    <td>Circulating Supply: </td>
+    <td>ℳ{{data[4]}}</td>
+    <td><a href="#supply_1M">1M</a> <a href="#supply_1Y">1Y</a> <a href="#supply_all">All</a></td>
+    <td align ="center">Total number of monero in circulation.</td>
+</tr>
+<tr>
+    <td>Fees Paid Per Block: </td>
+    <td>ℳ{{data[10]}} </td>
+    <td><a href="#fee_1M">1M</a> <a href="#fee_1Y">1Y</a> <a href="#fee_all">All</a></td>
+    <td align ="center">Average (Geometric) fee amount per block paid to miners.</td>
+</tr>
+<tr>
+    <td>Inflation Rate (1Y): </td>
+    <td>%{{data[7]}}</td>
+    <td><a href="#inflation_1M">1M</a> <a href="#inflation_1Y">1Y</a> <a href="#inflation_all">All</a></td>
+    <td align ="center">Percentage of circulating supply mined in the past year.</td>
+</tr>
+<tr>
+    <td>Market Capitalization: </td>
+    <td>${{data[6]}}</td>
+    <td><a href="#marketcap_1M">1M</a> <a href="#marketcap_1Y">1Y</a> <a href="#marketcap_all">All</a></td>
+    <td align ="center">USD value of total monero supply in circulation.</td>
+</tr>
+<tr>
+    <td>Market Price:</td>
+    <td>${{data[0]}}</td>
+    <td><a href="#price_1M">1M</a> <a href="#price_1Y">1Y</a> <a href="#price_all">All</a></td>
+    <td align ="center">Average USD market price across major monero exchanges.</td>
+</tr>
+<tr>
+    <td>Miner's Block Reward: </td>
+    <td>ℳ{{data[5]}} </td>
+    <td> <a href="#block_reward_1M">1M</a> <a href="#block_reward_1Y">1Y</a> <a href="#block_reward_all">All</a></td>
+    <td align ="center">Value of newly minted monero paid to miners per block.</td>
+</tr>
+<tr>
+    <td>Network Hashrate: </td>
+    <td>{{data[3]}}</td>
+    <td><a href="#hashrate_1M">1M</a> <a href="#hashrate_1Y">1Y</a> <a href="#hashrate_all">All</a></td>
+    <td align ="center">Estimated hashes/second the monero network is performing.</td>
+</tr>
+<tr>
+    <td>Nonce Uniformity: </td>
+    <td>%{{data[11]}} </td>
+    <td><a href="#nonce_1M">1M</a> <a href="#nonce_1Y">1Y</a> <a href="#nonce_all">All</a></td>
+    <td align ="center">Uniformity of the previous 2160 blocks' (~3 days) nonces.</td>
+</tr>
+<tr>
+    <td>Transactions Per Day: </td>
+    <td>{{data[2]}} </td>
+    <td><a href="#transaction_1M">1M</a> <a href="#transaction_1Y">1Y</a> <a href="#transaction_all">All</a></td>
+    <td align ="center">Number of monero transactions in the previous day.</td>
 </tr>
 <tr>
     <td>Version: </td>
