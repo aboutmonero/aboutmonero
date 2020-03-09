@@ -4,8 +4,10 @@
 from flask import Flask, flash, redirect, render_template, request, url_for
 import csv
 import cache
+from flask_stats.flask_stats import Stats
 
 app = Flask(__name__)
+Stats(app)
 
 @app.route('/')
 def root():
