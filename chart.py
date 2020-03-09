@@ -6,7 +6,7 @@ labels = {
     'inflation': {
         'title' : 'inflation',
         'x-axis' : 'Date',
-        'y-axis' : '1y emission % of total supply',
+        'y-axis' : '<1 Year Old ℳ : Total Supply',
         'scale' : 'linear',
         'options' : None
     } ,
