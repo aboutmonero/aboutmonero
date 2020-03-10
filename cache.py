@@ -4,28 +4,28 @@ from json import loads
 from monero.daemon import Daemon
 from monero.backends.jsonrpc import JSONRPCDaemon
 
-def get_csv(direc):
+def get_csv(direc,fl=True):
     if direc == 'blocks':
-        with open("static/data/"+direc+"_1000000.csv", 'r') as f:
+        with open(direc+"_1000000.csv", 'r') as f:
             read = reader(f)
             rows = list(read)   
         rows = [[float(y) for y in x] for x in rows]
-        with open("static/data/"+direc+"_2000000.csv", 'r') as f:
+        with open(direc+"_2000000.csv", 'r') as f:
             read = reader(f)
             newrows = list(read)   
         rows = rows + [[float(y) for y in x] for x in newrows]
-        with open("static/data/"+direc+".csv", 'r') as f:
+        with open(direc+".csv", 'r') as f:
             read = reader(f)
             newrows = list(read)   
         rows = rows + [[float(y) for y in x] for x in newrows]
         return rows
-    with open("static/data/"+direc+".csv", 'r') as f:
+    with open(direc+".csv", 'r') as f:
         rows = list(reader(f))
     rows = [[float(y) for y in x] for x in rows]
     return rows
         
 def cache(data,direc):
-    with open("static/data/"+direc+".csv", 'a+') as f:
+    with open(direc+".csv", 'a+') as f:
         write = writer(f) 
         write.writerows(data)
     return True
@@ -47,7 +47,7 @@ def cache_price():
         return cache(prices,"price")
     else:
         return False
-    
+        
 def cache_blocks(last = None, end = None):
     daemon = Daemon(JSONRPCDaemon(port=18081))
     new = []
@@ -66,20 +66,20 @@ def cache_blocks(last = None, end = None):
         return False
 
 def update_latest(targets):
-    with open("static/data/latest.csv", 'r') as f:
+    with open("latest.csv", 'r') as f:
         read = reader(f)
         rows = list(read)
     for target in targets.keys():
         for x in rows:
             if x[0] == target:
                 x[1] = targets[target]
-    with open("static/data/latest.csv", 'w') as f:
+    with open("latest.csv", 'w') as f:
         write = writer(f) 
         write.writerows(rows)
     return True
 
 def get_latest():
-    with open("static/data/latest.csv", 'r') as f:
+    with open("latest.csv", 'r') as f:
         read = reader(f)
         rows = list(read)
     for i in range(len(rows)):
