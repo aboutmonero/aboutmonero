@@ -1,4 +1,4 @@
-from history import block, get_blocks
+from block_data import last_block, get_blocks
 from chart import build_chart
 from cache import update_latest, cache_blocks, cache_price
 import gc
@@ -6,10 +6,10 @@ import gc
 cache_blocks()
 cache_price()
 
-data = get_blocks()
+data = get_block_data()
 timestamp = data.pop(0)
 timestamp.pop(0)
-update_latest(block)
+update_latest(last_block)
 
 while data:
     gc.collect()

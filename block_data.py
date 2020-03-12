@@ -2,7 +2,7 @@ from cache import get_csv
 from collections import deque
 from math import exp, log
 
-block = {
+last_block = {
     'timestamp' : 0,
     'price' : 0,
     'block_size' : 0,
@@ -21,61 +21,72 @@ block = {
     'inflation' : 0,
 }
 
-def get_blocks():
+def get_block_data():
+    #setup output list with keys as first element
+    output = [[i] for i in list(block.keys())]
+    
+    #import data from csv
     blocks = get_csv("blocks")[::-1]
     price = get_csv("price")[::-1]
     
+    #initiate price
     p = price.pop()    
-    block['price'] = p[1]
+    last_block['price'] = p[1]
     
-    out = [[i] for i in list(block.keys())]
+    #stacks for fast processing
     day = deque([])
     year = deque([])
-    
     nonces = deque([])
     fees = deque([])
     block_sizes = deque([])
-    nonce_geo = deque([])
+    
+    #nonce uniformity constants
+    #there are 2160 nonces and 2160 bins
     bin_size = int((2**32)/(720*3))
+    #we count how many nonces are in each bin
     bin_count = [0 for i in range((2**32)//(bin_size)+1)]
+    #the number of bins with only 1 nonce should be about 1/e
     unique_bins = 0
+    
+    #block reward over 1y
     reward_1y = 0
     
     while blocks:
         #block data
         x = blocks.pop()
         
-        block['timestamp'] = x[0]
-        block['block_height'] = int(x[1])
-        block['version'] = str(int(x[8]))+"."+str(int(x[9]))
+        #no calculation data
+        last_block['timestamp'] = x[0]
+        last_block['block_height'] = int(x[1])
+        last_block['version'] = str(int(x[8]))+"."+str(int(x[9]))
+        last_block['block_reward'] = x[3]
+        last_block['supply'] += x[3]
+        last_block['blockchain_size'] += x[6]
         
         #24h stats
         day.append([x[0],x[4]])
-        block['transaction'] += x[4]
-        block['block_count'] += 1
+        last_block['transaction'] += x[4]
+        last_block['block_count'] += 1
         while day[0][0] < x[0] - 24*60*60:
             head = day.popleft()[1]
-            block['transaction'] -= head
-            block['block_count'] -= 1
-            block['block_time']=((24*60*60)/block['block_count'])
-            block['hashrate'] = x[2] / (block['block_time'])
+            last_block['transaction'] -= head
+            last_block['block_count'] -= 1
+            last_block['block_time']=((24*60*60)/last_block['block_count'])
+            last_block['hashrate'] = x[2] / (last_block['block_time'])
             
-        block['block_reward'] = x[3]
-        block['supply'] += x[3]
-        block['blockchain_size'] += x[6]
         
         #inflation 1y %
         reward_1y += x[3]
         year.append([x[0],x[3]])
         while year[0][0] < x[0] - 365*24*60*60:
             reward_1y -= year.popleft()[1]
-        block['inflation']  = 100 * reward_1y / block['supply']
+        last_block['inflation']  = 100 * reward_1y / last_block['supply']
         
         #price
         while p[0] < x[0]:
             p = price.pop()
-            block['price'] = p[1]
-        block['marketcap']=block['supply']*block['price']
+            last_block['price'] = p[1]
+        last_block['marketcap']=last_block['supply']*last_block['price']
         
         #fee geometric mean
         if x[5]:
@@ -88,28 +99,35 @@ def get_blocks():
         #block_size geometric mean    
         block_sizes.append(x[6])
         if len(block_sizes) > 720:
-            block['block_size'] = exp(log(block['block_size']) + log(x[6]/block_sizes.popleft())/720)
+            last_block['block_size'] = exp(log(last_block['block_size']) + log(x[6]/block_sizes.popleft())/720)
         else:
-            block['block_size'] = x[6]
+            last_block['block_size'] = x[6]
         
         #nonce uniformity
+        #calculate which bin the nonce belongs in like a histogram
         nonce = int(x[7])//bin_size
+        #add to memory
         nonces.append(nonce)
+        #put nonce into bin
         bin_count[nonce] += 1
+        #recalculate bins with exactly one
         if bin_count[nonce] == 1:
             unique_bins += 1 
         elif bin_count[nonce] == 2:
             unique_bins -= 1 
         if len(nonces)> 720*3:    
+            #remove nonce and recalculate
             nonce = nonces.popleft()    
             bin_count[nonce] -= 1
             if bin_count[nonce] == 1:
                 unique_bins += 1 
             elif bin_count[nonce] == 0:
-                unique_bins -= 1 
-        block['nonce'] = exp(1)*100*(unique_bins)/(720*3)
+                unique_bins -= 1
+        #assuming the nonces are uniformly random, unique_bins : 2160 == 1 : e
+        #thus e * unique_bins / 2160 == 1
+        last_block['nonce'] = (exp(1)*unique_bins/(720*3))*100
         
-        for i in range(len(out)):
-            out[i].append(list(block.values())[i])
+        for i in range(len(output)):
+            output[i].append(list(last_block.values())[i])
         
-    return out
+    return output
