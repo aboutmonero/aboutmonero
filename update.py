@@ -1,4 +1,4 @@
-from block_data import last_block, get_blocks
+from block_data import last_block, get_block_data
 from chart import build_chart
 from cache import update_latest, cache_blocks, cache_price
 import gc

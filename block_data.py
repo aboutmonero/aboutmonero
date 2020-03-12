@@ -23,7 +23,7 @@ last_block = {
 
 def get_block_data():
     #setup output list with keys as first element
-    output = [[i] for i in list(block.keys())]
+    output = [[i] for i in list(last_block.keys())]
     
     #import data from csv
     blocks = get_csv("blocks")[::-1]
@@ -92,9 +92,9 @@ def get_block_data():
         if x[5]:
             fees.append(x[5])
             if len(fees) > 720:
-                block['fee'] = exp(log(block['fee']) + log(x[5]/fees.popleft())/720)
+                last_block['fee'] = exp(log(last_block['fee']) + log(x[5]/fees.popleft())/720)
             else:
-                block['fee'] = x[5]
+                last_block['fee'] = x[5]
         
         #block_size geometric mean    
         block_sizes.append(x[6])
