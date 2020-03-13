@@ -105,5 +105,46 @@ After this, there is the 'tail-emission' era. Once the miner's block reward reac
             'source' : 'BitcoinTalk Forum',
             'year' : 2014
             }]
+    } ,
+    'sound-money' : {
+        'title' : 'Sound Money',
+        'body' : """There have been many forms of money in history, but some forms have worked better than others because they have characteristics that make them more useful. The characteristics of money are durability, portability, divisibility, uniformity, limited supply, and acceptability [1]. Let's compare two examples of possible forms of money:
+<ul>
+    <li>A cow. Cattle have been used as money at different points in history.</li>
+    <li>ℳonero equal to the value of one cow.</li>
+</ul>
+Let's run down our list of characteristics to see how they stack up.
+<ol>
+    <li><b>Durability</b> A cow is fairly durable, but a long trip to market runs the risk of sickness or death for the cow and can severely reduce its value. Units of ℳonero cannot deteroriate or become broken in any way. It exists digitally within the decentralized peer-to-peer network which has no central point of failure.</li>
+    <li><b>Portability.</b> While the cow is difficult to transport to the store, the currency can be easily be transferred wherever an internet connection is available.</li>
+    <li><b>Divisibility.</b> A unit of ℳonero is practically infinitely divisble, up to 12 decimal places. A cow, on the other hand, is not very divisible.</li>
+    <li><b>Uniformity.</b> Cows come in many sizes and shapes and each has a different value; cows are not a very uniform form of money. Every unit of ℳonero is indistinguishable. Because accounts and transactions are encrypted, every unit of ℳonero is essentially freshly minted currency. That is why every ℳonero is treated equally</li>
+    <li><b>Limited supply.</b> In order to maintain its value, money must have a limited supply. While the supply of cows is fairly limited, if they were used as money, you can bet ranchers would do their best to increase the supply of cows, which would decrease their value. The supply, and therefore the value, of ℳonero is established by code agreed upon by the network participants so that the amount of money created is known and controlled.</li>
+    <li><b>Acceptability.</b> Even though cows have intrinsic value, some people may not accept cattle as money. In contrast, as ℳonero adoption grows, people will be more than willing to accept your ℳonero. ℳonero can also be exchanged on numerous currency exchanges for any major currency in the world.</li>
+</ol>
+Well, it seems "udderly" clear at this point that ℳonero is a much better form of money than cattle. Apply these same proporties to other currencies like gold, USD, or Bitcoin and see how they stand up against ℳonero. Is gold portable? Is there a limited supply of US Dollars? Is every Bitcoin uniform? You will come to realize why ℳonero is sound money.""",
+        'related-topics' : [{
+            'url' : 'supply-properties',
+            'title' : 'Supply properties'
+            } , {
+            'url' : 'controlled-inflation',
+            'title' : 'Controlled inflation'
+            }, {
+            'url' : 'fair-distribution',
+            'title' : 'Fair distribution'
+            }, {
+            'url' : 'block-reward',
+            'title' : 'Block reward'
+            }, {
+            'url' : 'emission-curve',
+            'title' : 'Emission curve'
+            }],
+        'references' : [{
+            'title': 'Functions of Money',
+            'author' : 'The Federal Reserve Bank',
+            'url' : 'https://www.stlouisfed.org/education/economic-lowdown-podcast-series/episode-9-functions-of-money',
+            'source' : 'The Economic Lowdon Podcast',
+            'year' : 2020
+            }]
     }
 }
