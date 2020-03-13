@@ -8,7 +8,7 @@ labels = {
         'file-name' : 'inflation',
         'x-axis' : 'Date',
         'y-axis' : '% of Circulating Supply',
-        'scale' : 'linear',
+        'scale' : 'log',
         'options' : None
     } ,
     'marketcap': {

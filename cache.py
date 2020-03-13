@@ -58,7 +58,8 @@ def cache_blocks(last = None, end = None):
     while end > last:
         last +=1
         data = daemon.block(height=last)
-        new.append([data.timestamp,data.height,data.difficulty,float(data.reward),data.num_txes,float(data.fee),data.size,data.nonce,data.version[0],data.version[1]])
+        new.append([data.timestamp,data.height,data.difficulty,float(data.reward), \
+            data.num_txes,float(data.fee),data.size,data.nonce,data.version[0],data.version[1]])
     if new:
         cache(new,"blocks")
         return True
