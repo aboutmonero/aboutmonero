@@ -81,40 +81,81 @@ Altcoins can differ from Bitcoin in a range of ways. Some have a different econo
             'year' : 2017
         }]
     } ,
-    'privacy' : {
-        'title' : 'Privacy',
-        'body' : 'Privacy and anonymity are the most important aspects of electronic cash.  Peer-to-peer payments seek to be concealed from third party’s view, a distinct difference when compared with traditional banking.  In particular, T. Okamoto and K. Ohta described six criteria of ideal electronic cash, which included “privacy:  relationship between the user and his purchases must be untraceable by anyone” [1].  From their description,  the CryptoNote protocol developers derived two properties which a fully anonymous electronic cash model must satisfy in order to comply with the requirements outlined by Okamoto and Ohta: Untraceability: for each incoming transaction all possible senders are equiprobable. Unlinkability: for any two outgoing transactions it is impossible to prove they were sent to the same person. [2] Monero meets these requirements through the utilization of the three encryption technologies: Ring Signatures, Stealth Addresses, and Ring Confidential Transactions. [3]',
+    'anti-money-laundering' : {
+        'title' : 'Anti-money laundering',
+        'body' : '''Money laundering is the illegal process of concealing the origins of money obtained illegally by passing it through a complex sequence of banking transfers or commercial transactions. The overall scheme of this process returns the money to the launderer in an obscure and indirect way.[1]
+<br><br>
+In late June 2019, one of the most authoritative regulatory organizations worldwide, the Financial Action Task Force (FATF), issued new guidelines on how digital assets should be regulated. While FATF recommendations are not legally binding, the G-20 stated that it uses them to regulate cryptocurrencies for Anti-Money Laundering (AML). For businesses that fail to make the grade, this could mean being shut out of lucrative international markets. No punitive measures have yet been imposed, but companies and crypto exchanges alike are acting fast.  [2]''',
         'related-topics' : [{
-            'url' : 'ring-signature',
-            'title' : 'Ring signature'
+            'url' : 'fatf',
+            'title' : 'FATF'
             } , {
-            'url' : 'ringct',
-            'title' : 'RingCT'
-            } , {
-            'url' : 'stealth-address',
-            'title' : 'Stealth Address'
-            } , {
-            'url' : 'cryptonote',
-            'title' : 'Cryptonote'
+            'url' : 'travel-rule',
+            'title' : 'Travel rule'
         }],
         'references' : [{
-            'title': 'Universal electronic cash',
-            'author' : 'Tatsuaki Okamoto and Kazuo Ohta',
-            'url' : 'https://link.springer.com/chapter/10.1007/3-540-46766-1_27',
-            'source' : 'CRYPTO',
-            'year' : 1991
-            } , {
-            'title': 'CryptoNote v 2.0',
-            'author' : 'Nicolas van Saberhagen',
-            'url' : '../static/cryptonote-whitepaper.pdf',
-            'source' : 'CryptoNote Whitepaper',
-            'year' : 2013
-            } , {
-            'title': 'What advantages does Monero offer that are not provided by other cryptocurrencies?',
-            'author' : 'JollyMort',
-            'url' : 'https://monero.stackexchange.com/questions/2254/what-advantages-does-monero-offer-that-are-not-provided-by-other-cryptocurrencie/',
-            'source' : 'StackExchange',
+            'title': 'Money Laundering',
+            'author' : 'Wikipedia Editors',
+            'url' : 'https://en.wikipedia.org/wiki/Money_laundering',
+            'source' : 'Wikipedia',
+            'year' : 2020
+        }, {
+            'title': 'FATF AML Regulation',
+            'author' : 'Joseph Birch',
+            'url' : 'https://cointelegraph.com/news/fatf-aml-regulation-can-the-crypto-industry-adapt-to-the-travel-rule',
+            'source' : 'CoinTelegraph',
             'year' : 2017
+        }]
+    } ,
+    'asic' : {
+        'title' : 'ASIC',
+        'body' : '''An application-specific integrated circuit (abbreviated as ASIC) is an integrated circuit (IC) customized for a particular use, rather than intended for general-purpose use. In mining hardware, ASICs were the next step of development after CPUs, GPUs and FPGAs. [1] <br><br>
+The Monero team believes that ASIC machines have a centralizing effect as there are only a few companies in the world that are able to manufacture them. [2]
+The Monero network successfully conducted a scheduled upgrade on Nov. 30. Among other features, the RandomX mining algorithm was introduced to cripple ASIC machines and improve the efficiency of CPUs. The Proof-of-Work algorithm uses random code execution and memory-intensive techniques to discourage the development of ASICs. Its introduction renders all existing CryptoNight ASICs obsolete, while the added complexity aims to make the development of new machines both expensive and ineffective.  [3]''',
+        'related-topics' : [{
+            'url' : 'randomx',
+            'title' : 'RandomX'
+            } , {
+            'url' : 'proof-of-work',
+            'title' : 'Proof-of-work'
+        }],
+        'references' : [{
+            'title': 'ASIC',
+            'author' : 'Bitcoin Wiki Editors',
+            'url' : 'https://en.bitcoin.it/wiki/ASIC',
+            'source' : 'Bitcoin Wiki',
+            'year' : 2020
+        } , {
+            'title': 'Monero Implements Hard Fork Including New ASIC-Resistant Mining Algorithm',
+            'author' : 'Joeri Cant',
+            'url' : 'https://cointelegraph.com/news/monero-implements-hard-fork-including-new-asic-resistant-mining-algorithm',
+            'source' : 'CoinTelegraph',
+            'year' : 2019
+        } , {
+            'title': 'Monero Penalizes GPU and ASIC Mining with RandomX Upgrade',
+            'author' : 'Andrey Schevchenko',
+            'url' : 'https://cryptobriefing.com/monero-penalizes-gpu-mining-randomx/',
+            'source' : 'Crypto Briefing',
+            'year' : 2019
+        }]
+    } ,
+    'atomic-swap' : {
+        'title' : 'Atomic Swap',
+        'body' : '''
+An atomic swap allows the exchange across two different blockchains. This allows two people to exchange different currencies without a third party. While there are currently no possible atomic swaps available for monero, there do exist cross-chain transactions for litecoin, bitcoin, and ethereum.''',
+        'related-topics' : [{
+            'url' : 'fatf',
+            'title' : 'FATF'
+            } , {
+            'url' : 'travel-rule',
+            'title' : 'Travel rule'
+        }],
+        'references' : [{
+            'title': 'Alt chains and atomic transfers',
+            'author' : 'TierNolan',
+            'url' : 'https://bitcointalk.org/index.php?topic=193281.msg2003765#msg2003765',
+            'source' : 'BitcoinTalk Forum',
+            'year' : 2013
         }]
     } ,
     'privacy' : {
