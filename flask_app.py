@@ -6,6 +6,8 @@ import csv
 import cache
 from flask import request 
 import time  
+from page_data import learn_pages
+
 app = Flask(__name__)
 
 @app.route('/')
@@ -57,5 +59,8 @@ def follow():
 def topic(topic):
     ip = request.environ.get('HTTP_X_REAL_IP', request.remote_addr)   
     cache.cache([[time.time(), ip, '/learn/'+topic]],'../usage')
-    return render_template('/learn/'+topic+'.html')
+    if topic in learn_pages.keys():
+        return render_template('/article.html', data = learn_pages[topic])
+    else:
+        return render_template('/learn/'+topic+'.html')
 
