@@ -1,4 +1,86 @@
 learn_pages = {
+    'account' : {
+        'title' : 'Account',
+        'body' : '''An account is a group of subaddresses of a wallet.<br><br>
+
+A wallet has a seed. From this seed, the primary address private spend and view keys are derived. From these private keys, subaddresses are derived. Subaddresses are grouped into accounts. This primary address is the first address in the first account in the wallet. Each account has its own balance, and can have multiple subaddresses associated with it. Since accounts are only groupings of subaddresses, there is no such thing as an account address (unless you count the first subaddress in the account as the 'account address'). So a wallet can have multiple accounts, and each account can have multiple subaddresses. Since accounts and subaddresses are deterministically derived from the seed, you only need to know the seed in order to restore the account/subaddress structure when restoring a wallet (although any labels you assign to the accounts/subaddresses will need to be noted separately).[1]''',
+        'related-topics' : [{
+            'url' : 'address',
+            'title' : 'Address'
+            } , {
+            'url' : 'subaddress',
+            'title' : 'Subaddress'
+            } , {
+            'url' : 'wallet',
+            'title' : 'Wallet'
+            } , {
+            'url' : 'seed',
+            'title' : 'Seed'
+        }],
+        'references' : [{
+            'title': 'Difference between “Wallet” and “Account”',
+            'author' : 'knacc',
+            'url' : 'https://monero.stackexchange.com/questions/10111/difference-between-wallet-and-account',
+            'source' : 'StackExchange',
+            'year' : 2018
+            } , {
+            'title': 'Account',
+            'author' : 'Monero Core Team',
+            'url' : 'https://web.getmonero.org/resources/moneropedia/account.html',
+            'source' : 'getmonero.org',
+            'year' : 2020
+            } , {
+            'title': 'How Monero’s accounts and subaddresses work in Monerujo',
+            'author' : 'Andres',
+            'url' : 'https://medium.com/@anhdres/how-moneros-accounts-and-subaddresses-work-in-monerujo-4fa7df0a58e4',
+            'source' : 'Medium',
+            'year' : 2018
+        }]
+    } ,
+    'airdrop' : {
+        'title' : 'Airdrop',
+        'body' : 'Distributing a cryptocurrency token or coin, usually for free, to numerous wallet addresses. [1] In a typical ICO, participants contribute capital to buy tokens whereas, in an airdrop (or hard fork), tokens are allocated to existing holders of a particular chain—typically Bitcoin or Ethereum. Instead of buying tokens, they’re simply given away to the holders of another coin. [2]',
+        'related-topics' : [{
+            'url' : 'fair-distribution',
+            'title' : 'Fair Distribution'
+            } , {
+            'url' : 'ico',
+            'title' : 'ICO'
+        }],
+        'references' : [{
+            'title': 'Airdrop (cryptocurrency)',
+            'author' : 'Wikipedia Editors',
+            'url' : 'https://en.wikipedia.org/wiki/Airdrop_(cryptocurrency)',
+            'source' : 'Wikipedia',
+            'year' : 2020
+            } , {
+            'title': 'The Trend That Is Increasing The Urgency Of Owning Bitcoin And Ethereum',
+            'author' : 'Spencer Bogart',
+            'url' : 'https://www.forbes.com/sites/spencerbogart/2017/10/08/the-trend-that-is-increasing-the-urgency-of-owning-bitcoin-and-ethereum/#27ec56df116b',
+            'source' : 'Forbes',
+            'year' : 2017
+        }]
+    } ,
+    'altcoin' : {
+        'title' : 'Altcoin',
+        'body' : '''Aside from bitcoin, there are hundreds of other digital currencies out there. These are known as “altcoins,” or alternatives to bitcoin; for example, ether, ripple, zcash, monero and dash, to name just a few. <br><br>
+
+Altcoins can differ from Bitcoin in a range of ways. Some have a different economic model or a different coin-distribution method, like altcoins that were given away to all citizens of a country. Others employ different proof-of-work mining algorithms, perhaps to resist specialized mining hardware — or maybe they don’t even rely on proof of work at all. Several altcoins offer a more versatile programming language to build applications on top of, while yet others offer more privacy compared to Bitcoin. And there are also altcoins that serve very specific, non-monetary use cases, like domain name registry or data storage pointers. [1]''',
+        'related-topics' : [{
+            'url' : 'hard-fork',
+            'title' : 'Hard fork'
+            } , {
+            'url' : 'ico',
+            'title' : 'ICO'
+        }],
+        'references' : [{
+            'title': 'What is an Altcoin?',
+            'author' : 'Bitcoin Magazine',
+            'url' : 'https://bitcoinmagazine.com/guides/what-altcoin',
+            'source' : 'CRYPTO',
+            'year' : 2017
+        }]
+    } ,
     'privacy' : {
         'title' : 'Privacy',
         'body' : 'Privacy and anonymity are the most important aspects of electronic cash.  Peer-to-peer payments seek to be concealed from third party’s view, a distinct difference when compared with traditional banking.  In particular, T. Okamoto and K. Ohta described six criteria of ideal electronic cash, which included “privacy:  relationship between the user and his purchases must be untraceable by anyone” [1].  From their description,  the CryptoNote protocol developers derived two properties which a fully anonymous electronic cash model must satisfy in order to comply with the requirements outlined by Okamoto and Ohta: Untraceability: for each incoming transaction all possible senders are equiprobable. Unlinkability: for any two outgoing transactions it is impossible to prove they were sent to the same person. [2] Monero meets these requirements through the utilization of the three encryption technologies: Ring Signatures, Stealth Addresses, and Ring Confidential Transactions. [3]',
@@ -14,7 +96,7 @@ learn_pages = {
             } , {
             'url' : 'cryptonote',
             'title' : 'Cryptonote'
-            }],
+        }],
         'references' : [{
             'title': 'Universal electronic cash',
             'author' : 'Tatsuaki Okamoto and Kazuo Ohta',
@@ -33,7 +115,43 @@ learn_pages = {
             'url' : 'https://monero.stackexchange.com/questions/2254/what-advantages-does-monero-offer-that-are-not-provided-by-other-cryptocurrencie/',
             'source' : 'StackExchange',
             'year' : 2017
-            }]
+        }]
+    } ,
+    'privacy' : {
+        'title' : 'Privacy',
+        'body' : 'Privacy and anonymity are the most important aspects of electronic cash.  Peer-to-peer payments seek to be concealed from third party’s view, a distinct difference when compared with traditional banking.  In particular, T. Okamoto and K. Ohta described six criteria of ideal electronic cash, which included “privacy:  relationship between the user and his purchases must be untraceable by anyone” [1].  From their description,  the CryptoNote protocol developers derived two properties which a fully anonymous electronic cash model must satisfy in order to comply with the requirements outlined by Okamoto and Ohta: Untraceability: for each incoming transaction all possible senders are equiprobable. Unlinkability: for any two outgoing transactions it is impossible to prove they were sent to the same person. [2] Monero meets these requirements through the utilization of the three encryption technologies: Ring Signatures, Stealth Addresses, and Ring Confidential Transactions. [3]',
+        'related-topics' : [{
+            'url' : 'ring-signature',
+            'title' : 'Ring signature'
+            } , {
+            'url' : 'ringct',
+            'title' : 'RingCT'
+            } , {
+            'url' : 'stealth-address',
+            'title' : 'Stealth Address'
+            } , {
+            'url' : 'cryptonote',
+            'title' : 'Cryptonote'
+        }],
+        'references' : [{
+            'title': 'Universal electronic cash',
+            'author' : 'Tatsuaki Okamoto and Kazuo Ohta',
+            'url' : 'https://link.springer.com/chapter/10.1007/3-540-46766-1_27',
+            'source' : 'CRYPTO',
+            'year' : 1991
+            } , {
+            'title': 'CryptoNote v 2.0',
+            'author' : 'Nicolas van Saberhagen',
+            'url' : '../static/cryptonote-whitepaper.pdf',
+            'source' : 'CryptoNote Whitepaper',
+            'year' : 2013
+            } , {
+            'title': 'What advantages does Monero offer that are not provided by other cryptocurrencies?',
+            'author' : 'JollyMort',
+            'url' : 'https://monero.stackexchange.com/questions/2254/what-advantages-does-monero-offer-that-are-not-provided-by-other-cryptocurrencie/',
+            'source' : 'StackExchange',
+            'year' : 2017
+        }]
     } ,
     'supply-properties' : {
         'title' : 'Supply Properties',
@@ -58,14 +176,14 @@ After this, there is the 'tail-emission' era. Once the miner's block reward reac
             }, {
             'url' : 'emission-curve',
             'title' : 'Emission curve'
-            }],
+        }],
         'references' : [{
             'title': 'Useful For Learning About Monero: Coin Emission And Block Reward Schedules',
             'author' : 'Amichateur',
             'url' : 'https://www.reddit.com/r/Monero/comments/512kwh/useful_for_learning_about_monero_coin_emission/',
             'source' : 'Reddit',
             'year' : 2017
-            }]
+        }]
     } ,
     'history' : {
         'title' : 'History',
@@ -79,7 +197,7 @@ After this, there is the 'tail-emission' era. Once the miner's block reward reac
             } , {
             'url' : 'bitmonero',
             'title' : 'Bitmonero'
-            }],
+        }],
         'references' : [{
             'title': 'Bytecoin. Secure, private, untraceable since 2012',
             'author' : 'DStrange',
@@ -104,7 +222,7 @@ After this, there is the 'tail-emission' era. Once the miner's block reward reac
             'url' : 'https://bitcointalk.org/index.php?topic=583449',
             'source' : 'BitcoinTalk Forum',
             'year' : 2014
-            }]
+        }]
     } ,
     'sound-money' : {
         'title' : 'Sound Money',
@@ -138,13 +256,13 @@ Well, it seems "udderly" clear at this point that ℳonero is a much better form
             }, {
             'url' : 'emission-curve',
             'title' : 'Emission curve'
-            }],
+        }],
         'references' : [{
             'title': 'Functions of Money',
             'author' : 'The Federal Reserve Bank',
             'url' : 'https://www.stlouisfed.org/education/economic-lowdown-podcast-series/episode-9-functions-of-money',
             'source' : 'The Economic Lowdon Podcast',
             'year' : 2020
-            }]
+        }]
     }
 }
