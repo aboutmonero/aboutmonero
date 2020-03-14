@@ -37,6 +37,36 @@ A wallet has a seed. From this seed, the primary address private spend and view 
             'year' : 2018
         }]
     } ,
+    'address' : {
+        'title' : 'Address',
+        'body' : '''A monero address is where monero is sent to. If you want to send monero to someone, you need their address. This address can be your primary wallet address or a subaddress of a wallet. Every Monero address is 95 characters and begins with a 4. The Monero Core Team donation address, for instance, is 44AFFq5kSiGBoZ4NMDwYtN18obc8AemS33DBLWs3H7otXft3XjrpDtQGv7SqSsaBYBb98uNbr2VBBEt7f2wfn3RVGQBEP3A. [1] <br><br>Because monero addresses can be so long and difficult to remember, the Core team has introduced OpenAlias to create memorable personalized monero addresses. For example, monero donations can be sent to donate@getmonero.org or donate.getmonero.org. [2]''',
+        'related-topics' : [{
+            'url' : 'open-alias',
+            'title' : 'OpenAlias'
+            } , {
+            'url' : 'subaddress',
+            'title' : 'Subaddress'
+            } , {
+            'url' : 'stealth-address',
+            'title' : 'Stealth address'
+            } , {
+            'url' : 'wallet',
+            'title' : 'Wallet'
+        }],
+        'references' : [{
+            'title': 'Address',
+            'author' : 'Monero Core',
+            'url' : 'https://web.getmonero.org/resources/moneropedia/address.html',
+            'source' : 'getmonero.org',
+            'year' : 2020
+            } , {
+            'title': 'OpenAlias Homepage',
+            'author' : 'Monero Core Team',
+            'url' : 'https://openalias.org/',
+            'source' : 'openalias.org',
+            'year' : 2020
+        }]
+    } ,
     'airdrop' : {
         'title' : 'Airdrop',
         'body' : 'Distributing a cryptocurrency token or coin, usually for free, to numerous wallet addresses. [1] In a typical ICO, participants contribute capital to buy tokens whereas, in an airdrop (or hard fork), tokens are allocated to existing holders of a particular chain—typically Bitcoin or Ethereum. Instead of buying tokens, they’re simply given away to the holders of another coin. [2]',
