@@ -49,7 +49,7 @@ def cache_price():
         return False
         
 def cache_blocks(last = None, end = None):
-    daemon = Daemon(host='10.8.0.4',JSONRPCDaemon(port=18081))
+    daemon = Daemon(JSONRPCDaemon(host='10.8.0.4', port=18081))
     new = []
     if not end:
         end = daemon.height() - 1
