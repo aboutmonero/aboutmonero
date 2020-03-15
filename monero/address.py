@@ -1,6 +1,6 @@
 from binascii import hexlify, unhexlify
 import re
-from sha3 import keccak_256
+from .sha3 import keccak_256
 import six
 import struct
 import warnings
