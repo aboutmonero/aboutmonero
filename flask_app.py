@@ -59,8 +59,5 @@ def follow():
 def topic(topic):
     ip = request.environ.get('HTTP_X_REAL_IP', request.remote_addr)   
     cache.cache([[time.time(), ip, '/learn/'+topic]],'../usage')
-    if topic in learn_pages.keys():
-        return render_template('/article.html', data = learn_pages[topic])
-    else:
-        return render_template('/learn/'+topic+'.html')
+    return render_template('/article.html', data = learn_pages[topic])
 
