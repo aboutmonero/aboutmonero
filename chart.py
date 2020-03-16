@@ -134,7 +134,7 @@ def build_chart(x_data, y_data, label_req, dur, scatter = False ):
     if scatter:
         plt.scatter(dates, y_data,s=.01)
     else:
-        ax.plot(dates, y_data,linewidth=.5)
+        ax.plot(dates, y_data,linewidth=.5,color = 'black')
 
     if label['scale']:
         if 'ℳ' in list(label['y-axis']) :
