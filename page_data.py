@@ -609,14 +609,14 @@ An alternate method of creating money is proposed, via an auction where particip
         'title' : 'Blockchain',
         'body' : '''At its core, Monero is built on the same technology that Bitcoin operates on. Unlike Bitcoin, Monero is built on the CryptoNote protocol. This protocol is an entirely new implementation of the blockchain technology with some key differences in database type, block size, privacy features, and fees for transactions. For more information please see the references below.''',
         'related-topics' : [{
-            'url' : 'hashcash',
-            'title' : 'Hashcash'
+            'url' : 'block',
+            'title' : 'Block'
+            } , {
+            'url' : 'cryptonote',
+            'title' : 'CryptoNote'
             } , {
             'url' : 'proof-of-work',
             'title' : 'Proof-of-work'
-            } , {
-            'url' : 'satoshi-nakamoto',
-            'title' : 'Satoshi Nakamoto'
             } , {
             'url' : 'history',
             'title' : 'History'
@@ -637,7 +637,7 @@ An alternate method of creating money is proposed, via an auction where particip
             'title': 'Why did Monero choose LMDB over alternative database types?',
             'author' : 'hyc',
             'url' : 'https://monero.stackexchange.com/questions/702/why-did-monero-choose-lmdb-over-alternative-database-types',
-            'source' : 'StacckExchange',
+            'source' : 'StackExchange',
             'year' : 2016
         }]
     } ,
