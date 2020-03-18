@@ -605,6 +605,42 @@ An alternate method of creating money is proposed, via an auction where particip
             'year' : 2020
         }]
     } ,
+    'blockchain' : {
+        'title' : 'Blockchain',
+        'body' : '''At its core, Monero is built on the same technology that Bitcoin operates on. Unlike Bitcoin, Monero is built on the CryptoNote protocol. This protocol is an entirely new implementation of the blockchain technology with some key differences in database type, block size, privacy features, and fees for transactions. For more information please see the references below.''',
+        'related-topics' : [{
+            'url' : 'hashcash',
+            'title' : 'Hashcash'
+            } , {
+            'url' : 'proof-of-work',
+            'title' : 'Proof-of-work'
+            } , {
+            'url' : 'satoshi-nakamoto',
+            'title' : 'Satoshi Nakamoto'
+            } , {
+            'url' : 'history',
+            'title' : 'History'
+        }],
+        'references' : [{
+            'title': 'Block chain',
+            'author' : 'Bitcoin Wiki Editors',
+            'url' : 'https://en.bitcoin.it/wiki/Block_chain',
+            'source' : 'Bitcoin Wiki',
+            'year' : 2020
+            } , {
+            'title': 'CRYPTONOTE STANDARD 003 - CryptoNote Blockchain ',
+            'author' : 'Antonio M. Juarez',
+            'url' : '../../static/cryptonote_standards/cns003.txt',
+            'source' : 'CryptoNote Standards',
+            'year' : 2012
+            } , {
+            'title': 'Why did Monero choose LMDB over alternative database types?',
+            'author' : 'hyc',
+            'url' : 'https://monero.stackexchange.com/questions/702/why-did-monero-choose-lmdb-over-alternative-database-types',
+            'source' : 'StacckExchange',
+            'year' : 2016
+        }]
+    } ,
     'cryptonote-standards' : {
         'title' : 'CryptoNote standards',
         'body' : '''
