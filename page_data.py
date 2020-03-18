@@ -445,7 +445,7 @@ A block explorer can be used to query transactions and blocks to analyze what da
         'references' : [{
         }]
     } ,
-    'block-height' : {
+    'block-interval' : {
         'title' : 'Block interval',
         'body' : '''
 The average duration of time between confirming blocks in the blockchain. For the Monero blockchain, there was initially a one minute block interval then later changed to two minutes. If there is in increase in the network hashrate, then blocks are produced faster. That is why there is a difficulty adjustment. As the network hashrate increases, the difficulty of confirming blocks also increases to try to maintain a two minute block interval.''',
@@ -608,6 +608,41 @@ An alternate method of creating money is proposed, via an auction where particip
     'blockchain' : {
         'title' : 'Blockchain',
         'body' : '''At its core, Monero is built on the same technology that Bitcoin operates on. Unlike Bitcoin, Monero is built on the CryptoNote protocol. This protocol is an entirely new implementation of the blockchain technology with some key differences in database type, block size, privacy features, and fees for transactions. For more information please see the references below.''',
+        'related-topics' : [{
+            'url' : 'block',
+            'title' : 'Block'
+            } , {
+            'url' : 'cryptonote',
+            'title' : 'CryptoNote'
+            } , {
+            'url' : 'proof-of-work',
+            'title' : 'Proof-of-work'
+            } , {
+            'url' : 'history',
+            'title' : 'History'
+        }],
+        'references' : [{
+            'title': 'Block chain',
+            'author' : 'Bitcoin Wiki Editors',
+            'url' : 'https://en.bitcoin.it/wiki/Block_chain',
+            'source' : 'Bitcoin Wiki',
+            'year' : 2020
+            } , {
+            'title': 'CRYPTONOTE STANDARD 003 - CryptoNote Blockchain ',
+            'author' : 'Antonio M. Juarez',
+            'url' : '../../static/cryptonote_standards/cns003.txt',
+            'source' : 'CryptoNote Standards',
+            'year' : 2012
+            } , {
+            'title': 'Why did Monero choose LMDB over alternative database types?',
+            'author' : 'hyc',
+            'url' : 'https://monero.stackexchange.com/questions/702/why-did-monero-choose-lmdb-over-alternative-database-types',
+            'source' : 'StackExchange',
+            'year' : 2016
+        }]
+    'block-size-debate' : {
+        'title' : 'Block size debate',
+        'body' : '''The size of blocks bottleneck the number of transactions that can be included. If there are no blocksize limits, competition amongst miners will force blocks to include transactions at the lowest fee possible. If there is no additional block reward, there is little incentive for miners to compete causing the security of the network to be compromised. When blocks have a fixed size, there is no limit to the amount of transactions requested to be included into a block. This could potentially cause fees to be unreasonably high for normal users. The monero supply has a constant tail emission which provides a stable anchor to incentivize miners while also allowing block size to adapt to the current network demands.''',
         'related-topics' : [{
             'url' : 'block',
             'title' : 'Block'
