@@ -640,6 +640,7 @@ An alternate method of creating money is proposed, via an auction where particip
             'source' : 'StackExchange',
             'year' : 2016
         }]
+    } ,
     'block-size-debate' : {
         'title' : 'Block size debate',
         'body' : '''The size of blocks bottleneck the number of transactions that can be included. If there are no blocksize limits, competition amongst miners will force blocks to include transactions at the lowest fee possible. If there is no additional block reward, there is little incentive for miners to compete causing the security of the network to be compromised. When blocks have a fixed size, there is no limit to the amount of transactions requested to be included into a block. This could potentially cause fees to be unreasonably high for normal users. The monero supply has a constant tail emission which provides a stable anchor to incentivize miners while also allowing block size to adapt to the current network demands.''',
