@@ -839,7 +839,6 @@ The Monero network is built on the CryptoNote Protocol. Since 2014, the core tea
         <li><a href='https://www.binance.com/en'>Binance</a>: Reputable cryptocurrency exchange.</li>
         </ul>[1]''',
         'related-topics' : [{
-            } , {
             'url' : 'send-monero',
             'title' : 'Send monero'
             } , {
