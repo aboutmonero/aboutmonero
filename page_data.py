@@ -700,7 +700,7 @@ An alternate method of creating money is proposed, via an auction where particip
             'title': 'A brief history of Boolberry',
             'author' : 'Boolberry',
             'url' : 'https://medium.com/@BoolberryBBR/a-brief-history-of-boolberry-c4048d692272',
-            'source' : 'BitcoinTalk Forum',
+            'source' : 'Medium',
             'year' : 2019
         }]
     } ,
