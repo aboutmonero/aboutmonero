@@ -404,6 +404,12 @@ reward: 7883911503742
             'url' : 'https://monero.stackexchange.com/questions/3958/what-is-the-format-of-a-block-in-the-monero-blockchain',
             'source' : 'StackExchange',
             'year' : 2017
+            } , {
+            'title': 'CRYPTONOTE STANDARD 003 - CryptoNote Blockchain ',
+            'author' : 'Antonio M. Juarez',
+            'url' : '../../static/cryptonote_standards/cns003.txt',
+            'source' : 'CryptoNote Standards',
+            'year' : 2012
         }]
     } ,
     'block-explorer' : {
@@ -643,7 +649,7 @@ An alternate method of creating money is proposed, via an auction where particip
     } ,
     'block-size-debate' : {
         'title' : 'Block size debate',
-        'body' : '''The size of blocks bottleneck the number of transactions that can be included. If there are no blocksize limits, competition amongst miners will force blocks to include transactions at the lowest fee possible. When there is no additional block reward, there is little incentive for miners to compete. This could potentially centralize the mining power to a single miner compromising the security of the network. When blocks have a fixed size, there is a limit to the number of transactions requested to be included into a block. This could potentially cause fees to be unreasonably high for normal users. The monero supply has a constant tail emission which provides a stable anchor to incentivize miners while also allowing block size to adapt to the current network demands.''',
+        'body' : '''The size of blocks bottleneck the number of transactions that can be included. If there are no blocksize limits, competition amongst miners will force blocks to include transactions at the lowest fee possible. When there is no additional block reward, there is little incentive for miners to compete. This could potentially centralize the mining power to a single miner compromising the security of the network. When blocks have a fixed size, there is a limit to the number of transactions requested to be included into a block. This could potentially cause fees to be unreasonably high for normal users.[1] The monero supply has a constant tail emission which provides a stable anchor to incentivize miners while also allowing block size to adapt to the current network demands.[2]''',
         'related-topics' : [{
             'url' : 'block',
             'title' : 'Block'
