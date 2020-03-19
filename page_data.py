@@ -786,7 +786,7 @@ The Monero network is built on the CryptoNote Protocol. Since 2014, the core tea
     } ,
     'create-a-wallet' : {
         'title' : 'Create a wallet',
-        'body' : '''These are some recommended sources for creating and using a Monero wallet
+        'body' : '''These are some recommended sources for creating and using a Monero wallet:
         <ul>
         <li><a href='https://github.com/monero-project/monero-gui'>Monero Core GUI</a>: Wallet supported by the Monero Core developers.</li>
         
@@ -829,7 +829,7 @@ The Monero network is built on the CryptoNote Protocol. Since 2014, the core tea
     } ,
     'obtain-monero' : {
         'title' : 'Obtain monero',
-        'body' : '''Monero can be obtained through exchange or through mining blocks. These are some recommended exchanges for obtaining monero with fiat currency
+        'body' : '''Monero can be obtained through exchange or through mining blocks. These are some recommended exchanges for obtaining monero with fiat currency:
         <ul>
         <li><a href='https://bisq.network'>Bisq</a>: Open source P2P exchange operating on Tor network.</li>
         <li><a href='https://localmonero.co/?language=en'>LocalMonero</a>: Classifieds based P2P exchange.</li>
