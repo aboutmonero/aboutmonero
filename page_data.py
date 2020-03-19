@@ -970,6 +970,12 @@ After this, there is the 'tail-emission' era. Once the miner's block reward reac
             'url' : 'https://bitcointalk.org/index.php?topic=583449',
             'source' : 'BitcoinTalk Forum',
             'year' : 2014
+            } , {
+            'title': "Monero's Early History with fluffypony - 5th Moneroversary 2019",
+            'author' : ' Monero Community Workgroup',
+            'url' : 'https://www.youtube.com/watch?v=olGIzybdrAA',
+            'source' : 'Youtube',
+            'year' : 2019
         }]
     } ,
     'sound-money' : {
