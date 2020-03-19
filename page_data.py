@@ -702,7 +702,6 @@ An alternate method of creating money is proposed, via an auction where particip
             'url' : 'https://medium.com/@BoolberryBBR/a-brief-history-of-boolberry-c4048d692272',
             'source' : 'BitcoinTalk Forum',
             'year' : 2019
-            } , {
         }]
     } ,
     'cryptonote-standards' : {
