@@ -788,13 +788,13 @@ The Monero network is built on the CryptoNote Protocol. Since 2014, the core tea
         'title' : 'Create a wallet',
         'body' : '''These are some recommended sources for creating and using a Monero wallet
         <ul>
-        <li><a href='https://github.com/monero-project/monero-gui'> Monero Core GUI</a></li>
+        <li><a href='https://github.com/monero-project/monero-gui'>Monero Core GUI</a></li>
         
-        <li><a href='https://www.mymonero.com/'> MyMonero Wallet</a></li>
+        <li><a href='https://www.mymonero.com/'>MyMonero Wallet</a></li>
         
         <li><a href='https://cakewallet.com/'>Cake Wallet</a></li>
         
-        <li><a href='https://www.monerujo.io/'> Monerujo Wallet</a></li>
+        <li><a href='https://www.monerujo.io/'>Monerujo Wallet</a></li>
         
         </ul>''',
         'related-topics' : [{
@@ -814,11 +814,6 @@ The Monero network is built on the CryptoNote Protocol. Since 2014, the core tea
             'title' : 'Store monero'
         }],
         'references' : [{
-            'title': 'CryptoNote Standards',
-            'author' : 'CryptoNote',
-            'url' : '',
-            'source' : '',
-            'year' : 2012
         }]
     } ,
     'privacy' : {
