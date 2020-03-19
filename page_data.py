@@ -797,6 +797,12 @@ The Monero network is built on the CryptoNote Protocol. Since 2014, the core tea
             'url' : 'stealth-address',
             'title' : 'Stealth Address'
             } , {
+            'url' : 'bulletproofs',
+            'title' : 'Bulletproofs'
+            } , {
+            'url' : 'range-proofs',
+            'title' : 'Range proofs'
+            } , {
             'url' : 'cryptonote',
             'title' : 'Cryptonote'
         }],
