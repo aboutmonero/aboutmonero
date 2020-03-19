@@ -978,6 +978,30 @@ After this, there is the 'tail-emission' era. Once the miner's block reward reac
             'year' : 2019
         }]
     } ,
+    'receive-monero' : {
+        'title' : 'Receive monero',
+        'body' : """To receive monero, you must provide the sender with your wallet address. This is your 95-character address beginning with a '4'. One-time stealth addresses protect your public key from being revealed to the public view so only the sender will know the address.[1]""",
+        'related-topics' : [{
+            'url' : 'send-monero',
+            'title' : 'Send monero'
+            } , {
+            'url' : 'store-monero',
+            'title' : 'Store monero'
+            } , {
+            'url' : 'stealth-address',
+            'title' : 'Steath address'
+            } , {
+            'url' : 'create-a-wallet',
+            'title' : 'Create a wallet'
+        }],
+        'references' : [{
+            'title': 'Monero GUI Guide',
+            'author' : 'Monero Ecosystem',
+            'url' : 'https://github.com/monero-ecosystem/monero-GUI-guide/blob/master/monero-GUI-guide.md',
+            'source' : 'Github',
+            'year' : 2020
+        }]
+    } ,
     'sound-money' : {
         'title' : 'Sound Money',
         'body' : """There have been many forms of money in history, but some forms have worked better than others because they have characteristics that make them more useful. The characteristics of money are durability, portability, divisibility, uniformity, limited supply, and acceptability [1]. Let's compare two examples of possible forms of money:
