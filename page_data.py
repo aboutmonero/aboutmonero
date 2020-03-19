@@ -674,6 +674,37 @@ An alternate method of creating money is proposed, via an auction where particip
             'year' : 2016
         }]
     } ,
+    'boolberry' : {
+        'title' : 'Boolberry',
+        'body' : '''At its core, Monero is built on the CryptoNote protocol. The origin of CryptoNote is largely unknown and disputed. In the original implementation there are many references to Andrey N. Sabelnikov. It is suspected that he played a role in the development of the CryptoNote Protocol. The first cryptocurrency to make use of the CryptoNote protocol was Bytecoin [1]. Many members of the cryptocurrency community were concerned about the lack of transparency from the Bytecoin development team. As a result, numerous copies of the CryptoNote protocol were made and many teams attemped to launch their own version of the CryptoNote protocol. Boolberry was one of these copies which was led by Andrey N. Sabelnikov. Since 2020, the development team has largely disbanded the project to focus work on a project named Zano.''',
+        'related-topics' : [{
+            'url' : 'cryptonote',
+            'title' : 'CryptoNote'
+            } , {
+            'url' : 'history',
+            'title' : 'History'
+        }],
+        'references' : [{
+            'title': 'Bytecoin. Secure, private, untraceable since 2012',
+            'author' : 'DStrange',
+            'url' : 'https://bitcointalk.org/index.php?topic=512747',
+            'source' : 'BitcoinTalk Forum',
+            'year' : 2014
+            } , {
+            'title': '[BBR] Boolberry: Privacy and Security - Guaranteed Since 2014',
+            'author' : 'crypto_zoidberg',
+            'url' : 'https://bitcointalk.org/index.php?topic=577267.0',
+            'source' : 'BitcoinTalk Forum',
+            'year' : 2014
+            } , {
+            'title': 'A brief history of Boolberry',
+            'author' : 'Boolberry',
+            'url' : 'https://medium.com/@BoolberryBBR/a-brief-history-of-boolberry-c4048d692272',
+            'source' : 'BitcoinTalk Forum',
+            'year' : 2019
+            } , {
+        }]
+    } ,
     'cryptonote-standards' : {
         'title' : 'CryptoNote standards',
         'body' : '''
