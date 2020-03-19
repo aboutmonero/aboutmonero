@@ -814,6 +814,17 @@ The Monero network is built on the CryptoNote Protocol. Since 2014, the core tea
             'title' : 'Store monero'
         }],
         'references' : [{
+            'title': 'Monero',
+            'author' : 'Monero Community',
+            'url' : 'https://www.reddit.com/r/Monero/',
+            'source' : 'Reddit',
+            'year' : 2015
+            } , {
+            'title': 'Downloads',
+            'author' : 'Monero Core',
+            'url' : 'https://web.getmonero.org/downloads/',
+            'source' : 'getmonero.org',
+            'year' : 2015
         }]
     } ,
     'privacy' : {
