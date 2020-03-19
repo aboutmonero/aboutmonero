@@ -788,15 +788,15 @@ The Monero network is built on the CryptoNote Protocol. Since 2014, the core tea
         'title' : 'Create a wallet',
         'body' : '''These are some recommended sources for creating and using a Monero wallet
         <ul>
-        <li><a href='https://github.com/monero-project/monero-gui'>Monero Core GUI</a></li>
+        <li><a href='https://github.com/monero-project/monero-gui'>Monero Core GUI</a>: Wallet supported by the Monero Core developers.</li>
         
-        <li><a href='https://www.mymonero.com/'>MyMonero Wallet</a></li>
+        <li><a href='https://www.mymonero.com/'>MyMonero Wallet</a>: Web wallet and desktop wallet.</li>
         
-        <li><a href='https://cakewallet.com/'>Cake Wallet</a></li>
+        <li><a href='https://cakewallet.com/'>Cake Wallet</a>: Mobile wallet</li>
         
-        <li><a href='https://www.monerujo.io/'>Monerujo Wallet</a></li>
+        <li><a href='https://www.monerujo.io/'>Monerujo Wallet</a>: Mobile Wallet</li>
         
-        </ul>''',
+        </ul>[1][2]''',
         'related-topics' : [{
             'url' : 'wallet',
             'title' : 'Wallet'
@@ -824,6 +824,39 @@ The Monero network is built on the CryptoNote Protocol. Since 2014, the core tea
             'author' : 'Monero Core',
             'url' : 'https://web.getmonero.org/downloads/',
             'source' : 'getmonero.org',
+            'year' : 2020
+        }]
+    } ,
+    'obtain-monero' : {
+        'title' : 'Obtain monero',
+        'body' : '''Monero can be obtained through exchange or through mining blocks. These are some recommended exchanges for obtaining monero with fiat currency
+        <ul>
+        <li><a href='https://bisq.network'>Bisq</a>: Open source P2P exchange operating on Tor network.</li>
+        <li><a href='https://localmonero.co/?language=en'>LocalMonero</a>: Classifieds based P2P exchange.</li>
+        <li><a href='https://changenow.io/'>ChangeNow</a>: Instant accountless cryptocurrency swap.</li>
+        <li><a href='https://www.kraken.com/en-us/'>Kraken</a>: Reputable cryptocurrency exchange.</li>
+        <li><a href='https://bittrex.com/'>Bittrex</a>: Reputable cryptocurrency exchange.</li>
+        <li><a href='https://www.binance.com/en'>Binance</a>: Reputable cryptocurrency exchange.</li>
+        </ul>[1]''',
+        'related-topics' : [{
+            } , {
+            'url' : 'send-monero',
+            'title' : 'Send monero'
+            } , {
+            'url' : 'receive-monero',
+            'title' : 'Receive monero'
+            } , {
+            'url' : 'store-monero',
+            'title' : 'Store monero'
+            } , {
+            'url' : 'mine-monero',
+            'title' : 'Mine monero'
+        }],
+        'references' : [{
+            'title': 'Monero',
+            'author' : 'Monero Community',
+            'url' : 'https://www.reddit.com/r/Monero/',
+            'source' : 'Reddit',
             'year' : 2015
         }]
     } ,
