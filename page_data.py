@@ -784,6 +784,43 @@ The Monero network is built on the CryptoNote Protocol. Since 2014, the core tea
             'year' : 2012
         }]
     } ,
+    'create-a-wallet' : {
+        'title' : 'Create a wallet',
+        'body' : '''These are some recommended sources for creating and using a Monero wallet
+        <ul>
+        <li><a href='https://github.com/monero-project/monero-gui'> Monero Core GUI</a></li>
+        
+        <li><a href='https://www.mymonero.com/'> MyMonero Wallet</a></li>
+        
+        <li><a href='https://cakewallet.com/'>Cake Wallet</a></li>
+        
+        <li><a href='https://www.monerujo.io/'> Monerujo Wallet</a></li>
+        
+        </ul>''',
+        'related-topics' : [{
+            'url' : 'wallet',
+            'title' : 'Wallet'
+            } , {
+            'url' : 'obtain-monero',
+            'title' : 'Obtain monero'
+            } , {
+            'url' : 'send-monero',
+            'title' : 'Send monero'
+            } , {
+            'url' : 'receive-monero',
+            'title' : 'Receive monero'
+            } , {
+            'url' : 'store-monero',
+            'title' : 'Store monero'
+        }],
+        'references' : [{
+            'title': 'CryptoNote Standards',
+            'author' : 'CryptoNote',
+            'url' : '',
+            'source' : '',
+            'year' : 2012
+        }]
+    } ,
     'privacy' : {
         'title' : 'Privacy',
         'body' : 'Privacy and anonymity are the most important aspects of electronic cash.  Peer-to-peer payments seek to be concealed from third party’s view, a distinct difference when compared with traditional banking.  In particular, T. Okamoto and K. Ohta described six criteria of ideal electronic cash, which included “privacy:  relationship between the user and his purchases must be untraceable by anyone” [1].  From their description,  the CryptoNote protocol developers derived two properties which a fully anonymous electronic cash model must satisfy in order to comply with the requirements outlined by Okamoto and Ohta: Untraceability: for each incoming transaction all possible senders are equiprobable. Unlinkability: for any two outgoing transactions it is impossible to prove they were sent to the same person. [2] Monero meets these requirements through the utilization of the three encryption technologies: Ring Signatures, Stealth Addresses, and Ring Confidential Transactions. [3]',
