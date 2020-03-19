@@ -704,6 +704,51 @@ An alternate method of creating money is proposed, via an auction where particip
             'year' : 2019
         }]
     } ,
+    'bootstrap-node' : {
+        'title' : 'Bootstrap node',
+        'body' : '''In the GUI, bootstrap node is a remote node to use whilst also syncing the blockchain. This is different to a straight up remote node in that using a remote node will not also sync the blockchain to local. <br><br> With regards to dEBRUYNE_1's reddit post, what is described is to default to using a bootstrap node and then automatically switch to local node when the blockchain has fully synced.[1]''',
+        'related-topics' : [{
+            'url' : 'node',
+            'title' : 'Node'
+            } , {
+            'url' : 'daemon',
+            'title' : 'Daemon'
+        }],
+        'references' : [{
+            'title': 'What is the "bootstrap node" when creating a monero wallet via the GUI?',
+            'author' : 'jtgrassie',
+            'url' : 'https://monero.stackexchange.com/questions/8604/what-is-the-bootstrap-node-when-creating-a-monero-wallet-via-the-gui',
+            'source' : 'StackExchange',
+            'year' : 2018
+        }]
+    } ,
+    'bulletproofs' : {
+        'title' : 'Bulletproofs',
+        'body' : '''Monero's confidential transactions hide the amounts involved. To ensure that inputs and outputs balance properly in a way that can be verified by anyone, we use commitments that have useful algebraic properties. However, this isn't enough. We also need to ensure that each amount is a positive value that won't risk an overflow, and this is where range proofs come in. A range proof allows anyone to verify that a commitment represents an amount within a specified range, without revealing anything else about its value. Our current range proofs scale linearly in size with the number of outputs and the number of bits in the range (currently 64 bits), meaning they make up the bulk of a transaction's size. Further, this means that a transaction with multiple outputs needs multiple separate range proofs. Not great. <br><br> Thanks to a fantastic new paper by Bünz, Bootle, and others [2], there is a more efficient way to handle range proofs. The size of a bulletproof increases only logarithmically with both the size of the range and the number of outputs. This gives us two related types of bulletproofs: single-output and multiple-output. A transaction with multiple outputs can either include several single-output proofs or one multiple-output proof (which is smaller than the separate proofs). [1]''',
+        'related-topics' : [{
+            'url' : 'privacy',
+            'title' : 'Privacy'
+            } , {
+            'url' : 'range-proofs',
+            'title' : 'Range proofs'
+            } , {
+            'url' : 'ringct',
+            'title' : 'RingCT'
+        }],
+        'references' : [{
+            'title': 'Monero Compatible Bulletproofs',
+            'author' : 'Sarang Noether',
+            'url' : 'https://web.getmonero.org/2017/12/07/Monero-Compatible-Bulletproofs.html',
+            'source' : 'getmonero.org',
+            'year' : 2017
+            } , {
+            'title': 'Bulletproofs:  Short Proofs for Confidential Transactions and More',
+            'author' : 'Bünz, Bootle',
+            'url' : '../static/bulletproofs.pdf',
+            'source' : 'Stanford University',
+            'year' : 2016
+        }]
+    } ,
     'cryptonote-standards' : {
         'title' : 'CryptoNote standards',
         'body' : '''
