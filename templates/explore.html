@@ -41,6 +41,17 @@
         margin: 0 auto;
         max-height: 100%;
         max-width: 100%;
+    } 
+    .column {
+      float: left;
+    }
+
+    .left {
+      width: 25%;
+    }
+
+    .right {
+      width: 75%;
     }
 </style>
  <style>
@@ -79,6 +90,8 @@
 <h1>Explore <span style="float:right;"> about<span style='font-size:16'>ℳ</span>onero </span></h1>
     
 <hr>
+<div class="row">
+<div class='column'>
 <center>
 <br>
 Statistics and charts for the Monero network.
@@ -161,6 +174,10 @@ Statistics and charts for the Monero network.
 </tr>
 </table>
 <br>
+</center>
+</div>
+<div class='column'>
+<center>
 <main>
     <section id="version_1M"> <img src="../static/data/version_1M.png" alt="Major and minor version of client used by miner." ></section>
     <section id="version_1Y"> <img src="../static/data/version_1Y.png" alt="Major and minor version of client used by miner." ></section>
@@ -206,6 +223,8 @@ Statistics and charts for the Monero network.
     <section id="price_all"> <img src="../static/data/price_all.png" alt="Major and minor version of client used by miner." ></section>
 </main>
 </center>
+</div>
+</div>
 <br>
 
 Source code for computation can be found at <a href='https://raw.githubusercontent.com/aboutmonero/aboutmonero/master/block_data.py'>githubusercontent.com/aboutmonero/aboutmonero/master/block_data.py</a>
