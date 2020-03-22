@@ -162,6 +162,8 @@ def build_chart(x_data, y_data, label_req, dur, scatter = False ):
     date_formatter = mdate.DateFormatter(date_fmt)
     
     ax.xaxis.set_minor_locator(mdates.MonthLocator(bymonth=3))
+    ax.xaxis.set_major_locator(mdates.YearLocator())
+    ax.xaxis.set_minor_formatter(date_formatter)
     ax.xaxis.set_major_formatter(date_formatter)
     
     ax.grid(which='major',linestyle = '--')
