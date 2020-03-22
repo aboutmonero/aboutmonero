@@ -89,7 +89,7 @@ def get_block_data():
             
         #inflation 1y %
         reward_1y += x[3]
-        last_block['1yo'] += p*x[3]
+        last_block['1yo'] += last_block['price']*x[3]
         year.append([x[0],[p,x[3]]])
         while year[0][0] < x[0] - 365*24*60*60:
             amt = year.popleft()[1]
