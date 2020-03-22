@@ -155,15 +155,18 @@ def build_chart(x_data, y_data, label_req, dur, scatter = False ):
     
     if label['scale']=='log':
         ax.yaxis.set_major_locator(LogLocator(base=10))
-        ax.yaxis.set_minor_locator(LogLocator(base=10,subs=(0.1,)))
+        ax.yaxis.set_minor_locator(LogLocator(base=10,subs=[0.2,0.4,0.6,0.8]))
     
     
     date_fmt = '%m/%d/%y'
     date_formatter = mdate.DateFormatter(date_fmt)
-    
-    ax.xaxis.set_minor_locator(mdates.MonthLocator(bymonth=3))
-    ax.xaxis.set_major_locator(mdates.YearLocator())
-    ax.xaxis.set_minor_formatter(date_formatter)
+    if dur = '1M':
+        ax.xaxis.set_minor_locator(mdates.DayLocator(interval=7))
+        ax.xaxis.set_major_locator(mdates.MonthLocator(interval=3))
+    else:
+        ax.xaxis.set_minor_locator(mdates.MonthLocator(interval=3))
+        ax.xaxis.set_major_locator(mdates.YearLocator())
+        
     ax.xaxis.set_major_formatter(date_formatter)
     
     ax.grid(which='major',linestyle = '--')
