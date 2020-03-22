@@ -2,7 +2,6 @@ import matplotlib
 import matplotlib.pyplot as plt
 import matplotlib.dates as mdate
 from matplotlib.ticker import LogLocator
-import matplotlib.dates as mdates
 
 labels = {
     'inflation': {
@@ -161,13 +160,16 @@ def build_chart(x_data, y_data, label_req, dur, scatter = False ):
     date_fmt = '%m/%d/%y'
     date_formatter = mdate.DateFormatter(date_fmt)
     if dur == '1M':
-        ax.xaxis.set_minor_locator(mdates.DayLocator(interval=7))
-        ax.xaxis.set_major_locator(mdates.MonthLocator(interval=3))
+        date_formatter = mdate.DateFormatter('%m/%d/%y')
+        ax.xaxis.set_minor_locator(mdate.DayLocator())
+        ax.xaxis.set_major_locator(mdate.WeekdayLocator(byweekday = mdate.SU))
+        ax.xaxis.set_major_formatter(date_formatter)
     else:
-        ax.xaxis.set_minor_locator(mdates.MonthLocator(interval=3))
-        ax.xaxis.set_major_locator(mdates.YearLocator())
+        date_formatter = mdate.DateFormatter('%y')
+        ax.xaxis.set_minor_locator(mdate.MonthLocator(bymonth=[1,4,7,10]))
+        ax.xaxis.set_major_locator(mdate.YearLocator())
+        ax.xaxis.set_major_formatter(date_formatter)
         
-    ax.xaxis.set_major_formatter(date_formatter)
     
     ax.grid(which='major',linestyle = '--')
     ax.grid(which='minor',linestyle = ':')
