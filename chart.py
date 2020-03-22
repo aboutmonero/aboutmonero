@@ -1,8 +1,7 @@
 import matplotlib
 import matplotlib.pyplot as plt
 import matplotlib.dates as mdate
-
-from matplotlib.ticker import (AutoMinorLocator, MultipleLocator)
+from matplotlib.ticker import LogLocator
 
 labels = {
     'inflation': {
