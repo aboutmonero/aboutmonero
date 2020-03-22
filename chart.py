@@ -14,7 +14,14 @@ labels = {
         'title' : 'Value of Circulating Supply',
         'file-name' : 'marketcap',
         'x-axis' : 'Date',
-        'y-axis' : 'Index Value',
+        'y-axis' : '$',
+        'scale' : 'log',
+    } , 
+    'marketcap_infl': {
+        'title' : 'Inflation Adjusted Value of Circulating Supply (2014 Dollars)',
+        'file-name' : 'marketcap_infl',
+        'x-axis' : 'Date',
+        'y-axis' : '2014 $',
         'scale' : 'log',
     } , 
     'block_time': {
@@ -114,6 +121,13 @@ labels = {
         'file-name' : '1yo',
         'x-axis' : 'Date',
         'y-axis' : '$',
+        'scale' : 'log',
+    } , 
+    'wiki_view': {
+        'title' : 'Views of Monero (cryptocurrency) Page on en.wikipedia.org',
+        'file-name' : 'wiki_view',
+        'x-axis' : 'Date',
+        'y-axis' : 'User View #',
         'scale' : 'log',
     }
 }

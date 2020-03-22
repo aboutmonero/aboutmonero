@@ -1,10 +1,12 @@
 from block_data import last_block, get_block_data
 from chart import build_chart
-from cache import update_latest, cache_blocks, cache_price
+from cache import update_latest, cache_blocks, cache_price, cache_CPI, cache_wiki
 import gc
 
 cache_blocks()
 cache_price()
+cache_CPI()
+cache_wiki()
 
 data = get_block_data()
 timestamp = data.pop(0)

@@ -161,9 +161,14 @@
         <td><a href="#nonce_1M">1M</a> <a href="#nonce_1Y">1Y</a> <a href="#nonce_all">All</a></td>
     </tr>
     <tr>
-        <td class = "tooltip">Total Value Index<span class="tooltiptext">Inflation adjusted index of value of total monero supply in circulation. (USD Price)*(Total Supply)/(CPIAUCSL)</span>: </td>
+        <td class = "tooltip">Total Supply Value<span class="tooltiptext">Value of total monero supply in circulation. (USD Price)*(Total Supply)</span>: </td>
         <td>{{data[6]}}</td>
         <td><a href="#marketcap_1M">1M</a> <a href="#marketcap_1Y">1Y</a> <a href="#marketcap_all">All</a></td>
+    </tr>
+    <tr>
+        <td class = "tooltip">Total Supply Value Adj<span class="tooltiptext">Inflation adjusted value of total monero supply in circulation (2014 Dollars). (USD Price)*(Total Supply)/(CPI/CPI_2014)</span>: </td>
+        <td>{{data[17]}}</td>
+        <td><a href="#marketcap_infl_1M">1M</a> <a href="#marketcap_infl_1Y">1Y</a> <a href="#marketcap_infl_all">All</a></td>
     </tr>
     <tr>
         <td class = "tooltip">Transactions 24h<span class="tooltiptext">Number of monero transactions in the previous day.</span>: </td>
@@ -179,6 +184,11 @@
         <td class = "tooltip">Version<span class="tooltiptext">Major and minor version of client used by miner.</span>: </td>
         <td>{{data[12]}}.{{data[13]}} </td>
         <td><a href="#version_1M">1M</a> <a href="#version_1Y">1Y</a> <a href="#version_all">All</a></td>
+    </tr>
+    <tr>
+        <td class = "tooltip">Wikipedia Page Views<span class="tooltiptext">Views of Monero (cryptocurrency) Page on en.wikipedia.org.</span>: </td>
+        <td>{{data[16]}} </td>
+        <td><a href="#wiki_view_1M">1M</a> <a href="#wiki_view_1Y">1Y</a> <a href="#wiki_view_all">All</a></td>
     </tr>
     <tr>
         <td class = "tooltip"> 1 Year Old Coin Value<span class="tooltiptext">Value of all coins less than 1 year old.</span>: </td>
@@ -246,6 +256,9 @@
         <section id="marketcap_1M"> <img src="../static/data/marketcap_1M.png" alt="Major and minor version of client used by miner." ></section>
         <section id="marketcap_1Y"> <img src="../static/data/marketcap_1Y.png" alt="Major and minor version of client used by miner." ></section>
         <section id="marketcap_all"> <img src="../static/data/marketcap_all.png" alt="Major and minor version of client used by miner." ></section>
+        <section id="marketcap_infl_1M"> <img src="../static/data/marketcap_infl_1M.png" alt="Major and minor version of client used by miner." ></section>
+        <section id="marketcap_infl_1Y"> <img src="../static/data/marketcap_infl_1Y.png" alt="Major and minor version of client used by miner." ></section>
+        <section id="marketcap_infl_all"> <img src="../static/data/marketcap_infl_all.png" alt="Major and minor version of client used by miner." ></section>
         <section id="supply_1M"> <img src="../static/data/supply_1M.png" alt="Major and minor version of client used by miner." ></section>
         <section id="supply_1Y"> <img src="../static/data/supply_1Y.png" alt="Major and minor version of client used by miner." ></section>
         <section id="supply_all"> <img src="../static/data/supply_all.png" alt="Major and minor version of client used by miner." ></section>
@@ -255,6 +268,9 @@
         <section id="1yo_1M"> <img src="../static/data/1yo_1M.png" alt="Major and minor version of client used by miner." ></section>
         <section id="1yo_1Y"> <img src="../static/data/1yo_1Y.png" alt="Major and minor version of client used by miner." ></section>
         <section id="1yo_all"> <img src="../static/data/1yo_all.png" alt="Major and minor version of client used by miner." ></section>
+        <section id="wiki_view_1M"> <img src="../static/data/wiki_view_1M.png" alt="Major and minor version of client used by miner." ></section>
+        <section id="wiki_view_1Y"> <img src="../static/data/wiki_view_1Y.png" alt="Major and minor version of client used by miner." ></section>
+        <section id="wiki_view_all"> <img src="../static/data/wiki_view_all.png" alt="Major and minor version of client used by miner." ></section>
     </main>
     </center>
     </div>

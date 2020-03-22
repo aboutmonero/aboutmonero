@@ -71,10 +71,10 @@ def cache_wiki():
     data = get_json("https://wikimedia.org/api/rest_v1/metrics/pageviews/per-article/en.wikipedia/all-access/user/Monero_(cryptocurrency)/daily/"+last+"/"+now+"120100")
     data = list(data['items'])[-1]
     print(data)
-    if data[0]['timestamp'] == last:
+    if data['timestamp'] == last:
         return False
     else:
-        return cache([[time.time(),data[0]['timestamp'],int(data[0]['views'])]],"wiki")
+        return cache([[time.time(),data['timestamp'],int(data['views'])]],"wiki")
                 
 def cache_blocks(last = None, end = None):
     daemon = Daemon(JSONRPCDaemon(host='10.8.0.4', port=18081))
@@ -112,7 +112,7 @@ def get_latest():
         read = reader(f)
         rows = list(read)
     for i in range(len(rows)):
-        if i in [1,2,3,4,6,9,12,13,14,15]:
+        if i in [1,2,3,4,6,9,12,13,14,15,16,17]:
             rows[i] = "{0:,}".format(int(float(rows[i][1])))
         elif i == 10:
             rows[i] = "{0:,.6f}".format(float(rows[i][1]))
@@ -120,4 +120,3 @@ def get_latest():
             rows[i] = "{0:,.2f}".format(float(rows[i][1]))
     return rows
 
-cache_wiki()

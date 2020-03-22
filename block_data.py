@@ -19,8 +19,10 @@ last_block = {
     'hashrate' : 0.1,
     'transaction' : 0,
     'marketcap' : 0,
+    'marketcap_infl' : 0,
     'inflation' : 0,
     '1yo': 0.0,
+    'wiki_view': 0.0
 }
 
 def get_block_data():
@@ -31,14 +33,20 @@ def get_block_data():
     blocks = get_csv("blocks")[::-1]
     price = get_csv("price")[::-1]
     cpi = get_csv("CPIAUCSL")[::-1]
+    wiki = get_csv("wiki")[::-1]
     
     #initiate price
     p = price.pop()    
     last_block['price'] = p[1]
     
+    #initiate wiki
+    w = wiki.pop()    
+    last_block['wiki_views'] = w[2]
+    
     #initiate cpi
     cpi_last = cpi.pop()    
     last_block['cpi'] = cpi_last[1]
+    reference_cpi = cpi_last[1]
     
     #stacks for fast processing
     day = deque([])
@@ -102,7 +110,13 @@ def get_block_data():
             cpi_last = cpi.pop()
             last_block['cpi'] = cpi_last[1]
             
-        last_block['marketcap']=last_block['supply']*last_block['price']/last_block['cpi']
+        #wiki
+        while wiki[0] < x[0] and wiki:
+            w = wiki.pop()
+            last_block['wiki_view'] = w[2]
+            
+        last_block['marketcap']=last_block['supply']*last_block['price']
+        last_block['marketcap_infl']=last_block['supply']*last_block['price']/(last_block['cpi']/reference_cpi)
         
         #fee geometric mean
         if x[5]:
