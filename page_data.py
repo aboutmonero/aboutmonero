@@ -751,7 +751,7 @@ An alternate method of creating money is proposed, via an auction where particip
     } ,
     'bytecoin' : {
         'title' : 'Bytecoin',
-        'body' : '''The first cryptocurrency to utilize the CryptoNote protocol. Its release was shrouded with uncertainty over the initial distribution. Nobody had heard of where, or how, Bytecoin was released; but, it is said that Bytecoin existed for years on the darknet. There is no evidence of this. By the time anybody had any notice of it, over 80% of the supply had been mined. This led to much of the community's distrust. In the coming days many attempts were made to fork the CryptoNote protocol to allow for a fairer distribution of the supply.''',
+        'body' : '''The first cryptocurrency to utilize the CryptoNote protocol.[1] Its release was shrouded with uncertainty over the initial distribution. Nobody had heard of where, or how, Bytecoin was released; but, it is said that Bytecoin existed for years on the darknet. There is no evidence of this. By the time anybody had any notice of it, over 80% of the supply had been mined. This led to much of the community's distrust.[2] In the coming days many attempts were made to fork the CryptoNote protocol to allow for a fairer distribution of the supply.''',
         'related-topics' : [{
             'url' : 'history',
             'title' : 'History'
