@@ -15,7 +15,7 @@ labels = {
         'title' : 'Value of Circulating Supply',
         'file-name' : 'marketcap',
         'x-axis' : 'Date',
-        'y-axis' : '$',
+        'y-axis' : 'Index Value',
         'scale' : 'log',
         'options' : None
     } , 
