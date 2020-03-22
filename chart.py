@@ -1,7 +1,7 @@
 import matplotlib
 import matplotlib.pyplot as plt
 import matplotlib.dates as mdate
-from matplotlib.ticker import LogLocator
+from matplotlib.ticker import LogLocator, LogFormatter
 
 labels = {
     'inflation': {
@@ -154,7 +154,8 @@ def build_chart(x_data, y_data, label_req, dur, scatter = False ):
     
     if label['scale']=='log':
         ax.yaxis.set_major_locator(LogLocator(base=10))
-        ax.yaxis.set_minor_locator(LogLocator(base=10,subs=[0.2,0.4,0.6,0.8]))
+        ax.yaxis.set_minor_locator(LogLocator(base=10,subs=[0.1,0.2,0.3,0.4,0.5,0.6,0.7,0.8,0.9]))
+        ax.yaxis.set_major_formatter(LogFormatter(labelOnlyBase=True))
     
     
     date_fmt = '%m/%d/%y'
