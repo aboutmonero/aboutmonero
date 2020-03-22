@@ -20,6 +20,7 @@ last_block = {
     'transaction' : 0,
     'marketcap' : 0,
     'inflation' : 0,
+    '1yo': 0.0,
 }
 
 def get_block_data():
@@ -87,12 +88,13 @@ def get_block_data():
         while year[0][0] < x[0] - 365*24*60*60:
             reward_1y -= year.popleft()[1]
         last_block['inflation']  = 100 * reward_1y / last_block['supply']
-        
+
         #price
         while p[0] < x[0]:
             p = price.pop()
             last_block['price'] = p[1]
-        
+            
+        last_block['1yo'] = last_block['price']*reward_1y
         #CPI
         while cpi_last[0] < x[0]:
             cpi_last = cpi.pop()
