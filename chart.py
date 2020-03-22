@@ -166,6 +166,7 @@ def build_chart(x_data, y_data, label_req, dur, scatter = False ):
     
     ax.grid(which='major',linestyle = '--')
     ax.grid(which='minor',linestyle = ':')
+    ax.grid(True)
     
     fig.set_size_inches(8,5)
     fig.savefig("static/data/"+ label['file-name'] +"_" + dur + ".png",dpi=150)
