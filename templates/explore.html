@@ -151,6 +151,11 @@
         <td> <a href="#block_reward_1M">1M</a> <a href="#block_reward_1Y">1Y</a> <a href="#block_reward_all">All</a></td>
     </tr>
     <tr>
+        <td class = "tooltip">Miner's Reward (1Y USD)<span class="tooltiptext">Sum of all coins' value at time of emission for 1 year.</span>: </td>
+        <td>${{data[15]}}</td>
+        <td><a href="#1yo_1M">1M</a> <a href="#1yo_1Y">1Y</a> <a href="#1yo_all">All</a></td>
+    </tr>
+    <tr>
         <td class = "tooltip">Network Hashrate<span class="tooltiptext">Estimated hashes/second the monero network is performing.</span>: </td>
         <td>{{data[3]}}</td>
         <td><a href="#hashrate_1M">1M</a> <a href="#hashrate_1Y">1Y</a> <a href="#hashrate_all">All</a></td>
@@ -161,12 +166,12 @@
         <td><a href="#nonce_1M">1M</a> <a href="#nonce_1Y">1Y</a> <a href="#nonce_all">All</a></td>
     </tr>
     <tr>
-        <td class = "tooltip">Total Supply Value<span class="tooltiptext">Value of total monero supply in circulation. (USD Price)*(Total Supply)</span>: </td>
+        <td class = "tooltip">Supply Value<span class="tooltiptext">Value of total monero supply in circulation. (USD Price)*(Total Supply)</span>: </td>
         <td>${{data[6]}}</td>
         <td><a href="#marketcap_1M">1M</a> <a href="#marketcap_1Y">1Y</a> <a href="#marketcap_all">All</a></td>
     </tr>
     <tr>
-        <td class = "tooltip">Total Supply Value Adj<span class="tooltiptext">Inflation adjusted value of total monero supply in circulation (2014 Dollars). (USD Price)*(Total Supply)/(CPI/CPI_2014)</span>: </td>
+        <td class = "tooltip">Supply Value Infl. Adj.<span class="tooltiptext">Inflation adjusted value of total monero supply in circulation (2014 Dollars). (USD Price)*(Total Supply)/(CPI/CPI_2014)</span>: </td>
         <td>${{data[17]}}</td>
         <td><a href="#marketcap_infl_1M">1M</a> <a href="#marketcap_infl_1Y">1Y</a> <a href="#marketcap_infl_all">All</a></td>
     </tr>
@@ -189,11 +194,6 @@
         <td class = "tooltip">Wikipedia Page Views<span class="tooltiptext">Views of Monero (cryptocurrency) Page on en.wikipedia.org.</span>: </td>
         <td>{{data[16]}} </td>
         <td><a href="#wiki_view_1M">1M</a> <a href="#wiki_view_1Y">1Y</a> <a href="#wiki_view_all">All</a></td>
-    </tr>
-    <tr>
-        <td class = "tooltip"> 1 Year Miner's Reward<span class="tooltiptext">Sum of all coins' value at emission less than 1 year old.</span>: </td>
-        <td>${{data[15]}}</td>
-        <td><a href="#1yo_1M">1M</a> <a href="#1yo_1Y">1Y</a> <a href="#1yo_all">All</a></td>
     </tr>
     </table>
     <br>

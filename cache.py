@@ -56,10 +56,10 @@ def cache_price():
         return False
 
 def cache_CPI():
-    last = str(float(get_csv("CPIAUCSL")[-1][1]))
+    last = float(get_csv("CPIAUCSL")[-1][1])
     cpi = []
     data = get_csv_from_url("https://fred.stlouisfed.org/graph/fredgraph.csv?id=CPIAUCSL")[:-1]
-    if last == str(data[-1][1]):
+    if last == float(data[-1][1]):
         return False
     else:
         cpi.append([time.time(),float(data[-1][1])])
@@ -119,3 +119,4 @@ def get_latest():
             rows[i] = "{0:,.2f}".format(float(rows[i][1]))
     return rows
 
+cache_CPI()
