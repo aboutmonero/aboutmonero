@@ -160,7 +160,7 @@ def build_chart(x_data, y_data, label_req, dur, scatter = False ):
     
     date_fmt = '%m/%d/%y'
     date_formatter = mdate.DateFormatter(date_fmt)
-    if dur = '1M':
+    if dur == '1M':
         ax.xaxis.set_minor_locator(mdates.DayLocator(interval=7))
         ax.xaxis.set_major_locator(mdates.MonthLocator(interval=3))
     else:
