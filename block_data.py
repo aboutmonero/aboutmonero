@@ -90,13 +90,13 @@ def get_block_data():
         last_block['inflation']  = 100 * reward_1y / last_block['supply']
 
         #price
-        while p[0] < x[0]:
+        while p[0] < x[0] and price:
             p = price.pop()
             last_block['price'] = p[1]
             
         last_block['1yo'] = last_block['price']*reward_1y
         #CPI
-        while cpi_last[0] < x[0]:
+        while cpi_last[0] < x[0] and cpi:
             cpi_last = cpi.pop()
             last_block['cpi'] = cpi_last[1]
             
