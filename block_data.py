@@ -5,6 +5,7 @@ from math import exp, log
 last_block = {
     'timestamp' : 0,
     'price' : 0,
+    'cpi' : 0,
     'block_size' : 0,
     'blockchain_size' : 0,
     'block_count' : 0,
@@ -28,10 +29,15 @@ def get_block_data():
     #import data from csv
     blocks = get_csv("blocks")[::-1]
     price = get_csv("price")[::-1]
+    cpi = get_csv("CPIAUCSL")[::-1]
     
     #initiate price
     p = price.pop()    
     last_block['price'] = p[1]
+    
+    #initiate cpi
+    cpi_last = cpi.pop()    
+    last_block['cpi'] = cpi_last[1]
     
     #stacks for fast processing
     day = deque([])
@@ -86,7 +92,13 @@ def get_block_data():
         while p[0] < x[0]:
             p = price.pop()
             last_block['price'] = p[1]
-        last_block['marketcap']=last_block['supply']*last_block['price']
+        
+        #CPI
+        while cpi_last[0] < x[0]:
+            cpi_last = cpi.pop()
+            last_block['cpi'] = cpi_last[1]
+            
+        last_block['marketcap']=last_block['supply']*last_block['price']/last_block['cpi']
         
         #fee geometric mean
         if x[5]:

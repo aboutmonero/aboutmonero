@@ -1,4 +1,5 @@
 from csv import reader, writer
+import time
 import urllib.request
 from json import loads
 from monero.daemon import Daemon
@@ -35,7 +36,13 @@ def get_json(url):
     with urllib.request.urlopen(req) as urltemp:
         data = loads(urltemp.read().decode())
     return data
-    
+
+def get_csv_from_url(url):   
+    req = urllib.request.Request(url, headers={'User-Agent': 'Mozilla/5.0'})
+    with urllib.request.urlopen(req) as urltemp:
+        data = list(reader(urltemp.read().decode('latin-1').split('\n')))
+    return data
+        
 def cache_price():
     last = str(int(get_csv("price")[-1][0]))
     prices = []
@@ -47,7 +54,17 @@ def cache_price():
         return cache(prices,"price")
     else:
         return False
-        
+
+def cache_CPI():
+    last = str(int(get_csv("CPIAUCSL")[-1][1]))
+    cpi = []
+    data = get_csv_from_url("https://fred.stlouisfed.org/graph/fredgraph.csv?id=CPIAUCSL")
+    if last == str(data[-1][1]):
+        return False
+    else:
+        cpi.append([time.time(),float(data[-1][1])])
+        return cache(cpi,"CPIAUCSL")
+                
 def cache_blocks(last = None, end = None):
     daemon = Daemon(JSONRPCDaemon(host='10.8.0.4', port=18081))
     new = []
@@ -93,5 +110,5 @@ def get_latest():
     return rows
 
 
-
+cache_CPI()
 
