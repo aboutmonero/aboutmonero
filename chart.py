@@ -108,7 +108,6 @@ labels = {
         'x-axis' : 'Date',
         'y-axis' : 'Uniformity',
         'scale' : 'linear',
-    }
     } , 
     '1yo': {
         'title' : '<1 Year Old Coin USD Value',
