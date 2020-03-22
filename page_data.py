@@ -776,6 +776,66 @@ An alternate method of creating money is proposed, via an auction where particip
             'year' : 2014
         }]
     } ,
+    'c++' : {
+        'title' : 'c++',
+        'body' : '''The original implementation language of the CryptoNote protocol. View the source code on <a href='https://github.com/monero-project/'>github</a>.''',
+        'related-topics' : [{
+            'url' : 'history',
+            'title' : 'History'
+        }],
+        'references' : [{
+            'title': 'Monero Project',
+            'author' : 'Monero Core',
+            'url' : 'https://github.com/monero-project/',
+            'source' : 'Monero Source Code',
+            'year' : 2014
+        }]
+    } ,
+    'c++' : {
+        'title' : 'c++',
+        'body' : '''The original implementation language of the CryptoNote protocol. View the source code on <a href='https://github.com/monero-project/'>github</a>.''',
+        'related-topics' : [{
+            'url' : 'history',
+            'title' : 'History'
+        }],
+        'references' : [{
+            'title': 'Monero Project',
+            'author' : 'Monero Core',
+            'url' : 'https://github.com/monero-project/',
+            'source' : 'Monero Source Code',
+            'year' : 2014
+        }]
+    } ,
+    'c++' : {
+        'title' : 'c++',
+        'body' : '''The original implementation language of the CryptoNote protocol. View the source code on <a href='https://github.com/monero-project/'>github</a>.''',
+        'related-topics' : [{
+            'url' : 'history',
+            'title' : 'History'
+        }],
+        'references' : [{
+            'title': 'Monero Project',
+            'author' : 'Monero Core',
+            'url' : 'https://github.com/monero-project/',
+            'source' : 'Monero Source Code',
+            'year' : 2014
+        }]
+    } ,
+    'cake-wallet' : {
+        'title' : 'Cake wallet',
+        'body' : '''A mobile-only wallet. This wallet incorporates an accountless exchange named ChangeNow. This can be used to swap small amount of monero for other cryptocurrencies. Another feature is XMR.to, a service providing exchange to bitcoin for purchases of exchanges. It is available for Android and iOS. View the source code on <a href='https://github.com/cake-tech/cake_wallet'>github</a>.[1]''',
+        'related-topics' : [{
+            'url' : 'create-a-wallet',
+            'title' : 'Create a wallet'
+        }],
+        'references' : [{
+            'title': 'Cake Wallet',
+            'author' : 'Cake Wallet Team',
+            'url' : 'https://cakewallet.com/',
+            'source' : 'cakewallet.com',
+            'year' : 2020
+        }]
+    } ,
     'cryptonote-standards' : {
         'title' : 'CryptoNote standards',
         'body' : '''
