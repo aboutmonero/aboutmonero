@@ -2,6 +2,8 @@ import matplotlib
 import matplotlib.pyplot as plt
 import matplotlib.dates as mdate
 
+from matplotlib.ticker import (AutoMinorLocator, MultipleLocator)
+
 labels = {
     'inflation': {
         'title' : 'Inflation Rate',
@@ -149,11 +151,19 @@ def build_chart(x_data, y_data, label_req, dur, scatter = False ):
         ax.set(xlabel = label['x-axis'], ylabel = label['y-axis'], title = label['title'], yscale = label['scale'])
     else:
         ax.set(xlabel = label['x-axis'], ylabel = label['y-axis'], title = label['title'])
-    ax.grid()
 
+    
+    
+    ax.xaxis.set_major_locator(MultipleLocator(60*60*24*30*4))
+    ax.xaxis.set_minor_locator(AutoMinorLocator(60*60*24*30))
+    
+    ax.grid(which='major',linestyle = '--')
+    ax.grid(which='minor',linestyle = ':')
+    
     date_fmt = '%m/%d/%y'
     date_formatter = mdate.DateFormatter(date_fmt)
     ax.xaxis.set_major_formatter(date_formatter)
+    
     fig.set_size_inches(8,5)
     fig.savefig("static/data/"+ label['file-name'] +"_" + dur + ".png",dpi=150)
     plt.cla() 
