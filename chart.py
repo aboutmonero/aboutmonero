@@ -118,7 +118,7 @@ labels = {
         'scale' : 'linear',
     } , 
     '1yo': {
-        'title' : "1Y Miner's Reward",
+        'title' : "1Y Miner's Revenue",
         'file-name' : '1yo',
         'x-axis' : 'Date',
         'y-axis' : '$',
