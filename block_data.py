@@ -82,19 +82,21 @@ def get_block_data():
             last_block['hashrate'] = x[2] / (last_block['block_time'])
             
         
-        #inflation 1y %
-        reward_1y += x[3]
-        year.append([x[0],x[3]])
-        while year[0][0] < x[0] - 365*24*60*60:
-            reward_1y -= year.popleft()[1]
-        last_block['inflation']  = 100 * reward_1y / last_block['supply']
-
         #price
         while p[0] < x[0] and price:
             p = price.pop()
             last_block['price'] = p[1]
             
-        last_block['1yo'] = last_block['price']*reward_1y
+        #inflation 1y %
+        reward_1y += x[3]
+        last_block['1yo'] += p*x[3]
+        year.append([x[0],[p,x[3]]])
+        while year[0][0] < x[0] - 365*24*60*60:
+            amt = year.popleft()[1]
+            reward_1y -= amt[1]
+            last_block['1yo'] -= amt[0]*amt[1]
+        last_block['inflation']  = 100 * reward_1y / last_block['supply']
+
         #CPI
         while cpi_last[0] < x[0] and cpi:
             cpi_last = cpi.pop()
