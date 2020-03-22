@@ -2,6 +2,7 @@ import matplotlib
 import matplotlib.pyplot as plt
 import matplotlib.dates as mdate
 from matplotlib.ticker import LogLocator
+import matplotlib.dates as mdates
 
 labels = {
     'inflation': {
@@ -152,16 +153,19 @@ def build_chart(x_data, y_data, label_req, dur, scatter = False ):
         ax.set(xlabel = label['x-axis'], ylabel = label['y-axis'], title = label['title'])
 
     
+    if lavel['scale']=='log':
+        ax.yaxis.set_major_locator(LogLocator(base=10))
+        ax.yaxis.set_minor_locator(LogLocator(base=10,subs=(0.1,)))
     
-    ax.yaxis.set_major_locator(LogLocator(base=10))
-    ax.yaxis.set_minor_locator(LogLocator(base=10,subs=(0.1,)))
-    
-    ax.grid(which='major',linestyle = '--')
-    ax.grid(which='minor',linestyle = ':')
     
     date_fmt = '%m/%d/%y'
     date_formatter = mdate.DateFormatter(date_fmt)
+    
+    ax.xaxis.set_minor_locator(mdates.MonthLocator(bymonth=3))
     ax.xaxis.set_major_formatter(date_formatter)
+    
+    ax.grid(which='major',linestyle = '--')
+    ax.grid(which='minor',linestyle = ':')
     
     fig.set_size_inches(8,5)
     fig.savefig("static/data/"+ label['file-name'] +"_" + dur + ".png",dpi=150)
