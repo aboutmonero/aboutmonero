@@ -154,8 +154,8 @@ def build_chart(x_data, y_data, label_req, dur, scatter = False ):
 
     
     
-    ax.xaxis.set_major_locator(MultipleLocator(60*60*24*30*4))
-    ax.xaxis.set_minor_locator(AutoMinorLocator(60*60*24*30))
+    ax.yaxis.set_major_locator(LogLocator(base=10))
+    ax.yaxis.set_minor_locator(LogLocator(base=10,subs=(0.1,)))
     
     ax.grid(which='major',linestyle = '--')
     ax.grid(which='minor',linestyle = ':')
@@ -170,8 +170,6 @@ def build_chart(x_data, y_data, label_req, dur, scatter = False ):
     plt.clf() 
     plt.close('all')
     return True
-
-
 
 
 
