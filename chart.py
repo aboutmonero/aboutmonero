@@ -9,7 +9,6 @@ labels = {
         'x-axis' : 'Date',
         'y-axis' : '% of Circulating Supply',
         'scale' : 'log',
-        'options' : None
     } ,
     'marketcap': {
         'title' : 'Value of Circulating Supply',
@@ -17,7 +16,6 @@ labels = {
         'x-axis' : 'Date',
         'y-axis' : 'Index Value',
         'scale' : 'log',
-        'options' : None
     } , 
     'block_time': {
         'title' : 'Block Time',
@@ -25,7 +23,6 @@ labels = {
         'x-axis' : 'Date',
         'y-axis' : 'Seconds',
         'scale' : 'linear',
-        'options' : None
     } , 
     'hashrate': {
         'title' : 'Network Hashrate',
@@ -33,7 +30,6 @@ labels = {
         'x-axis' : 'Date',
         'y-axis' : 'Hashes/Second',
         'scale' : 'log',
-        'options' : None
     } , 
     'supply': {
         'title' : 'Circulating Supply',
@@ -41,7 +37,6 @@ labels = {
         'x-axis' : 'Date',
         'y-axis' : 'ℳ',
         'scale' : 'linear',
-        'options' : None
     } , 
     'price': {
         'title' : 'Price',
@@ -49,7 +44,6 @@ labels = {
         'x-axis' : 'Date',
         'y-axis' : '$',
         'scale' : 'log',
-        'options' : None
     } , 
     'block_reward': {
         'title' : "Miner's Block Reward",
@@ -57,7 +51,6 @@ labels = {
         'x-axis' : 'Date',
         'y-axis' : 'ℳ',
         'scale' : 'log',
-        'options' : None
     } , 
     'block_count': {
         'title' : 'Block Count (24h)',
@@ -65,7 +58,6 @@ labels = {
         'x-axis' : 'date',
         'y-axis' : '# of Blocks',
         'scale' : 'log',
-        'options' : None
     } , 
     'block_height': {
         'title' : 'Block Height',
@@ -73,7 +65,6 @@ labels = {
         'x-axis' : 'Date',
         'y-axis' : '# of Blocks',
         'scale' : 'linear',
-        'options' : None
     } , 
     'transaction': {
         'title' : 'Transactions (24h)',
@@ -81,7 +72,6 @@ labels = {
         'x-axis' : 'Date',
         'y-axis' : '# of Transactions',
         'scale' : 'log',
-        'options' : None
     } , 
     'fee': {
         'title' : 'Fee per Block (Geometric Mean Of 720 Blocks)',
@@ -97,7 +87,6 @@ labels = {
         'x-axis' : 'Date',
         'y-axis' : '#',
         'scale' : None,
-        'options' : None
     } , 
     'block_size': {
         'title' : 'Block Size (Geometric Mean Of 720 Blocks)',
@@ -105,7 +94,6 @@ labels = {
         'x-axis' : 'Date',
         'y-axis' : 'b',
         'scale' : 'log',
-        'options' : 'avg'
     } , 
     'blockchain_size': {
         'title' : 'Blockchain Size',
@@ -113,7 +101,6 @@ labels = {
         'x-axis' : 'Date',
         'y-axis' : 'b',
         'scale' : 'linear',
-        'options' : None
     } , 
     'nonce': {
         'title' : 'Nonce Uniformity',
@@ -121,7 +108,14 @@ labels = {
         'x-axis' : 'Date',
         'y-axis' : 'Uniformity',
         'scale' : 'linear',
-        'options' : 'var'
+    }
+    } , 
+    '1yo': {
+        'title' : '<1 Year Old Coin USD Value',
+        'file-name' : '1yo',
+        'x-axis' : 'Date',
+        'y-axis' : '$',
+        'scale' : 'log',
     }
 }
     
