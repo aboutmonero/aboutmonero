@@ -139,11 +139,15 @@ def build_chart(x_data, y_data, label_req, dur, scatter = False ):
     
     dates = mdate.epoch2num(x_data)
     fig, ax = plt.subplots()
+    
     if scatter:
         plt.scatter(dates, y_data,s=.01)
     else:
         ax.plot(dates, y_data,linewidth=.5,color = 'black')
-
+        
+    if dur !='1M':
+        label['x-axis'] ='Year'
+        
     if label['scale']:
         if 'ℳ' in list(label['y-axis']) :
             plt.ylabel('ℳ', fontdict = {'family': 'sans'})
