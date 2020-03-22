@@ -158,15 +158,13 @@ def build_chart(x_data, y_data, label_req, dur, scatter = False ):
         ax.yaxis.set_major_formatter(LogFormatter(labelOnlyBase=True))
     
     
-    date_fmt = '%m/%d/%y'
-    date_formatter = mdate.DateFormatter(date_fmt)
     if dur == '1M':
         date_formatter = mdate.DateFormatter('%m/%d/%y')
         ax.xaxis.set_minor_locator(mdate.DayLocator())
         ax.xaxis.set_major_locator(mdate.WeekdayLocator(byweekday = mdate.SU))
         ax.xaxis.set_major_formatter(date_formatter)
     else:
-        date_formatter = mdate.DateFormatter('%y')
+        date_formatter = mdate.DateFormatter('%Y')
         ax.xaxis.set_minor_locator(mdate.MonthLocator(bymonth=[1,4,7,10]))
         ax.xaxis.set_major_locator(mdate.YearLocator())
         ax.xaxis.set_major_formatter(date_formatter)
