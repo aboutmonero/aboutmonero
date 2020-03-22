@@ -153,7 +153,7 @@ def build_chart(x_data, y_data, label_req, dur, scatter = False ):
         ax.set(xlabel = label['x-axis'], ylabel = label['y-axis'], title = label['title'])
 
     
-    if lavel['scale']=='log':
+    if label['scale']=='log':
         ax.yaxis.set_major_locator(LogLocator(base=10))
         ax.yaxis.set_minor_locator(LogLocator(base=10,subs=(0.1,)))
     
