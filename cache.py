@@ -70,7 +70,6 @@ def cache_wiki():
     now = str(int(time.time()/(60*60*24*365))+1970+1)
     data = get_json("https://wikimedia.org/api/rest_v1/metrics/pageviews/per-article/en.wikipedia/all-access/user/Monero_(cryptocurrency)/daily/"+last+"/"+now+"120100")
     data = list(data['items'])[-1]
-    print(data)
     if data['timestamp'] == last:
         return False
     else:

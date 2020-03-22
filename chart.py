@@ -117,7 +117,7 @@ labels = {
         'scale' : 'linear',
     } , 
     '1yo': {
-        'title' : '<1 Year Old Coin USD Value',
+        'title' : "1Y Miner's Reward",
         'file-name' : '1yo',
         'x-axis' : 'Date',
         'y-axis' : '$',

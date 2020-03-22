@@ -111,7 +111,7 @@ def get_block_data():
             last_block['cpi'] = cpi_last[1]
             
         #wiki
-        while wiki[0] < x[0] and wiki:
+        while w[0] < x[0] and wiki:
             w = wiki.pop()
             last_block['wiki_view'] = w[2]
             
