@@ -749,6 +749,33 @@ An alternate method of creating money is proposed, via an auction where particip
             'year' : 2016
         }]
     } ,
+    'bytecoin' : {
+        'title' : 'Bytecoin',
+        'body' : '''The first cryptocurrency to utilize the CryptoNote protocol. Its release was shrouded with uncertainty over the initial distribution. Nobody had heard of where, or how, Bytecoin was released; but, it is said that Bytecoin existed for years on the darknet. There is no evidence of this. By the time anybody had any notice of it, over 80% of the supply had been mined. This led to much of the community's distrust. In the coming days many attempts were made to fork the CryptoNote protocol to allow for a fairer distribution of the supply.''',
+        'related-topics' : [{
+            'url' : 'history',
+            'title' : 'History'
+            } , {
+            'url' : 'boolberry',
+            'title' : 'Boolberry'
+            } , {
+            'url' : 'cryptonote',
+            'title' : 'CryptoNote'
+        }],
+        'references' : [{
+            'title': 'Bytecoin. Secure, private, untraceable since 2012',
+            'author' : 'DStrange',
+            'url' : 'https://bitcointalk.org/index.php?topic=512747',
+            'source' : 'BitcoinTalk Forum',
+            'year' : 2014
+            } , {
+            'title': 'Blowing the lid off the CryptoNote/Bytecoin scam (with the exception of Monero)',
+            'author' : 'rethink-your-strategy',
+            'url' : 'https://bitcointalk.org/index.php?topic=740112.0',
+            'source' : 'BitcoinTalk',
+            'year' : 2014
+        }]
+    } ,
     'cryptonote-standards' : {
         'title' : 'CryptoNote standards',
         'body' : '''
@@ -827,6 +854,57 @@ The Monero network is built on the CryptoNote Protocol. Since 2014, the core tea
             'year' : 2020
         }]
     } ,
+    'history' : {
+        'title' : 'History',
+        'body' : """The Monero project begins with the introduction of the CryptoNote protocol in early 2014. A group of people (possibly a single person) created the protocol using a wide variety of pseudonyms. In the source code of the protocol, there are many copyright references to Andrey N. Sabelnikov who is associated with the botnet Kelihos. It is suspected that he played a role in the development of the CryptoNote Protocol. The first cryptocurrency to make use of the CryptoNote protocol was Bytecoin [1]. Many members of the cryptocurrency community were concerned about the lack of transparency from the Bytecoin development team. As a result, numerous copies of the CryptoNote protocol were made and many teams attemped to launch their own version of the CryptoNote protocol. Bitmonero was one of these copies [2]. Within the Bitmonero team, there was still major disagreement about the distribution and branding of the project [3]. A group of community members again copied the source code of Bitmonero and created Monero [4]. This all happened over the course of a month between March and April 2014. Much of the discussion that took place amongst the earliest developers of monero can still be found in the BitcoinTalk threads listed below.""",
+        'related-topics' : [{
+            'url' : 'cryptonote',
+            'title' : 'CryptoNote'
+            } , {
+            'url' : 'bytecoin',
+            'title' : 'Bytecoin'
+            } , {
+            'url' : 'bitmonero',
+            'title' : 'Bitmonero'
+        }],
+        'references' : [{
+            'title': 'Bytecoin. Secure, private, untraceable since 2012',
+            'author' : 'DStrange',
+            'url' : 'https://bitcointalk.org/index.php?topic=512747',
+            'source' : 'BitcoinTalk Forum',
+            'year' : 2014
+            } , {
+            'title': 'Bitmonero - a new coin based on CryptoNote technology - LAUNCHED',
+            'author' : 'thankful_for_today',
+            'url' : 'https://bitcointalk.org/index.php?topic=563821',
+            'source' : 'BitcoinTalk Forum',
+            'year' : 2014
+            } , {
+            'title': 'Monero - an anonymous coin based on CryptoNote technology',
+            'author' : 'monero',
+            'url' : 'https://bitcointalk.org/index.php?topic=582080',
+            'source' : 'BitcoinTalk Forum',
+            'year' : 2014
+            } , {
+            'title': 'Monero - A secure, private, untraceable cryptocurrency',
+            'author' : 'monero',
+            'url' : 'https://bitcointalk.org/index.php?topic=583449',
+            'source' : 'BitcoinTalk Forum',
+            'year' : 2014
+            } , {
+            'title': "Monero's Early History with fluffypony - 5th Moneroversary 2019",
+            'author' : ' Monero Community Workgroup',
+            'url' : 'https://www.youtube.com/watch?v=olGIzybdrAA',
+            'source' : 'Youtube',
+            'year' : 2019
+            } , {
+            'title': 'Blowing the lid off the CryptoNote/Bytecoin scam (with the exception of Monero)',
+            'author' : 'rethink-your-strategy',
+            'url' : 'https://bitcointalk.org/index.php?topic=740112.0',
+            'source' : 'BitcoinTalk',
+            'year' : 2014
+        }]
+    } ,
     'obtain-monero' : {
         'title' : 'Obtain monero',
         'body' : '''Monero can be obtained through exchange or through mining blocks. These are some recommended exchanges for obtaining monero with fiat currency:
@@ -901,83 +979,6 @@ The Monero network is built on the CryptoNote Protocol. Since 2014, the core tea
             'year' : 2017
         }]
     } ,
-    'supply-properties' : {
-        'title' : 'Supply Properties',
-        'body' : """The economic properties of monero can be discussed in two eras. The first era is the 'fair-distribution' era which will last from the Genesis block in April 2014 until May 2022. During this era, monero is distributed to miners at an exponentially decreasing rate. The first block reward was ℳ17.59218, the millionth block had a reward of ℳ6.796686, and the two-millionth block ℳ2.040028. This block reward will decrease until it reaches ℳ0.6 per block in May 2022. At this point, the circulating supply will be ℳ18.132 million. [1] This is the end of the fair-distribution era.
-<br><br>
-After this, there is the 'tail-emission' era. Once the miner's block reward reaches ℳ0.6 per block, it will stay constant forever. The implication of this is that the circulating supply of monero will increase by (ℳ0.6 per block)*(365*24*60/2 blocks) = ℳ157,680 each year. [1] As the circulating supply increases and the amount of newly minted monero stays constant, there is a decreasing rate of inflation. In fact, this rate of inflation will forever stay below 1% per year in the tail emission era.""",
-        'related-topics' : [{
-            'url' : 'sound-money',
-            'title' : 'Sound money'
-            } , {
-            'url' : 'controlled-supply',
-            'title' : 'Controlled supply'
-            } , {
-            'url' : 'controlled-inflation',
-            'title' : 'Controlled inflation'
-            }, {
-            'url' : 'fair-distribution',
-            'title' : 'Fair distribution'
-            }, {
-            'url' : 'block-reward',
-            'title' : 'Block reward'
-            }, {
-            'url' : 'emission-curve',
-            'title' : 'Emission curve'
-        }],
-        'references' : [{
-            'title': 'Useful For Learning About Monero: Coin Emission And Block Reward Schedules',
-            'author' : 'Amichateur',
-            'url' : 'https://www.reddit.com/r/Monero/comments/512kwh/useful_for_learning_about_monero_coin_emission/',
-            'source' : 'Reddit',
-            'year' : 2017
-        }]
-    } ,
-    'history' : {
-        'title' : 'History',
-        'body' : """The Monero project begins with the introduction of the CryptoNote protocol in early 2014. A group of people (possibly a single person) created the protocol using a wide variety of pseudonyms. In the source code of the protocol, there are many copyright references to Andrey N. Sabelnikov who is associated with the botnet Kelihos. It is suspected that he played a role in the development of the CryptoNote Protocol. The first cryptocurrency to make use of the CryptoNote protocol was Bytecoin [1]. Many members of the cryptocurrency community were concerned about the lack of transparency from the Bytecoin development team. As a result, numerous copies of the CryptoNote protocol were made and many teams attemped to launch their own version of the CryptoNote protocol. Bitmonero was one of these copies [2]. Within the Bitmonero team, there was still major disagreement about the distribution and branding of the project [3]. A group of community members again copied the source code of Bitmonero and created Monero [4]. This all happened over the course of a month between March and April 2014. Much of the discussion that took place amongst the earliest developers of monero can still be found in the BitcoinTalk threads listed below.""",
-        'related-topics' : [{
-            'url' : 'cryptonote',
-            'title' : 'CryptoNote'
-            } , {
-            'url' : 'bytecoin',
-            'title' : 'Bytecoin'
-            } , {
-            'url' : 'bitmonero',
-            'title' : 'Bitmonero'
-        }],
-        'references' : [{
-            'title': 'Bytecoin. Secure, private, untraceable since 2012',
-            'author' : 'DStrange',
-            'url' : 'https://bitcointalk.org/index.php?topic=512747',
-            'source' : 'BitcoinTalk Forum',
-            'year' : 2014
-            } , {
-            'title': 'Bitmonero - a new coin based on CryptoNote technology - LAUNCHED',
-            'author' : 'thankful_for_today',
-            'url' : 'https://bitcointalk.org/index.php?topic=563821',
-            'source' : 'BitcoinTalk Forum',
-            'year' : 2014
-            } , {
-            'title': 'Monero - an anonymous coin based on CryptoNote technology',
-            'author' : 'monero',
-            'url' : 'https://bitcointalk.org/index.php?topic=582080',
-            'source' : 'BitcoinTalk Forum',
-            'year' : 2014
-            } , {
-            'title': 'Monero - A secure, private, untraceable cryptocurrency',
-            'author' : 'monero',
-            'url' : 'https://bitcointalk.org/index.php?topic=583449',
-            'source' : 'BitcoinTalk Forum',
-            'year' : 2014
-            } , {
-            'title': "Monero's Early History with fluffypony - 5th Moneroversary 2019",
-            'author' : ' Monero Community Workgroup',
-            'url' : 'https://www.youtube.com/watch?v=olGIzybdrAA',
-            'source' : 'Youtube',
-            'year' : 2019
-        }]
-    } ,
     'receive-monero' : {
         'title' : 'Receive monero',
         'body' : """To receive monero, you must provide the sender with your wallet address. This is your 95-character address beginning with a '4'. One-time stealth addresses protect your public key from being revealed to the public view so only the sender will know the address.[1]""",
@@ -1041,6 +1042,38 @@ Well, it seems "udderly" clear at this point that ℳonero is a much better form
             'url' : 'https://www.stlouisfed.org/education/economic-lowdown-podcast-series/episode-9-functions-of-money',
             'source' : 'The Economic Lowdon Podcast',
             'year' : 2020
+        }]
+    } ,
+    'supply-properties' : {
+        'title' : 'Supply Properties',
+        'body' : """The economic properties of monero can be discussed in two eras. The first era is the 'fair-distribution' era which will last from the Genesis block in April 2014 until May 2022. During this era, monero is distributed to miners at an exponentially decreasing rate. The first block reward was ℳ17.59218, the millionth block had a reward of ℳ6.796686, and the two-millionth block ℳ2.040028. This block reward will decrease until it reaches ℳ0.6 per block in May 2022. At this point, the circulating supply will be ℳ18.132 million. [1] This is the end of the fair-distribution era.
+<br><br>
+After this, there is the 'tail-emission' era. Once the miner's block reward reaches ℳ0.6 per block, it will stay constant forever. The implication of this is that the circulating supply of monero will increase by (ℳ0.6 per block)*(365*24*60/2 blocks) = ℳ157,680 each year. [1] As the circulating supply increases and the amount of newly minted monero stays constant, there is a decreasing rate of inflation. In fact, this rate of inflation will forever stay below 1% per year in the tail emission era.""",
+        'related-topics' : [{
+            'url' : 'sound-money',
+            'title' : 'Sound money'
+            } , {
+            'url' : 'controlled-supply',
+            'title' : 'Controlled supply'
+            } , {
+            'url' : 'controlled-inflation',
+            'title' : 'Controlled inflation'
+            }, {
+            'url' : 'fair-distribution',
+            'title' : 'Fair distribution'
+            }, {
+            'url' : 'block-reward',
+            'title' : 'Block reward'
+            }, {
+            'url' : 'emission-curve',
+            'title' : 'Emission curve'
+        }],
+        'references' : [{
+            'title': 'Useful For Learning About Monero: Coin Emission And Block Reward Schedules',
+            'author' : 'Amichateur',
+            'url' : 'https://www.reddit.com/r/Monero/comments/512kwh/useful_for_learning_about_monero_coin_emission/',
+            'source' : 'Reddit',
+            'year' : 2017
         }]
     }
 }
