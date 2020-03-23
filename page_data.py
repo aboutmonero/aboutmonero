@@ -852,44 +852,17 @@ The whole problem is caused by a slight delay in sending signals to all corners 
             'year' : 2016
         }]
     } ,
-    'cryptonote-standards' : {
-        'title' : 'CryptoNote standards',
-        'body' : '''
-The Monero network is built on the CryptoNote Protocol. Since 2014, the core team has worked to make improvements and adjustments to the protocol. These are the original standards of the CryptoNote protocol as of 2012.
-<div style="line-height:1.5">
-<ul>
-<li><a href="../../static/cryptonote_standards/cns001.txt">Signatures (outdated) (CNS001)</a>; <a href="../static/cryptonote_standards/cns002.txt">Signatures (revised) (CNS002)</a>: The exact method of zero-knowledge proof.</li>
-<li><a href="../../static/cryptonote_standards/cns003.txt">Blockchain (CNS003)</a>: Describes how data is stored
-   within blocks and the blockhain.</li>
-<li><a href="../../static/cryptonote_standards/cns004.txt">Transactions (CNS004)</a>: The transfer of assets between users through transactions.</li>
-<li><a href="../../static/cryptonote_standards/cns005.txt">Transaction Field Extra (CNS005)</a>:  This document defines the way extra data can be added to a CryptoNote transaction.</li>
-<li><a href="../../static/cryptonote_standards/cns006.txt">One-Time Keys (CNS006)</a>: Describes how unlinkability of transactions is achieved.</li>
-<li><a href="../../static/cryptonote_standards/cns007.txt">Keys and Addresses (CNS007)</a>: Various types of user keys used in CryptoNote and the way the addresses are encoded.
-</li>
-<li><a href="../../static/cryptonote_standards/cns008.txt">Hash Function (CNS008)</a>: The CryptoNote's default proof-of-work hash function, CryptoNight. </li>
-<li><a href="../../static/cryptonote_standards/cns009.txt">Technology (CNS009)</a>: The core concepts of the
-   CryptoNote technology and surveys the whole system's workflow.</li>
-<li><a href="../../static/cryptonote_standards/cns010.txt">Difficulty Adjustment (CNS010)</a>: The method for
-   maintaining the rate at which blocks are generated.</li>
-</ul>''',
-        'related-topics' : [{
-            'url' : 'cryptonote',
-            'title' : 'CryptoNote'
-            } , {
-            'url' : 'history',
-            'title' : 'History'
-        }],
-        'references' : [{
-            'title': 'CryptoNote Standards',
-            'author' : 'CryptoNote',
-            'url' : '',
-            'source' : '',
-            'year' : 2012
-        }]
-    } ,
     'create-a-wallet' : {
         'title' : 'Create a wallet',
-        'body' : '''These are some recommended sources for creating and using a Monero wallet:
+        'body' : '''If you are familiar with python, these files may be used to generate a seed phrase locally.
+        <ul>
+        <li><a href='../../static/words.py'>words.py</a>: Seed phrase word bank.</li>
+        
+        <li><a href='../../static/seed_phrase.py'>seed_phrase.py</a>: Generates random seed phrase.</li>
+        
+        </ul>
+        <br><br>
+        Otherwise, these are some recommended sources for using a Monero wallet:
         <ul>
         <li><a href='https://github.com/monero-project/monero-gui'>Monero Core GUI</a>: Wallet supported by the Monero Core developers.</li>
         
@@ -928,6 +901,41 @@ The Monero network is built on the CryptoNote Protocol. Since 2014, the core tea
             'url' : 'https://web.getmonero.org/downloads/',
             'source' : 'getmonero.org',
             'year' : 2020
+        }]
+    } ,
+    'cryptonote-standards' : {
+        'title' : 'CryptoNote standards',
+        'body' : '''
+The Monero network is built on the CryptoNote Protocol. Since 2014, the core team has worked to make improvements and adjustments to the protocol. These are the original standards of the CryptoNote protocol as of 2012.
+<div style="line-height:1.5">
+<ul>
+<li><a href="../../static/cryptonote_standards/cns001.txt">Signatures (outdated) (CNS001)</a>; <a href="../static/cryptonote_standards/cns002.txt">Signatures (revised) (CNS002)</a>: The exact method of zero-knowledge proof.</li>
+<li><a href="../../static/cryptonote_standards/cns003.txt">Blockchain (CNS003)</a>: Describes how data is stored
+   within blocks and the blockhain.</li>
+<li><a href="../../static/cryptonote_standards/cns004.txt">Transactions (CNS004)</a>: The transfer of assets between users through transactions.</li>
+<li><a href="../../static/cryptonote_standards/cns005.txt">Transaction Field Extra (CNS005)</a>:  This document defines the way extra data can be added to a CryptoNote transaction.</li>
+<li><a href="../../static/cryptonote_standards/cns006.txt">One-Time Keys (CNS006)</a>: Describes how unlinkability of transactions is achieved.</li>
+<li><a href="../../static/cryptonote_standards/cns007.txt">Keys and Addresses (CNS007)</a>: Various types of user keys used in CryptoNote and the way the addresses are encoded.
+</li>
+<li><a href="../../static/cryptonote_standards/cns008.txt">Hash Function (CNS008)</a>: The CryptoNote's default proof-of-work hash function, CryptoNight. </li>
+<li><a href="../../static/cryptonote_standards/cns009.txt">Technology (CNS009)</a>: The core concepts of the
+   CryptoNote technology and surveys the whole system's workflow.</li>
+<li><a href="../../static/cryptonote_standards/cns010.txt">Difficulty Adjustment (CNS010)</a>: The method for
+   maintaining the rate at which blocks are generated.</li>
+</ul>''',
+        'related-topics' : [{
+            'url' : 'cryptonote',
+            'title' : 'CryptoNote'
+            } , {
+            'url' : 'history',
+            'title' : 'History'
+        }],
+        'references' : [{
+            'title': 'CryptoNote Standards',
+            'author' : 'CryptoNote',
+            'url' : '',
+            'source' : '',
+            'year' : 2012
         }]
     } ,
     'history' : {
