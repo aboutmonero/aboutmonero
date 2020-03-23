@@ -167,7 +167,7 @@ def build_chart(x_data, y_data, label_req, dur, scatter = False ):
         ax.xaxis.set_major_locator(mdate.WeekdayLocator(byweekday = mdate.SU))
         ax.xaxis.set_major_formatter(date_formatter)
     elif dur == '1Y':
-        date_formatter = mdate.DateFormatter("%M, '%y")
+        date_formatter = mdate.DateFormatter("%b, '%y")
         ax.xaxis.set_minor_locator(mdate.WeekdayLocator(byweekday = mdate.SU))
         ax.xaxis.set_major_locator(mdate.MonthLocator(bymonth=[1,4,7,10]))
         ax.xaxis.set_major_formatter(date_formatter)
