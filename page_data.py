@@ -566,8 +566,7 @@ The average duration of time between confirming blocks in the blockchain. For th
             'url' : 'block',
             'title' : 'Block'
         }],
-        'references' : [{
-        }]
+        'references' : []
     } ,
     'b-money' : {
         'title' : 'B-money',
@@ -1212,10 +1211,8 @@ Well, it seems "udderly" clear at this point that ℳonero is a much better form
     'submission' : {
         'title' : 'Submission',
         'body' : '''All aboutmonero articles follow a common template. They require a title, body, related topics, and references. Have a suggestion for a new article? Write to aboutmonero@protonmail.com''',
-        'related-topics' : [{
-        }],
-        'references' : [{
-        }]
+        'related-topics' : [],
+        'references' : []
     } ,
     'supply-properties' : {
         'title' : 'Supply Properties',

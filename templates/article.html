@@ -45,9 +45,12 @@
 <div style="line-height: 1.5;">
 {{data['body']|safe}}
 <br><br>
+{%if data['related-topics']%}
 See also: {%for x in data['related-topics']%}  <a href="../learn/{{x['url']}}.html">{{x['title']}}</a> {%endfor%}
+{% endif %}
 </div>
 <hr>
+{%if data['references']%}
 <div style="line-height: 1.5;">
 <h3>References</h3>
 <ol>
@@ -57,6 +60,7 @@ See also: {%for x in data['related-topics']%}  <a href="../learn/{{x['url']}}.ht
 </ol>
 </div>
 <hr>
+{% endif %}
 <div style="line-height:1.5">
 <a href="/index.html">ℳ</a>
 <a href="/learn.html">Learn</a> 
