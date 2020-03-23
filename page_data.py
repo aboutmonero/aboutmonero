@@ -836,6 +836,76 @@ An alternate method of creating money is proposed, via an auction where particip
             'year' : 2020
         }]
     } ,
+    'chain-reorganization' : {
+        'title' : 'Chain reorganization',
+        'body' : '''Reorgs happen when there is temporarily a disagreement about what the longest chain is. It happens in every Cryptocurrency, and the shorter the block time, the more frequent it happens. Basically, picture a guy in the Philippines and a guy in Spain each mining what they say is block 780000 at almost exactly the same time. Half the network sees the one guys block first and accepts it, while rejecting the other guys block. The other half the network does the opposite. It's actually not that uncommon for this to happen, but usually someone mining on one of those two chains finds another block and adds it on, and then everyone goes "oh look, that chain is longer" and ditches the other one. BUT, sometimes, the near tie in finding blocks can happen two or three or four times in a row. Eventually, one side wins out, and anyone on the wrong chain has to reorganize.
+
+This is why merchants are recommended to wait for a few confirmations before fully crediting a payment for big ticket items. The more confirmations (or the more blocks that get added on top of the one your transaction is in), the harder it is to happen on a reorg.
+
+The whole problem is caused by a slight delay in sending signals to all corners of the earth that a miner found a block. The total lag is pretty much ~15 seconds or so. The shorter the block time, the larger an effect that lag has. i.e. for a 1 minute block, that lag is 1/4th the block time, but for a 2 minute block, it is 1/8th the block time. In bitcoin's case, it is 1/40th the block time. The smaller that fraction gets, the less likely a reorg is to occur. [1]''',
+        'related-topics' : [{
+            'url' : 'proof-of-work',
+            'title' : 'Proof-of-work'
+            } , {
+            'url' : 'confirmation',
+            'title' : 'Confirmation'
+            } , {
+            'url' : 'consensus',
+            'title' : 'Consensus'
+            } , {
+            'url' : 'blockchain',
+            'title' : 'Blockchain'
+            } , {
+        }],
+        'references' : [{
+            'title': 'What does "BLOCK ADDED AS ALTERNATIVE ON <some value>" mean in the bitmonerod?',
+            'author' : 'bigreddmachine',
+            'url' : 'https://www.reddit.com/r/Monero/comments/3o21b5/what_does_block_added_as_alternative_on_some/cvtfz4e/',
+            'source' : 'Reddit',
+            'year' : 2016
+            } , {
+            'title': 'Block added as alternative on height xxxxx',
+            'author' : 'JollyMort',
+            'url' : 'https://monero.stackexchange.com/questions/2018/block-added-as-alternative-on-height-xxxxx',
+            'source' : 'StackExchange',
+            'year' : 2016
+        }]
+    } ,
+    'change' : {
+        'title' : 'Change',
+        'body' : '''Reorgs happen when there is temporarily a disagreement about what the longest chain is. It happens in every Cryptocurrency, and the shorter the block time, the more frequent it happens. Basically, picture a guy in the Philippines and a guy in Spain each mining what they say is block 780000 at almost exactly the same time. Half the network sees the one guys block first and accepts it, while rejecting the other guys block. The other half the network does the opposite. It's actually not that uncommon for this to happen, but usually someone mining on one of those two chains finds another block and adds it on, and then everyone goes "oh look, that chain is longer" and ditches the other one. BUT, sometimes, the near tie in finding blocks can happen two or three or four times in a row. Eventually, one side wins out, and anyone on the wrong chain has to reorganize.
+
+This is why merchants are recommended to wait for a few confirmations before fully crediting a payment for big ticket items. The more confirmations (or the more blocks that get added on top of the one your transaction is in), the harder it is to happen on a reorg.
+
+The whole problem is caused by a slight delay in sending signals to all corners of the earth that a miner found a block. The total lag is pretty much ~15 seconds or so. The shorter the block time, the larger an effect that lag has. i.e. for a 1 minute block, that lag is 1/4th the block time, but for a 2 minute block, it is 1/8th the block time. In bitcoin's case, it is 1/40th the block time. The smaller that fraction gets, the less likely a reorg is to occur. [1]''',
+        'related-topics' : [{
+            'url' : 'proof-of-work',
+            'title' : 'Proof-of-work'
+            } , {
+            'url' : 'confirmation',
+            'title' : 'Confirmation'
+            } , {
+            'url' : 'consensus',
+            'title' : 'Consensus'
+            } , {
+            'url' : 'blockchain',
+            'title' : 'Blockchain'
+            } , {
+        }],
+        'references' : [{
+            'title': 'What does "BLOCK ADDED AS ALTERNATIVE ON <some value>" mean in the bitmonerod?',
+            'author' : 'bigreddmachine',
+            'url' : 'https://www.reddit.com/r/Monero/comments/3o21b5/what_does_block_added_as_alternative_on_some/cvtfz4e/',
+            'source' : 'Reddit',
+            'year' : 2016
+            } , {
+            'title': 'Block added as alternative on height xxxxx',
+            'author' : 'JollyMort',
+            'url' : 'https://monero.stackexchange.com/questions/2018/block-added-as-alternative-on-height-xxxxx',
+            'source' : 'StackExchange',
+            'year' : 2016
+        }]
+    } ,
     'cryptonote-standards' : {
         'title' : 'CryptoNote standards',
         'body' : '''
@@ -1063,6 +1133,41 @@ The Monero network is built on the CryptoNote Protocol. Since 2014, the core tea
             'year' : 2020
         }]
     } ,
+    'reorganization-of-the-blockchain' : {
+        'title' : 'Reorganization of the blockchain',
+        'body' : '''Reorgs happen when there is temporarily a disagreement about what the longest chain is. It happens in every Cryptocurrency, and the shorter the block time, the more frequent it happens. Basically, picture a guy in the Philippines and a guy in Spain each mining what they say is block 780000 at almost exactly the same time. Half the network sees the one guys block first and accepts it, while rejecting the other guys block. The other half the network does the opposite. It's actually not that uncommon for this to happen, but usually someone mining on one of those two chains finds another block and adds it on, and then everyone goes "oh look, that chain is longer" and ditches the other one. BUT, sometimes, the near tie in finding blocks can happen two or three or four times in a row. Eventually, one side wins out, and anyone on the wrong chain has to reorganize.
+
+This is why merchants are recommended to wait for a few confirmations before fully crediting a payment for big ticket items. The more confirmations (or the more blocks that get added on top of the one your transaction is in), the harder it is to happen on a reorg.
+
+The whole problem is caused by a slight delay in sending signals to all corners of the earth that a miner found a block. The total lag is pretty much ~15 seconds or so. The shorter the block time, the larger an effect that lag has. i.e. for a 1 minute block, that lag is 1/4th the block time, but for a 2 minute block, it is 1/8th the block time. In bitcoin's case, it is 1/40th the block time. The smaller that fraction gets, the less likely a reorg is to occur. [1]''',
+        'related-topics' : [{
+            'url' : 'proof-of-work',
+            'title' : 'Proof-of-work'
+            } , {
+            'url' : 'confirmation',
+            'title' : 'Confirmation'
+            } , {
+            'url' : 'consensus',
+            'title' : 'Consensus'
+            } , {
+            'url' : 'blockchain',
+            'title' : 'Blockchain'
+            } , {
+        }],
+        'references' : [{
+            'title': 'What does "BLOCK ADDED AS ALTERNATIVE ON <some value>" mean in the bitmonerod?',
+            'author' : 'bigreddmachine',
+            'url' : 'https://www.reddit.com/r/Monero/comments/3o21b5/what_does_block_added_as_alternative_on_some/cvtfz4e/',
+            'source' : 'Reddit',
+            'year' : 2016
+            } , {
+            'title': 'Block added as alternative on height xxxxx',
+            'author' : 'JollyMort',
+            'url' : 'https://monero.stackexchange.com/questions/2018/block-added-as-alternative-on-height-xxxxx',
+            'source' : 'StackExchange',
+            'year' : 2016
+        }]
+    } ,
     'sound-money' : {
         'title' : 'Sound Money',
         'body' : """There have been many forms of money in history, but some forms have worked better than others because they have characteristics that make them more useful. The characteristics of money are durability, portability, divisibility, uniformity, limited supply, and acceptability [1]. Let's compare two examples of possible forms of money:
@@ -1102,6 +1207,14 @@ Well, it seems "udderly" clear at this point that ℳonero is a much better form
             'url' : 'https://www.stlouisfed.org/education/economic-lowdown-podcast-series/episode-9-functions-of-money',
             'source' : 'The Economic Lowdon Podcast',
             'year' : 2020
+        }]
+    } ,
+    'submission' : {
+        'title' : 'Submission',
+        'body' : '''All aboutmonero articles follow a common template. They require a title, body, related topics, and references. Have a suggestion for a new article? Write to aboutmonero@protonmail.com''',
+        'related-topics' : [{
+        }],
+        'references' : [{
         }]
     } ,
     'supply-properties' : {
