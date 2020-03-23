@@ -429,8 +429,7 @@ A block explorer can be used to query transactions and blocks to analyze what da
             'url' : 'node',
             'title' : 'Node'
         }],
-        'references' : [{
-        }]
+        'references' : []
     } ,
     'block-height' : {
         'title' : 'Block height',
@@ -448,8 +447,7 @@ A block explorer can be used to query transactions and blocks to analyze what da
             'url' : 'node',
             'title' : 'Node'
         }],
-        'references' : [{
-        }]
+        'references' : []
     } ,
     'block-interval' : {
         'title' : 'Block interval',
@@ -468,8 +466,7 @@ The average duration of time between confirming blocks in the blockchain. For th
             'url' : 'block',
             'title' : 'Block'
         }],
-        'references' : [{
-        }]
+        'references' : []
     } ,
     'block-reward' : {
         'title' : 'Block reward',
