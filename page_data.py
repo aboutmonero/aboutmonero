@@ -861,7 +861,6 @@ The whole problem is caused by a slight delay in sending signals to all corners 
         <li><a href='../../static/seed_phrase.py'>seed_phrase.py</a>: Generates random seed phrase.</li>
         
         </ul>
-        <br><br>
         Otherwise, these are some recommended sources for using a Monero wallet:
         <ul>
         <li><a href='https://github.com/monero-project/monero-gui'>Monero Core GUI</a>: Wallet supported by the Monero Core developers.</li>
