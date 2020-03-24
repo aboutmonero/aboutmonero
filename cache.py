@@ -76,7 +76,7 @@ def cache_wiki():
         return cache([[time.time(),data['timestamp'],int(data['views'])]],"wiki")
                 
 def cache_blocks(last = None, end = None):
-    daemon = Daemon(JSONRPCDaemon(host='10.8.0.4', port=18081))
+    daemon = Daemon(JSONRPCDaemon(host='127.0.0.1', port=18081))
     new = []
     if not end:
         end = daemon.height() - 1
