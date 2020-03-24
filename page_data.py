@@ -709,6 +709,12 @@ An alternate method of creating money is proposed, via an auction where particip
             } , {
             'url' : 'daemon',
             'title' : 'Daemon'
+            } , {
+            'url' : 'monerod',
+            'title' : 'monerod'
+            } , {
+            'url' : 'run-a-node',
+            'title' : 'Run a node'
         }],
         'references' : [{
             'title': 'What is the "bootstrap node" when creating a monero wallet via the GUI?',
@@ -1129,14 +1135,13 @@ The whole problem is caused by a slight delay in sending signals to all corners 
             'title' : 'Node'
             } , {
             'url' : 'bootstrap-node',
-            'title' : 'Bootstrap Node'
+            'title' : 'Bootstrap node'
             } , {
             'url' : 'monerod',
             'title' : 'monerod'
             } , {
             'url' : 'daemon',
             'title' : 'Daemon'
-            } , {
         }],
         'references' : [{
             'title': 'How to Run a Monero Node',
