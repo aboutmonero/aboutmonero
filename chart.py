@@ -158,7 +158,7 @@ def build_chart(x_data, y_data, label_req, dur, scatter = False ):
     
     if label['scale']=='log':
         ax.yaxis.set_major_locator(LogLocator(base=10))
-        ax.yaxis.set_minor_locator(LogLocator(base=10,subs=[0.1,0.2,0.3,0.4,0.5,0.6,0.7,0.8,0.9]))
+        ax.yaxis.set_minor_locator(LogLocator(base=10,subs=[0.0, 0.1,0.2,0.3,0.4,0.5,0.6,0.7,0.8,0.9,1]))
         ax.yaxis.set_major_formatter(LogFormatterMathtext(labelOnlyBase=True))
     
     if dur == '1M':
