@@ -1121,6 +1121,43 @@ The whole problem is caused by a slight delay in sending signals to all corners 
             'year' : 2016
         }]
     } ,
+    'run-a-node' : {
+        'title' : 'Run a node',
+        'body' : '''Nodes form the P2P monero network. They are critical in verifying transactions and relaying information to and from miners. They also store and update a copy of the blockchain [1]. Running your own node allows you to independently transact and verify the blockchain state. If you don't run a node, you must rely on others to do the checks for you and broadcast your transaction to the network when you want to transact [2]. The node software for monero is called monerod - the monero daemon. It is part of the official Monero distribution which can be downloaded from the Monero Downloads page [3].''',
+        'related-topics' : [{
+            'url' : 'node',
+            'title' : 'Node'
+            } , {
+            'url' : 'bootstrap-node',
+            'title' : 'Bootstrap Node'
+            } , {
+            'url' : 'monerod',
+            'title' : 'monerod'
+            } , {
+            'url' : 'daemon',
+            'title' : 'Daemon'
+            } , {
+        }],
+        'references' : [{
+            'title': 'How to Run a Monero Node',
+            'author' : 'Justin Ehrenhofer',
+            'url' : 'https://www.monero.how/how-to-run-monero-node',
+            'source' : 'monero.how',
+            'year' : 2018
+            } , {
+            'title': 'What is the purpose of running a monero node?',
+            'author' : 'JollyMort',
+            'url' : 'https://monero.stackexchange.com/questions/7152/what-is-the-purpose-of-running-a-monero-node?noredirect=1&lq=1',
+            'source' : 'StackExchange',
+            'year' : 2018
+            } , {
+            'title': 'Running a Monero node',
+            'author' : 'm2049r',
+            'url' : 'https://www.reddit.com/r/Monero/comments/9obs6q/running_a_monero_node/',
+            'source' : 'Reddit',
+            'year' : 2018
+        }]
+    } ,
     'sound-money' : {
         'title' : 'Sound Money',
         'body' : """There have been many forms of money in history, but some forms have worked better than others because they have characteristics that make them more useful. The characteristics of money are durability, portability, divisibility, uniformity, limited supply, and acceptability [1]. Let's compare two examples of possible forms of money:
