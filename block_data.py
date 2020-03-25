@@ -89,7 +89,7 @@ def get_block_data():
             last_block['block_count'] -= 1
             last_block['block_time']=((24*60*60)/last_block['block_count'])
             last_block['hashrate'] = x[2] / (last_block['block_time'])
-            if head == last_block['max_transaction_block']:
+            if head == last_block['transaction_block_max']:
                 last_block['transaction_block_max'] = max([x[1] for x in day])
         
         #price
