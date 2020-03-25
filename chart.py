@@ -189,7 +189,7 @@ def build_chart(x_data, y_data, label_req, dur, scatter = False ):
     ax.grid(which='minor',linestyle = ':')
     ax.grid(True)
     
-    fig.set_size_inches(16,10)
+    fig.set_size_inches(12,7.5)
     fig.savefig("static/data/"+ label['file-name'] +"_" + dur + ".png",dpi=150)
     plt.cla() 
     plt.clf() 
