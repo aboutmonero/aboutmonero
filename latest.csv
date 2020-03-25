@@ -15,9 +15,5 @@ version_minor,12.0
 block_height,2062381
 1yo,43941729.66741029
 wiki_view,404.0
-<<<<<<< HEAD
 marketcap_infl,731090258.3550785
-transaction_block_max,10423.0
-=======
-marketcap_infl,738440069.9703374
->>>>>>> 0f149653809ef2875ba87307a94b7c1a6a70aa0a
+transaction_block_max,100
