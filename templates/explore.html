@@ -113,7 +113,7 @@
         <th>Chart</th>
     </tr>
     <tr>
-        <td class = "tooltip">Block Count (1D)<span class="tooltiptext">The number of blocks mined in the previous day.</span>: </td>
+        <td class = "tooltip">Block Count 1D<span class="tooltiptext">The number of blocks mined in the previous day.</span>: </td>
         <td>{{data[1]}} </td>
         <td> <a href="#block_count_1M">1M</a> <a href="#block_count_1Y">1Y</a> <a href="#block_count_all">All</a></td>
     </tr>
@@ -143,14 +143,14 @@
         <td><a href="#fee_1M">1M</a> <a href="#fee_1Y">1Y</a> <a href="#fee_all">All</a></td>
     </tr>
     <tr>
-        <td class = "tooltip">Inflation Rate (1Y)<span class="tooltiptext">Percentage of circulating supply mined in the past year.</span>: </td>
+        <td class = "tooltip">Inflation Rate 1Y<span class="tooltiptext">Percentage of circulating supply mined in the past year.</span>: </td>
         <td>%{{data[7]}}</td>
         <td><a href="#inflation_1M">1M</a> <a href="#inflation_1Y">1Y</a> <a href="#inflation_all">All</a></td>
     </tr>
     <tr>
-        <td class = "tooltip">Max Transactions (1D)<span class="tooltiptext">Largest number of monero transactions in a block since the previous day.</span>: </td>
-        <td>{{data[18]}} </td>
-        <td><a href="#transaction_block_max_1M">1M</a> <a href="#transaction_block_max_1Y">1Y</a> <a href="#transaction_block_max_all">All</a></td>
+        <td class = "tooltip">Market Price $<span class="tooltiptext">Average USD market price across major monero exchanges.</span>: </td>
+        <td>${{data[0]}}</td>
+        <td><a href="#price_1M">1M</a> <a href="#price_1Y">1Y</a> <a href="#price_all">All</a></td>
     </tr>
     <tr>
         <td class = "tooltip">Miner's Block Reward<span class="tooltiptext">Value of newly minted monero paid to miners per block.</span>: </td>
@@ -158,7 +158,7 @@
         <td> <a href="#block_reward_1M">1M</a> <a href="#block_reward_1Y">1Y</a> <a href="#block_reward_all">All</a></td>
     </tr>
     <tr>
-        <td class = "tooltip">Miner's Revenue (1Y)<span class="tooltiptext">Sum of all coins' value at time of emission for 1 year.</span>: </td>
+        <td class = "tooltip">Miner's Revenue 1Y<span class="tooltiptext">Sum of all coins' value at time of emission for 1 year.</span>: </td>
         <td>${{data[15]}}</td>
         <td><a href="#1yo_1M">1M</a> <a href="#1yo_1Y">1Y</a> <a href="#1yo_all">All</a></td>
     </tr>
@@ -183,14 +183,14 @@
         <td><a href="#marketcap_infl_1M">1M</a> <a href="#marketcap_infl_1Y">1Y</a> <a href="#marketcap_infl_all">All</a></td>
     </tr>
     <tr>
-        <td class = "tooltip">Transaction Count (1D)<span class="tooltiptext">Number of monero transactions in the previous day.</span>: </td>
+        <td class = "tooltip">Transactions 1D Count<span class="tooltiptext">Number of monero transactions in the previous day.</span>: </td>
         <td>{{data[2]}} </td>
         <td><a href="#transaction_1M">1M</a> <a href="#transaction_1Y">1Y</a> <a href="#transaction_all">All</a></td>
     </tr>
     <tr>
-        <td class = "tooltip">USD Market Price<span class="tooltiptext">Average USD market price across major monero exchanges.</span>: </td>
-        <td>${{data[0]}}</td>
-        <td><a href="#price_1M">1M</a> <a href="#price_1Y">1Y</a> <a href="#price_all">All</a></td>
+        <td class = "tooltip">Transactions 1D Max<span class="tooltiptext">Largest number of monero transactions in a block since the previous day.</span>: </td>
+        <td>{{data[18]}} </td>
+        <td><a href="#transaction_block_max_1M">1M</a> <a href="#transaction_block_max_1Y">1Y</a> <a href="#transaction_block_max_all">All</a></td>
     </tr>
     <tr>
         <td class = "tooltip">Version<span class="tooltiptext">Major and minor version of client used by miner.</span>: </td>
@@ -198,7 +198,7 @@
         <td><a href="#version_1M">1M</a> <a href="#version_1Y">1Y</a> <a href="#version_all">All</a></td>
     </tr>
     <tr>
-        <td class = "tooltip">Wikipedia Page Views<span class="tooltiptext">Views of Monero (cryptocurrency) Page on en.wikipedia.org.</span>: </td>
+        <td class = "tooltip">Wikipedia Views 1D<span class="tooltiptext">Views of Monero (cryptocurrency) Page on en.wikipedia.org.</span>: </td>
         <td>{{data[16]}} </td>
         <td><a href="#wiki_view_1M">1M</a> <a href="#wiki_view_1Y">1Y</a> <a href="#wiki_view_all">All</a></td>
     </tr>
