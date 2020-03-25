@@ -16,11 +16,6 @@ def root():
     cache.cache([[time.time(), ip, '/']],'../usage')
     return render_template('index.html')
     
-@app.route('/external/<topic>')
-def root():
-    ip = request.environ.get('HTTP_X_REAL_IP', request.remote_addr)   
-    cache.cache([[time.time(), ip, topic]],'../usage')
-    return redirect(topic)
 
 @app.route('/index.html')
 def index():
