@@ -141,7 +141,7 @@ labels = {
 }
     
 def build_chart(x_data, y_data, label_req, dur, scatter = False ):   
-    matplotlib.rcParams.update({'font.family': 'monospace'})
+    matplotlib.rcParams.update({'font.family': 'monospace', 'font.size': 7})
     label = labels[label_req]
     
     dates = mdate.epoch2num(x_data)
@@ -174,12 +174,12 @@ def build_chart(x_data, y_data, label_req, dur, scatter = False ):
         ax.xaxis.set_major_locator(mdate.WeekdayLocator(byweekday = mdate.SU))
         ax.xaxis.set_major_formatter(date_formatter)
     elif dur == '1Y':
-        date_formatter = mdate.DateFormatter("%b, '%y")
+        date_formatter = mdate.DateFormatter("%b.%y")
         ax.xaxis.set_minor_locator(mdate.MonthLocator())
         ax.xaxis.set_major_locator(mdate.MonthLocator(bymonth=[1,4,7,10]))
         ax.xaxis.set_major_formatter(date_formatter)
     else:
-        date_formatter = mdate.DateFormatter('%Y')
+        date_formatter = mdate.DateFormatter('%y')
         ax.xaxis.set_minor_locator(mdate.MonthLocator(bymonth=[1,4,7,10]))
         ax.xaxis.set_major_locator(mdate.YearLocator())
         ax.xaxis.set_major_formatter(date_formatter)
