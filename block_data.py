@@ -17,6 +17,7 @@ last_block = {
     'supply' : 0,
     'hashrate' : 0.1,
     'transaction' : 0,
+    'transaction_block_max' : 0,
     'marketcap' : 0,
     'marketcap_infl' : 0,
     'inflation' : 0,
@@ -80,13 +81,16 @@ def get_block_data():
         day.append([x[0],x[4]])
         last_block['transaction'] += x[4]
         last_block['block_count'] += 1
+        last_block['transaction_block_max'] = max(last_block['transaction_block_max'],x[4])
+        #remove old data
         while day[0][0] < x[0] - 24*60*60:
             head = day.popleft()[1]
             last_block['transaction'] -= head
             last_block['block_count'] -= 1
             last_block['block_time']=((24*60*60)/last_block['block_count'])
             last_block['hashrate'] = x[2] / (last_block['block_time'])
-            
+            if head == last_block['max_transaction_block']:
+                last_block['transaction_block_max'] = max([x[1] for x in day])
         
         #price
         while p[0] < x[0] and price:

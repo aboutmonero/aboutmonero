@@ -81,6 +81,13 @@ labels = {
         'y-axis' : '# of Transactions',
         'scale' : 'log',
     } , 
+    'transaction_block_max': {
+        'title' : 'Max Transactions Per Block (24h)',
+        'file-name' : 'transaction_block_max',
+        'x-axis' : 'Date',
+        'y-axis' : '# of Transactions',
+        'scale' : 'log',
+    } , 
     'fee': {
         'title' : 'Fee per Block (Geometric Mean Of 720 Blocks)',
         'file-name' : 'fee',
