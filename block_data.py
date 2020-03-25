@@ -64,7 +64,7 @@ def get_block_data():
     
     #block reward over 1y
     reward_1y = 0
-    
+    maxmax = [0,0]
     while blocks:
         #block data
         x = blocks.pop()
@@ -82,6 +82,7 @@ def get_block_data():
         last_block['transaction'] += x[4]
         last_block['block_count'] += 1
         last_block['transaction_block_max'] = max(last_block['transaction_block_max'],x[4])
+        
         if maxmax[1] < last_block['transaction_block_max']:
             maxmax = [x[1],last_block['transaction_block_max']]
         print(maxmax)
