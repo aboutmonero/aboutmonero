@@ -994,6 +994,39 @@ The Monero network is built on the CryptoNote Protocol. Since 2014, the core tea
             'year' : 2014
         }]
     } ,
+    'mining' : {
+        'title' : 'Mining',
+        'body' : """Nodes verify transactions and relay that information to miners. Miners prove transactions are valid by expending some computational power in a process known as proof-of-work. They receive a small reward for this verification process. Unlike most cryptocurrencies today, Monero's mining algorithm (RandomX) is optimized for CPU computation to resist centralized ASIC domination. If you have a powerful CPU, you will be able to contribute to the Monero network hashpower. You can dedicate your own computational power by running mining software, using the monero-cli [2], or the monero-gui interface [1]. Miners often "pool" together their computational power to find more blocks. These pools can be found from any search engine. """,
+        'related-topics' : [{
+            'url' : 'proof-of-work',
+            'title' : 'Proof-of-work'
+            } , {
+            'url' : 'asic',
+            'title' : 'ASIC'
+            } , {
+            'url' : 'randomx',
+            'title' : 'RandomX'
+            } , {
+            'url' : 'monero-cli',
+            'title' : 'monero-cli'
+            } , {
+            'url' : 'monero-gui',
+            'title' : 'monero-gui'
+        }],
+        'references' : [{
+            'title': 'Solo mining',
+            'author' : 'monero-ecosystem',
+            'url' : 'https://github.com/monero-ecosystem/monero-GUI-guide/blob/master/monero-GUI-guide.md#solo-mining',
+            'source' : 'Github',
+            'year' : 2019
+            } , {
+            'title': 'Getting started with the CLI wallet',
+            'author' : 'Monero Core',
+            'url' : 'https://web.getmonero.org/resources/user-guides/monero-wallet-cli.html',
+            'source' : 'getmonero.org',
+            'year' : 2014
+        }]
+    } ,
     'obtain-monero' : {
         'title' : 'Obtain monero',
         'body' : '''Monero can be obtained through exchange or through mining blocks. These are some recommended exchanges for obtaining monero with fiat currency:
@@ -1015,8 +1048,8 @@ The Monero network is built on the CryptoNote Protocol. Since 2014, the core tea
             'url' : 'store-monero',
             'title' : 'Store monero'
             } , {
-            'url' : 'mine-monero',
-            'title' : 'Mine monero'
+            'url' : 'mining',
+            'title' : 'Mining'
         }],
         'references' : [{
             'title': 'Monero',
