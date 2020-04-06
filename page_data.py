@@ -1205,7 +1205,7 @@ The whole problem is caused by a slight delay in sending signals to all corners 
 </ul>
 Let's run down our list of characteristics to see how they stack up.
 <ol>
-    <li><b>Durability</b> A cow is fairly durable, but a long trip to market runs the risk of sickness or death for the cow and can severely reduce its value. Units of ℳonero cannot deteroriate or become broken in any way. It exists digitally within the decentralized peer-to-peer network which has no central point of failure.</li>
+    <li><b>Durability</b>. A cow is fairly durable, but a long trip to market runs the risk of sickness or death for the cow and can severely reduce its value. Units of ℳonero cannot deteroriate or become broken in any way. It exists digitally within the decentralized peer-to-peer network which has no central point of failure.</li>
     <li><b>Portability.</b> While the cow is difficult to transport to the store, the currency can be easily be transferred wherever an internet connection is available.</li>
     <li><b>Divisibility.</b> A unit of ℳonero is practically infinitely divisble, up to 12 decimal places. A cow, on the other hand, is not very divisible.</li>
     <li><b>Uniformity.</b> Cows come in many sizes and shapes and each has a different value; cows are not a very uniform form of money. Every unit of ℳonero is indistinguishable. Because accounts and transactions are encrypted, every unit of ℳonero is essentially freshly minted currency. That is why every ℳonero is treated equally</li>
