@@ -860,14 +860,7 @@ The whole problem is caused by a slight delay in sending signals to all corners 
     } ,
     'create-a-wallet' : {
         'title' : 'Create a wallet',
-        'body' : '''If you are familiar with python, these files may be used to generate a seed phrase locally.
-        <ul>
-        <li><a href='../../static/words.py'>words.py</a>: Seed phrase word bank.</li>
-        
-        <li><a href='../../static/seed_phrase.py'>seed_phrase.py</a>: Generates random seed phrase.</li>
-        
-        </ul>
-        Otherwise, these are some recommended sources for using a Monero wallet:
+        'body' : '''These are some recommended sources for using a Monero wallet:
         <ul>
         <li><a href='https://github.com/monero-project/monero-gui'>Monero Core GUI</a>: Wallet supported by the Monero Core developers.</li>
         
@@ -877,7 +870,14 @@ The whole problem is caused by a slight delay in sending signals to all corners 
         
         <li><a href='https://www.monerujo.io/'>Monerujo Wallet</a>: Mobile Wallet</li>
         
-        </ul>[1][2]''',
+        </ul>
+        If you are familiar with python, these files may be used to generate a seed phrase locally.
+        <ul>
+        <li><a href='../../static/words.py'>words.py</a>: Seed phrase word bank.</li>
+        
+        <li><a href='../../static/seed_phrase.py'>seed_phrase.py</a>: Generates random seed phrase.</li>
+        
+        </ul>  [1][2]''',
         'related-topics' : [{
             'url' : 'wallet',
             'title' : 'Wallet'
