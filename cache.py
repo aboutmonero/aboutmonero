@@ -118,5 +118,3 @@ def get_latest():
         else:
             rows[i] = "{0:,.2f}".format(float(rows[i][1]))
     return rows
-
-cache_CPI()
